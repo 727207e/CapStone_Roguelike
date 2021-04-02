@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     public static GameManager Instance
     {
         get
