@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject player; // 플레이어
 
+    public Transform audioListener;
+
     private void Awake()
     {
         if(instance == null)
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
             //씬 전환이후 그 씬에도 gamemanager가 있을수 있음.
             //따라서 새로운 씬의 gamemanager 파괴
             Destroy(this.gameObject);
+
         }
     }
 
@@ -42,6 +45,15 @@ public class GameManager : MonoBehaviour
         if(GameObject.Find("Player") != null)
         {
             player = GameObject.Find("Player");
+        }
+    }
+
+    void Update()
+    {
+        if (player != null)
+        {
+            //오디오 리스너를 플레이어에게 붙인다
+            audioListener.position = player.transform.position;
         }
     }
 }
