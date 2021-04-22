@@ -177,5 +177,11 @@ public class msPlayerController : MonoBehaviour
         
     }
 
+    public void OnHit(int Damage)
+    {
+        //Damage만큼의 피해를 입는다
+        GetComponent<CharacterStats>().maxHealth -= Damage;
+        print(Damage + transform.name);
+    }
 
 }
