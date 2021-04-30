@@ -1,0 +1,4160 @@
+fileFormatVersion: 2
+guid: 8341562bfbed81e43b7ce75b57bfbee5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: Top_Banner_01
+  - first:
+      213: 21300002
+    second: Title_Bar_01
+  - first:
+      213: 21300004
+    second: Corner_1
+  - first:
+      213: 21300006
+    second: Top_Banner_02
+  - first:
+      213: 21300008
+    second: Corner_2
+  - first:
+      213: 21300010
+    second: Title_Bar_Setting_01
+  - first:
+      213: 21300012
+    second: Title_Bar_Close_01
+  - first:
+      213: 21300014
+    second: Main_Screen_Overlay_01
+  - first:
+      213: 21300016
+    second: Main_Frame_01
+  - first:
+      213: 21300018
+    second: Main_Frame_Close_01
+  - first:
+      213: 21300020
+    second: Map_Frame_01
+  - first:
+      213: 21300022
+    second: Map_Quest_01
+  - first:
+      213: 21300024
+    second: SF_ATlas_2048x2048_12
+  - first:
+      213: 21300026
+    second: Map_Corner_Top_01
+  - first:
+      213: 21300028
+    second: Map_Enemy_01
+  - first:
+      213: 21300030
+    second: Map_NPC_01
+  - first:
+      213: 21300032
+    second: Map_Corner_Bot_01
+  - first:
+      213: 21300034
+    second: Map_Character_01
+  - first:
+      213: 21300036
+    second: Main_Frame_Overlay_02
+  - first:
+      213: 21300038
+    second: Map_Zoom_In_01
+  - first:
+      213: 21300040
+    second: Map_Zoom_Out_01
+  - first:
+      213: 21300042
+    second: Map_Net_01
+  - first:
+      213: 21300044
+    second: Login_Screen_TextInput_01
+  - first:
+      213: 21300046
+    second: Main_Frame_Overlay_01
+  - first:
+      213: 21300048
+    second: Main_Frame_Corner_01
+  - first:
+      213: 21300050
+    second: Main_Frame_Quest_01
+  - first:
+      213: 21300052
+    second: Main_Frame_Arrow_01
+  - first:
+      213: 21300054
+    second: Main_Frame_Button_01
+  - first:
+      213: 21300056
+    second: Main_Frame_Arrow_02
+  - first:
+      213: 21300058
+    second: Main_Frame_Corner_02
+  - first:
+      213: 21300060
+    second: Map_Overlay_01
+  - first:
+      213: 21300062
+    second: Login_Screen_Login_01
+  - first:
+      213: 21300064
+    second: Main_Frame_Square_01
+  - first:
+      213: 21300066
+    second: Main_Frame_Square_02
+  - first:
+      213: 21300068
+    second: Main_Frame_Square_03
+  - first:
+      213: 21300070
+    second: Main_Frame_Button_02
+  - first:
+      213: 21300072
+    second: Main_Frame_Scroll_01
+  - first:
+      213: 21300074
+    second: Main_Frame_Scroll_02
+  - first:
+      213: 21300076
+    second: Settings_General_01
+  - first:
+      213: 21300078
+    second: Settings_General_02
+  - first:
+      213: 21300080
+    second: Settings_General_03
+  - first:
+      213: 21300082
+    second: Main_Frame_Button_03
+  - first:
+      213: 21300084
+    second: Inventory_Frame_01
+  - first:
+      213: 21300086
+    second: Inventory_Close_01
+  - first:
+      213: 21300088
+    second: Settings_Graphics_01
+  - first:
+      213: 21300090
+    second: Settings_Graphics_02
+  - first:
+      213: 21300092
+    second: Settings_Graphics_03
+  - first:
+      213: 21300094
+    second: Inventory_Scroll_02
+  - first:
+      213: 21300096
+    second: Login_Screen_Login_02
+  - first:
+      213: 21300098
+    second: SF_ATlas_2048x2048_53
+  - first:
+      213: 21300100
+    second: SF_ATlas_2048x2048_54
+  - first:
+      213: 21300102
+    second: SF_ATlas_2048x2048_55
+  - first:
+      213: 21300104
+    second: Main_Frame_Button_04
+  - first:
+      213: 21300106
+    second: Inventory_Scroll_01
+  - first:
+      213: 21300108
+    second: SF_ATlas_2048x2048_58
+  - first:
+      213: 21300110
+    second: SF_ATlas_2048x2048_59
+  - first:
+      213: 21300112
+    second: SF_ATlas_2048x2048_60
+  - first:
+      213: 21300114
+    second: Settings_Video_01
+  - first:
+      213: 21300116
+    second: Settings_Video_02
+  - first:
+      213: 21300118
+    second: Settings_Video_03
+  - first:
+      213: 21300120
+    second: Main_Frame_Button_06
+  - first:
+      213: 21300122
+    second: Login_Screen_Quit_01
+  - first:
+      213: 21300124
+    second: Settings_Audio_01
+  - first:
+      213: 21300126
+    second: Settings_Audio_02
+  - first:
+      213: 21300128
+    second: Settings_Audio_03
+  - first:
+      213: 21300130
+    second: SF_ATlas_2048x2048_69
+  - first:
+      213: 21300132
+    second: SF_ATlas_2048x2048_70
+  - first:
+      213: 21300134
+    second: SF_ATlas_2048x2048_71
+  - first:
+      213: 21300136
+    second: SF_ATlas_2048x2048_72
+  - first:
+      213: 21300138
+    second: SF_ATlas_2048x2048_73
+  - first:
+      213: 21300140
+    second: SF_ATlas_2048x2048_74
+  - first:
+      213: 21300142
+    second: SF_ATlas_2048x2048_75
+  - first:
+      213: 21300144
+    second: SF_ATlas_2048x2048_76
+  - first:
+      213: 21300146
+    second: SF_ATlas_2048x2048_77
+  - first:
+      213: 21300148
+    second: SF_ATlas_2048x2048_78
+  - first:
+      213: 21300150
+    second: SF_ATlas_2048x2048_79
+  - first:
+      213: 21300152
+    second: SF_ATlas_2048x2048_80
+  - first:
+      213: 21300154
+    second: SF_ATlas_2048x2048_81
+  - first:
+      213: 21300156
+    second: SF_ATlas_2048x2048_82
+  - first:
+      213: 21300158
+    second: SF_ATlas_2048x2048_83
+  - first:
+      213: 21300160
+    second: SF_ATlas_2048x2048_84
+  - first:
+      213: 21300162
+    second: SF_ATlas_2048x2048_85
+  - first:
+      213: 21300164
+    second: SF_ATlas_2048x2048_86
+  - first:
+      213: 21300166
+    second: SF_ATlas_2048x2048_87
+  - first:
+      213: 21300168
+    second: SF_ATlas_2048x2048_88
+  - first:
+      213: 21300170
+    second: SF_ATlas_2048x2048_89
+  - first:
+      213: 21300172
+    second: SF_ATlas_2048x2048_90
+  - first:
+      213: 21300174
+    second: SF_ATlas_2048x2048_91
+  - first:
+      213: 21300176
+    second: SF_ATlas_2048x2048_92
+  - first:
+      213: 21300178
+    second: SF_ATlas_2048x2048_93
+  - first:
+      213: 21300180
+    second: SF_ATlas_2048x2048_94
+  - first:
+      213: 21300182
+    second: Setting_SliderButton_01
+  - first:
+      213: 21300184
+    second: Setting_SliderButton_02
+  - first:
+      213: 21300186
+    second: Setting_SliderButton_03
+  - first:
+      213: 21300188
+    second: Setting_Slider_01
+  - first:
+      213: 21300190
+    second: Setting_Corner_01
+  - first:
+      213: 21300192
+    second: Setting_Overlay_01
+  - first:
+      213: 21300194
+    second: Login_Screen_Quit_02
+  - first:
+      213: 21300196
+    second: Setting_Toggle_01
+  - first:
+      213: 21300198
+    second: Setting_Toggle_02
+  - first:
+      213: 21300200
+    second: Setting_Toggle_03
+  - first:
+      213: 21300202
+    second: Setting_Select_Arrow_01
+  - first:
+      213: 21300204
+    second: Setting_Select_Arrow_02
+  - first:
+      213: 21300206
+    second: Setting_Select_Arrow_03
+  - first:
+      213: 21300208
+    second: SF_ATlas_2048x2048_108
+  - first:
+      213: 21300210
+    second: SF_ATlas_2048x2048_109
+  - first:
+      213: 21300212
+    second: Setting_Select_01
+  - first:
+      213: 21300214
+    second: Setting_CheckBox_01
+  - first:
+      213: 21300216
+    second: Setting_CheckBox_02
+  - first:
+      213: 21300218
+    second: Setting_CheckBox_03
+  - first:
+      213: 21300220
+    second: Setting_Close_01
+  - first:
+      213: 21300222
+    second: Setting_Close_02
+  - first:
+      213: 21300224
+    second: Setting_Close_03
+  - first:
+      213: 21300226
+    second: Setting_Select_02
+  - first:
+      213: 21300228
+    second: Setting_SliderBar_01
+  - first:
+      213: 21300230
+    second: Inventory_Square_01
+  - first:
+      213: 21300232
+    second: Inventory_Credit_01
+  - first:
+      213: 21300234
+    second: Inventory_Credit_02
+  - first:
+      213: 21300236
+    second: Inventory_Credit_03
+  - first:
+      213: 21300238
+    second: Inventory_Corner_01
+  - first:
+      213: 21300240
+    second: Setting_TextField_01
+  - first:
+      213: 21300242
+    second: Setting_Scroll_01
+  - first:
+      213: 21300244
+    second: Setting_Scroll_02
+  - first:
+      213: 21300246
+    second: Exp_Bar_01
+  - first:
+      213: 21300248
+    second: LevelUp_01
+  - first:
+      213: 21300250
+    second: Main_Screen_Corner_01
+  - first:
+      213: 21300252
+    second: Exp_Bar_02
+  - first:
+      213: 21300254
+    second: ActionBar_Skill_02
+  - first:
+      213: 21300256
+    second: ActionBar_Skill_01
+  - first:
+      213: 21300258
+    second: Bottom_Banner_Square_01
+  - first:
+      213: 21300260
+    second: Bottom_Banner_Square_02
+  - first:
+      213: 21300262
+    second: Bottom_Banner_Settings_01
+  - first:
+      213: 21300264
+    second: Bottom_Banner_QuestLog_01
+  - first:
+      213: 21300266
+    second: Bottom_Banner_Trophies_01
+  - first:
+      213: 21300268
+    second: Bottom_Banner_Inventory_01
+  - first:
+      213: 21300270
+    second: Bottom_Banner_Character_01
+  - first:
+      213: 21300272
+    second: Bottom_Banner_Teleport_01
+  - first:
+      213: 21300274
+    second: SF_ATlas_2048x2048_142
+  - first:
+      213: 21300276
+    second: Bottom_Banner_01
+  - first:
+      213: 21300278
+    second: Bottom_Banner_02
+  - first:
+      213: 21300280
+    second: Title_Bar_02
+  - first:
+      213: 21300282
+    second: Main_Frame_Character_01
+  - first:
+      213: 21300284
+    second: Portrait_01
+  - first:
+      213: 21300286
+    second: Resources_Icon_01
+  - first:
+      213: 21300288
+    second: Resources_Icon_02
+  - first:
+      213: 21300290
+    second: Resources_Icon_03
+  - first:
+      213: 21300292
+    second: Resources_Icon_04
+  - first:
+      213: 21300294
+    second: Portrait_Bar_01
+  - first:
+      213: 21300296
+    second: Portrait_Bar_02
+  - first:
+      213: 21300298
+    second: Portrait_Bar_03
+  - first:
+      213: 21300300
+    second: Setting_Button_01
+  - first:
+      213: 21300302
+    second: Setting_Button_02
+  - first:
+      213: 21300304
+    second: Setting_EnterText_01
+  - first:
+      213: 21300306
+    second: Main_Frame_Button_05
+  - first:
+      213: 21300308
+    second: Settings_Interface_01
+  - first:
+      213: 21300310
+    second: Settings_Interface_02
+  - first:
+      213: 21300312
+    second: Settings_Interface_03
+  - first:
+      213: 21300314
+    second: Settings_Controls_01
+  - first:
+      213: 21300316
+    second: Settings_Controls_02
+  - first:
+      213: 21300318
+    second: Settings_Controls_03
+  - first:
+      213: 21300320
+    second: Setting_Slider_Bar_01
+  - first:
+      213: 21300322
+    second: Setting_Text_Field_01
+  - first:
+      213: 21300324
+    second: Level_Up_01
+  - first:
+      213: 21300326
+    second: Action_Bar_Skill_02
+  - first:
+      213: 21300328
+    second: Action_Bar_Skill_01
+  - first:
+      213: 21300330
+    second: Setting_Enter_Text_01
+  - first:
+      213: 21300332
+    second: Main_Frame_Boarder_01
+  - first:
+      213: 21300334
+    second: Settings_Overlay_2
+  - first:
+      213: 9081508309854333124
+    second: SF_ATlas_2048x2048_0
+  - first:
+      213: -4058382280181579711
+    second: SF_ATlas_2048x2048_1
+  - first:
+      213: 6862682997561899911
+    second: SF_ATlas_2048x2048_2
+  - first:
+      213: 597093033119097804
+    second: SF_ATlas_2048x2048_3
+  - first:
+      213: -6652996491651902263
+    second: SF_ATlas_2048x2048_4
+  - first:
+      213: -4175862962745769689
+    second: SF_ATlas_2048x2048_5
+  - first:
+      213: 3920061462490105863
+    second: SF_ATlas_2048x2048_6
+  - first:
+      213: 5600268811391001702
+    second: SF_ATlas_2048x2048_7
+  - first:
+      213: 1816976428176701415
+    second: SF_ATlas_2048x2048_8
+  - first:
+      213: 1116013985526719036
+    second: SF_ATlas_2048x2048_9
+  - first:
+      213: 2451626051881457804
+    second: SF_ATlas_2048x2048_10
+  - first:
+      213: -8938623467397213070
+    second: SF_ATlas_2048x2048_11
+  - first:
+      213: 6905951109670989080
+    second: SF_ATlas_2048x2048_13
+  - first:
+      213: 5922542867816238238
+    second: SF_ATlas_2048x2048_14
+  - first:
+      213: -6916403931922048190
+    second: SF_ATlas_2048x2048_15
+  - first:
+      213: 3212406918921819120
+    second: SF_ATlas_2048x2048_16
+  - first:
+      213: -5437545397156769813
+    second: SF_ATlas_2048x2048_17
+  - first:
+      213: -5692134211579086199
+    second: SF_ATlas_2048x2048_18
+  - first:
+      213: -7907236282926518350
+    second: SF_ATlas_2048x2048_19
+  - first:
+      213: 1372823616028235971
+    second: SF_ATlas_2048x2048_20
+  - first:
+      213: 8893539149778562312
+    second: SF_ATlas_2048x2048_21
+  - first:
+      213: -7183675738192176671
+    second: SF_ATlas_2048x2048_22
+  - first:
+      213: 2633281615857425626
+    second: SF_ATlas_2048x2048_23
+  - first:
+      213: 986922290419110345
+    second: SF_ATlas_2048x2048_24
+  - first:
+      213: -244582514928565882
+    second: SF_ATlas_2048x2048_25
+  - first:
+      213: -8130039529774847457
+    second: SF_ATlas_2048x2048_26
+  - first:
+      213: 5622236379229594934
+    second: SF_ATlas_2048x2048_27
+  - first:
+      213: 8972935924620138929
+    second: SF_ATlas_2048x2048_28
+  - first:
+      213: -8573020649393944176
+    second: SF_ATlas_2048x2048_29
+  - first:
+      213: -5864212647043900063
+    second: SF_ATlas_2048x2048_30
+  - first:
+      213: 2417066836470056995
+    second: SF_ATlas_2048x2048_31
+  - first:
+      213: 3223122659479265672
+    second: SF_ATlas_2048x2048_32
+  - first:
+      213: -1999407551378768764
+    second: SF_ATlas_2048x2048_33
+  - first:
+      213: 5440830903712758929
+    second: SF_ATlas_2048x2048_34
+  - first:
+      213: 4495507940331668364
+    second: SF_ATlas_2048x2048_35
+  - first:
+      213: 7896148575658393169
+    second: SF_ATlas_2048x2048_36
+  - first:
+      213: 8546263335568148855
+    second: SF_ATlas_2048x2048_37
+  - first:
+      213: -4114295370914725725
+    second: SF_ATlas_2048x2048_38
+  - first:
+      213: -6910476293083919338
+    second: SF_ATlas_2048x2048_39
+  - first:
+      213: -6935835400492372091
+    second: SF_ATlas_2048x2048_40
+  - first:
+      213: 3022298313405778514
+    second: SF_ATlas_2048x2048_41
+  - first:
+      213: -6380209677620486202
+    second: SF_ATlas_2048x2048_42
+  - first:
+      213: -4802223737099395015
+    second: SF_ATlas_2048x2048_43
+  - first:
+      213: 5667100724399578130
+    second: SF_ATlas_2048x2048_44
+  - first:
+      213: 8977901781171187616
+    second: SF_ATlas_2048x2048_45
+  - first:
+      213: 1956640673869503138
+    second: SF_ATlas_2048x2048_46
+  - first:
+      213: 5258104828834489302
+    second: SF_ATlas_2048x2048_47
+  - first:
+      213: -5701170707520299764
+    second: SF_ATlas_2048x2048_48
+  - first:
+      213: -6205239153419801511
+    second: SF_ATlas_2048x2048_49
+  - first:
+      213: -5997373185075596676
+    second: SF_ATlas_2048x2048_50
+  - first:
+      213: 88060941229760086
+    second: SF_ATlas_2048x2048_51
+  - first:
+      213: 7016553119522729538
+    second: SF_ATlas_2048x2048_52
+  - first:
+      213: -4406797166757143790
+    second: SF_ATlas_2048x2048_56
+  - first:
+      213: -2677825879047688668
+    second: SF_ATlas_2048x2048_57
+  - first:
+      213: -7878764770176040692
+    second: SF_ATlas_2048x2048_61
+  - first:
+      213: -3130451678617702090
+    second: SF_ATlas_2048x2048_62
+  - first:
+      213: 1183586699357447507
+    second: SF_ATlas_2048x2048_63
+  - first:
+      213: -2064611434295006214
+    second: SF_ATlas_2048x2048_64
+  - first:
+      213: -971393832585725147
+    second: SF_ATlas_2048x2048_65
+  - first:
+      213: 7927025286278621674
+    second: SF_ATlas_2048x2048_66
+  - first:
+      213: -7553222382655659831
+    second: SF_ATlas_2048x2048_67
+  - first:
+      213: -8074093563045267698
+    second: SF_ATlas_2048x2048_68
+  - first:
+      213: 7648202216237724966
+    second: SF_ATlas_2048x2048_95
+  - first:
+      213: 1950667110067957934
+    second: SF_ATlas_2048x2048_96
+  - first:
+      213: 4584731119840677244
+    second: SF_ATlas_2048x2048_97
+  - first:
+      213: 360384056378083599
+    second: SF_ATlas_2048x2048_98
+  - first:
+      213: -3797325662093303160
+    second: SF_ATlas_2048x2048_99
+  - first:
+      213: 8467077370441039917
+    second: SF_ATlas_2048x2048_100
+  - first:
+      213: 6153963877933578531
+    second: SF_ATlas_2048x2048_101
+  - first:
+      213: 909315417427188611
+    second: SF_ATlas_2048x2048_102
+  - first:
+      213: 1424560597758326245
+    second: SF_ATlas_2048x2048_103
+  - first:
+      213: 7630885752822072626
+    second: SF_ATlas_2048x2048_104
+  - first:
+      213: 8508462672360119653
+    second: SF_ATlas_2048x2048_105
+  - first:
+      213: 3314489248234905413
+    second: SF_ATlas_2048x2048_106
+  - first:
+      213: -1820578865849703911
+    second: SF_ATlas_2048x2048_107
+  - first:
+      213: -2786943584226492605
+    second: SF_ATlas_2048x2048_110
+  - first:
+      213: -3900205965271680247
+    second: SF_ATlas_2048x2048_111
+  - first:
+      213: -840537915146426637
+    second: SF_ATlas_2048x2048_112
+  - first:
+      213: 3900927961234283253
+    second: SF_ATlas_2048x2048_113
+  - first:
+      213: 1855635954044430532
+    second: SF_ATlas_2048x2048_114
+  - first:
+      213: -3194611119709627690
+    second: SF_ATlas_2048x2048_115
+  - first:
+      213: 6911480734485284245
+    second: SF_ATlas_2048x2048_116
+  - first:
+      213: 2182093649249035937
+    second: SF_ATlas_2048x2048_117
+  - first:
+      213: -9157036437572209528
+    second: SF_ATlas_2048x2048_118
+  - first:
+      213: -8736702849895527196
+    second: SF_ATlas_2048x2048_119
+  - first:
+      213: 3021314532963265739
+    second: SF_ATlas_2048x2048_120
+  - first:
+      213: 5199575348192942555
+    second: SF_ATlas_2048x2048_121
+  - first:
+      213: -5355980866007807169
+    second: SF_ATlas_2048x2048_122
+  - first:
+      213: 6980234955787538363
+    second: SF_ATlas_2048x2048_123
+  - first:
+      213: 3186467442687330723
+    second: SF_ATlas_2048x2048_124
+  - first:
+      213: -1144261207647534415
+    second: SF_ATlas_2048x2048_125
+  - first:
+      213: 5202803787075816902
+    second: SF_ATlas_2048x2048_126
+  - first:
+      213: -8665152950799388628
+    second: SF_ATlas_2048x2048_127
+  - first:
+      213: -4806011121236164260
+    second: SF_ATlas_2048x2048_128
+  - first:
+      213: -5952392756188532343
+    second: SF_ATlas_2048x2048_129
+  - first:
+      213: 3791779710131974560
+    second: SF_ATlas_2048x2048_130
+  - first:
+      213: -1648203416519194112
+    second: SF_ATlas_2048x2048_131
+  - first:
+      213: -8090823400600071581
+    second: SF_ATlas_2048x2048_132
+  - first:
+      213: 392149794768281103
+    second: SF_ATlas_2048x2048_133
+  - first:
+      213: -8045617560780626464
+    second: SF_ATlas_2048x2048_134
+  - first:
+      213: -1881318773676426535
+    second: SF_ATlas_2048x2048_135
+  - first:
+      213: -5288658528357668228
+    second: SF_ATlas_2048x2048_136
+  - first:
+      213: -7755373293705472687
+    second: SF_ATlas_2048x2048_137
+  - first:
+      213: 5564429023240737047
+    second: SF_ATlas_2048x2048_138
+  - first:
+      213: 2660333166312109038
+    second: SF_ATlas_2048x2048_139
+  - first:
+      213: 7937977382136655579
+    second: SF_ATlas_2048x2048_140
+  - first:
+      213: 2636486230471712289
+    second: SF_ATlas_2048x2048_141
+  - first:
+      213: -2747401515751031747
+    second: SF_ATlas_2048x2048_143
+  - first:
+      213: -4606423410862535699
+    second: SF_ATlas_2048x2048_144
+  - first:
+      213: 1307184093954900858
+    second: SF_ATlas_2048x2048_145
+  - first:
+      213: 3746846345634316232
+    second: SF_ATlas_2048x2048_146
+  - first:
+      213: -534174497101273856
+    second: SF_ATlas_2048x2048_147
+  - first:
+      213: -3040659392447309921
+    second: SF_ATlas_2048x2048_148
+  - first:
+      213: -1191814003237210560
+    second: SF_ATlas_2048x2048_149
+  - first:
+      213: -4004897787858148915
+    second: SF_ATlas_2048x2048_150
+  - first:
+      213: -8224990844722733121
+    second: SF_ATlas_2048x2048_151
+  - first:
+      213: -2753783421284813040
+    second: SF_ATlas_2048x2048_152
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 16
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1857
+        width: 817
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c820a121bff70e70800000000000000
+      internalID: 9081508309854333124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_1
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1630
+        width: 880
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140890381dabda7c0800000000000000
+      internalID: -4058382280181579711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_2
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 1859
+        width: 130
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b3ac383d52d3f50800000000000000
+      internalID: 6862682997561899911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_3
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1663
+        width: 818
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc3ace833fc494800800000000000000
+      internalID: 597093033119097804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_4
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 1663
+        width: 129
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c41b2f90fecba3a0800000000000000
+      internalID: -6652996491651902263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_5
+      rect:
+        serializedVersion: 2
+        x: 1845
+        y: 1591
+        width: 55
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72104d292ca5c06c0800000000000000
+      internalID: -4175862962745769689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_6
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1595
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 708cb69712bd66630800000000000000
+      internalID: 3920061462490105863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_7
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1209
+        width: 706
+        height: 368
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 664e8adffc628bd40800000000000000
+      internalID: 5600268811391001702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_8
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 925
+        width: 484
+        height: 637
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e7fab64f62373910800000000000000
+      internalID: 1816976428176701415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_9
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1539
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3220b39ec0ec7f00800000000000000
+      internalID: 1116013985526719036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_10
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 1291
+        width: 304
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c88dc78a7ece50220800000000000000
+      internalID: 2451626051881457804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_11
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 1540
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27491d4b051a3f380800000000000000
+      internalID: -8938623467397213070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_12
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 1530
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83305410000000000800000000000000
+      internalID: 21300024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_13
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1433
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d6728e1fdd6df50800000000000000
+      internalID: 6905951109670989080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_14
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1492
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9cc53bfb59113250800000000000000
+      internalID: 5922542867816238238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_15
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 1461
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bdba2c44ff300a0800000000000000
+      internalID: -6916403931922048190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_16
+      rect:
+        serializedVersion: 2
+        x: 1995
+        y: 1405
+        width: 31
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f3975c9213c49c20800000000000000
+      internalID: 3212406918921819120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_17
+      rect:
+        serializedVersion: 2
+        x: 762
+        y: 929
+        width: 296
+        height: 443
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef09684545f984b0800000000000000
+      internalID: -5437545397156769813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_18
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 1336
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98afaf0c71a7101b0800000000000000
+      internalID: -5692134211579086199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_19
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1356
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bfa519be7ad34290800000000000000
+      internalID: -7907236282926518350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_20
+      rect:
+        serializedVersion: 2
+        x: 1994
+        y: 1311
+        width: 31
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c851a42ecf3d0310800000000000000
+      internalID: 1372823616028235971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_21
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 935
+        width: 272
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80da49a9cb23c6b70800000000000000
+      internalID: 8893539149778562312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_22
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 1016
+        width: 286
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e996731af47e4c90800000000000000
+      internalID: -7183675738192176671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_23
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 940
+        width: 272
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc9fba8dab4b8420800000000000000
+      internalID: 2633281615857425626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_24
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 879
+        width: 188
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1985d189042bd00800000000000000
+      internalID: 986922290419110345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_25
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 835
+        width: 462
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 681496f9f711b9cf0800000000000000
+      internalID: -244582514928565882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_26
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 604
+        width: 443
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1ae2e95f1c4c2f80800000000000000
+      internalID: -8130039529774847457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_27
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 848
+        width: 70
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6352243f232360e40800000000000000
+      internalID: 5622236379229594934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_28
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 856
+        width: 12
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9135bcea5468c70800000000000000
+      internalID: 8972935924620138929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_29
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 874
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09909c42423860980800000000000000
+      internalID: -8573020649393944176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_30
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 868
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16d589ddaa12e9ea0800000000000000
+      internalID: -5864212647043900063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_31
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 860
+        width: 148
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328cc2a4b752b8120800000000000000
+      internalID: 2417066836470056995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_32
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 868
+        width: 8
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88126c16bf4dabc20800000000000000
+      internalID: 3223122659479265672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_33
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 874
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cb5d2ec6da044e0800000000000000
+      internalID: -1999407551378768764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_34
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 848
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c34c251e6b18b40800000000000000
+      internalID: 5440830903712758929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_35
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 755
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c83ca6c47a0436e30800000000000000
+      internalID: 4495507940331668364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_36
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e33d14b41c49d60800000000000000
+      internalID: 7896148575658393169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_37
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7790c71493d6a9670800000000000000
+      internalID: 8546263335568148855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_38
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 805
+        width: 33
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a0089b982617e6c0800000000000000
+      internalID: -4114295370914725725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_39
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 774
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61c89f9bc6e0910a0800000000000000
+      internalID: -6910476293083919338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_40
+      rect:
+        serializedVersion: 2
+        x: 1105
+        y: 774
+        width: 61
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fa21d6376febf90800000000000000
+      internalID: -6935835400492372091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_41
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 771
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25a40df9d4c51f920800000000000000
+      internalID: 3022298313405778514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_42
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 809
+        width: 148
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfdbec1a11f477a0800000000000000
+      internalID: -6380209677620486202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_43
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 778
+        width: 7
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 930ed3254f21b5db0800000000000000
+      internalID: -4802223737099395015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_44
+      rect:
+        serializedVersion: 2
+        x: 1446
+        y: 455
+        width: 11
+        height: 383
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c1230551695ae40800000000000000
+      internalID: 5667100724399578130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_45
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af2e0f5a1ae79c70800000000000000
+      internalID: 8977901781171187616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_46
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa921f7352672b10800000000000000
+      internalID: 1956640673869503138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_47
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 767
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d32272bb7a88f840800000000000000
+      internalID: 5258104828834489302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_48
+      rect:
+        serializedVersion: 2
+        x: 1262
+        y: 755
+        width: 159
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0dd366927f51e0b0800000000000000
+      internalID: -5701170707520299764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_49
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 404
+        width: 304
+        height: 399
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95c2112eddf82e9a0800000000000000
+      internalID: -6205239153419801511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_50
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 779
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72bd161ddc05cca0800000000000000
+      internalID: -5997373185075596676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_51
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 748
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65e1690a5fad83100800000000000000
+      internalID: 88060941229760086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_52
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 748
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24eafcc03edcf5160800000000000000
+      internalID: 7016553119522729538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_53
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 748
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28305410000000000800000000000000
+      internalID: 21300098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_54
+      rect:
+        serializedVersion: 2
+        x: 2001
+        y: 528
+        width: 12
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48305410000000000800000000000000
+      internalID: 21300100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_55
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 673
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68305410000000000800000000000000
+      internalID: 21300102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_56
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 738
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b1e363359e7d2c0800000000000000
+      internalID: -4406797166757143790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_57
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 738
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ea30dfc8376dad0800000000000000
+      internalID: -2677825879047688668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_58
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 738
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8305410000000000800000000000000
+      internalID: 21300108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_59
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 709
+        width: 159
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8305410000000000800000000000000
+      internalID: 21300110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_60
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 687
+        width: 7
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09305410000000000800000000000000
+      internalID: 21300112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_61
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 728
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c018bcc5f2109a290800000000000000
+      internalID: -7878764770176040692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_62
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 728
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631777db8c66e84d0800000000000000
+      internalID: -3130451678617702090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_63
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 728
+        width: 31
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 355e31805d1fc6010800000000000000
+      internalID: 1183586699357447507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_64
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbe2abd6d60953e0800000000000000
+      internalID: -2064611434295006214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_65
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52bf8b7b47ae482f0800000000000000
+      internalID: -971393832585725147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_66
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 692
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae92d2aaf73720e60800000000000000
+      internalID: 7927025286278621674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_67
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 618
+        width: 163
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0a74cf2409d2790800000000000000
+      internalID: -7553222382655659831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_68
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e073b6bceae03ff80800000000000000
+      internalID: -8074093563045267698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_69
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a305410000000000800000000000000
+      internalID: 21300130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_70
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 655
+        width: 18
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a305410000000000800000000000000
+      internalID: 21300132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_71
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 586
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a305410000000000800000000000000
+      internalID: 21300134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_72
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a305410000000000800000000000000
+      internalID: 21300136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_73
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa305410000000000800000000000000
+      internalID: 21300138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_74
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca305410000000000800000000000000
+      internalID: 21300140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_75
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea305410000000000800000000000000
+      internalID: 21300142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_76
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b305410000000000800000000000000
+      internalID: 21300144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_77
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b305410000000000800000000000000
+      internalID: 21300146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_78
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b305410000000000800000000000000
+      internalID: 21300148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_79
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b305410000000000800000000000000
+      internalID: 21300150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_80
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 637
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b305410000000000800000000000000
+      internalID: 21300152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_81
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab305410000000000800000000000000
+      internalID: 21300154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_82
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb305410000000000800000000000000
+      internalID: 21300156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_83
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb305410000000000800000000000000
+      internalID: 21300158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_84
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c305410000000000800000000000000
+      internalID: 21300160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_85
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c305410000000000800000000000000
+      internalID: 21300162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_86
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c305410000000000800000000000000
+      internalID: 21300164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_87
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c305410000000000800000000000000
+      internalID: 21300166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_88
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c305410000000000800000000000000
+      internalID: 21300168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_89
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 627
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac305410000000000800000000000000
+      internalID: 21300170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_90
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc305410000000000800000000000000
+      internalID: 21300172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_91
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec305410000000000800000000000000
+      internalID: 21300174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_92
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d305410000000000800000000000000
+      internalID: 21300176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_93
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d305410000000000800000000000000
+      internalID: 21300178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_94
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d305410000000000800000000000000
+      internalID: 21300180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_95
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 625743dc46fd32a60800000000000000
+      internalID: 7648202216237724966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_96
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea073aac669221b10800000000000000
+      internalID: 1950667110067957934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_97
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d48cc99ac30af30800000000000000
+      internalID: 4584731119840677244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_98
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 619
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09412fc367500500800000000000000
+      internalID: 360384056378083599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_99
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 570
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882247eed603d4bc0800000000000000
+      internalID: -3797325662093303160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_100
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 570
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2003e6020a118570800000000000000
+      internalID: 8467077370441039917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_101
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 570
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 329f0d8ba85476550800000000000000
+      internalID: 6153963877933578531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_102
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 576
+        width: 117
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38b988ced898e9c00800000000000000
+      internalID: 909315417427188611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_103
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 473
+        width: 115
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e53766e05e05c310800000000000000
+      internalID: 1424560597758326245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_104
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 353
+        width: 239
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2358c8a792a56e960800000000000000
+      internalID: 7630885752822072626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_105
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 505
+        width: 347
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d12b288b1241670800000000000000
+      internalID: 8508462672360119653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_106
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f94ec096e6ffd20800000000000000
+      internalID: 3314489248234905413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_107
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 912e177da210cb6e0800000000000000
+      internalID: -1820578865849703911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_108
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 523
+        width: 33
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f305410000000000800000000000000
+      internalID: 21300208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_109
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 541
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f305410000000000800000000000000
+      internalID: 21300210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_110
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 541
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f30257399c259d0800000000000000
+      internalID: -2786943584226492605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_111
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 541
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b3f19b65fafd9c0800000000000000
+      internalID: -3900205965271680247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_112
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 547
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f62373383fc554f0800000000000000
+      internalID: -840537915146426637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_113
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 247
+        width: 191
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa12cf0051e22630800000000000000
+      internalID: 3900927961234283253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_114
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 531
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8e241911b80c910800000000000000
+      internalID: 1855635954044430532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_115
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 531
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dad136cc167aa3d0800000000000000
+      internalID: -3194611119709627690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_116
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 531
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59583f20c138aef50800000000000000
+      internalID: 6911480734485284245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_117
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 428
+        width: 269
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6ef1edc9a584e10800000000000000
+      internalID: 2182093649249035937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_118
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 475
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884333740ebabe080800000000000000
+      internalID: -9157036437572209528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_119
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 475
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec85db0c0ff0c680800000000000000
+      internalID: -8736702849895527196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_120
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 475
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcc20046f8ddde920800000000000000
+      internalID: 3021314532963265739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_121
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd91beb0b3a982840800000000000000
+      internalID: 5199575348192942555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_122
+      rect:
+        serializedVersion: 2
+        x: 594
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bc0d197cbbba5b0800000000000000
+      internalID: -5355980866007807169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_123
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 478
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf0b7c95b6ced060800000000000000
+      internalID: 6980234955787538363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_124
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 354
+        width: 269
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9c9b9a14b983c20800000000000000
+      internalID: 3186467442687330723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_125
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 352
+        width: 435
+        height: 81
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2c8e38e74ce10f0800000000000000
+      internalID: -1144261207647534415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_126
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 341
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd06bc8a72143840800000000000000
+      internalID: 5202803787075816902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_127
+      rect:
+        serializedVersion: 2
+        x: 1746
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20bc2b1d413fb780800000000000000
+      internalID: -8665152950799388628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_128
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c51442c395e9d4db0800000000000000
+      internalID: -4806011121236164260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_129
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 372
+        width: 37
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98136cb435ad46da0800000000000000
+      internalID: -5952392756188532343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_130
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 345
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a133f08e8b1f9430800000000000000
+      internalID: 3791779710131974560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_131
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 185
+        width: 521
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ac9c8a9b76029e0800000000000000
+      internalID: -1648203416519194112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_132
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 195
+        width: 11
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36290d2fbfe97bf80800000000000000
+      internalID: -8090823400600071581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_133
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 271
+        width: 7
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ed7ef1922317500800000000000000
+      internalID: 392149794768281103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_134
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 181
+        width: 211
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5a60bb479385090800000000000000
+      internalID: -8045617560780626464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_135
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 258
+        width: 638
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da3eb10b8634e5e0800000000000000
+      internalID: -1881318773676426535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_136
+      rect:
+        serializedVersion: 2
+        x: 1957
+        y: 220
+        width: 70
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7aa6e6c619ea96b0800000000000000
+      internalID: -5288658528357668228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_137
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 40
+        width: 181
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 155522044116f5490800000000000000
+      internalID: -7755373293705472687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_138
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 214
+        width: 624
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711532c07b2d83d40800000000000000
+      internalID: 5564429023240737047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_139
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 139
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee339327be66be420800000000000000
+      internalID: 2660333166312109038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_140
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 139
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde27513f5c592e60800000000000000
+      internalID: 7937977382136655579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_141
+      rect:
+        serializedVersion: 2
+        x: 1444
+        y: 147
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e9976024ea69420800000000000000
+      internalID: 2636486230471712289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_142
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 147
+        width: 50
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23405410000000000800000000000000
+      internalID: 21300274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_143
+      rect:
+        serializedVersion: 2
+        x: 1561
+        y: 152
+        width: 38
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3c3a46b0e44fd9d0800000000000000
+      internalID: -2747401515751031747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_144
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 163
+        width: 9
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debce7e4052b210c0800000000000000
+      internalID: -4606423410862535699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_145
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 152
+        width: 31
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a730938f10d042210800000000000000
+      internalID: 1307184093954900858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_146
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 153
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cff08356e87ff330800000000000000
+      internalID: 3746846345634316232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_147
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 152
+        width: 30
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 005a434002b3698f0800000000000000
+      internalID: -534174497101273856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_148
+      rect:
+        serializedVersion: 2
+        x: 1777
+        y: 174
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f97193684686dc5d0800000000000000
+      internalID: -3040659392447309921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_149
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 152
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046b5b28a73d57fe0800000000000000
+      internalID: -1191814003237210560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_150
+      rect:
+        serializedVersion: 2
+        x: 1626
+        y: 152
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc1a7f84eaebb68c0800000000000000
+      internalID: -4004897787858148915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_151
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 25
+        width: 792
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbf16739766fadd80800000000000000
+      internalID: -8224990844722733121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SF_ATlas_2048x2048_152
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 25
+        width: 792
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01775f9819898c9d0800000000000000
+      internalID: -2753783421284813040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: afef7ac93554a524fbc13ce8e7436e3f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 1
+  pSDShowRemoveMatteOption: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
