@@ -21,7 +21,7 @@ public class mapscript : MonoBehaviour
         // 초기맵 자동생성
         map_List[stage_Position].SetActive(true);
         Debug.Log("위치: " + (stage_Position + 1));
-        player.transform.position = map_List[stage_Position].transform.FindChild("Player_Spawn_1").position;
+        player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_1").position;
     }
 
     // Update is called once per frame
@@ -35,7 +35,7 @@ public class mapscript : MonoBehaviour
             map_List[stage_Position - 1].SetActive(false);
             map_List[stage_Position].SetActive(true);
             Debug.Log("위치: " + (stage_Position + 1));
-            player.transform.position = map_List[stage_Position].transform.FindChild("Player_Spawn_1").position;
+            player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_1").position;
         }
         if (Input.GetKeyDown(KeyCode.Mouse1) == true)
         {
@@ -43,7 +43,7 @@ public class mapscript : MonoBehaviour
             map_List[stage_Position + 1].SetActive(false);
             map_List[stage_Position].SetActive(true);
             Debug.Log("위치: " + (stage_Position + 1));
-            player.transform.position = map_List[stage_Position].transform.FindChild("Player_Spawn_2").position;
+            player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_2").position;
         }
 
     }
