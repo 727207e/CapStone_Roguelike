@@ -42,8 +42,14 @@ public class MapMove : MonoBehaviour
         //과거방 할당
         old_room = new_room;
 
+        //FadeOUT
+        FadeController.instance.objFadeout();
+
         //플레이어를 해당 방에 시작점으로 이동
         GameManager.Instance.player.transform.position = new_room.GetComponent<RoomInfo>().start_Position.transform.position;
+
+        //FadeIN
+        FadeController.instance.objFadein();
 
         //플레이어 다음 이동 가능(활성화)
         GameManager.Instance.player.GetComponent<CharMove>().player_Move_Bool = true;
