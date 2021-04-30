@@ -1,0 +1,136 @@
+fileFormatVersion: 2
+guid: 867819347228b0344b3ec938f8f0663c
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Base Human
+    100002: Base HumanHead
+    100004: Base HumanLCalf
+    100006: Base HumanLCollarbone
+    100008: Base HumanLFoot
+    100010: Base HumanLForearm
+    100012: Base HumanLPalm
+    100014: Base HumanLPalmFingers
+    100016: Base HumanLPalmIKTarget
+    100018: Base HumanLPalmThumb
+    100020: Base HumanLPlatform
+    100022: Base HumanLThigh
+    100024: Base HumanLUpperarm
+    100026: Base HumanNeck
+    100028: Base HumanPelvis
+    100030: Base HumanRArmCollarbone
+    100032: Base HumanRArmForearm
+    100034: Base HumanRArmPalm
+    100036: Base HumanRArmUpperarm
+    100038: Base HumanRCalf
+    100040: Base HumanRFoot
+    100042: Base HumanRibcage
+    100044: Base HumanRPalmFingers
+    100046: Base HumanRPalmIKTarget
+    100048: Base HumanRPalmThumb
+    100050: Base HumanRPlatform
+    100052: Base HumanRThigh
+    100054: Base HumanSpine1
+    100056: Base HumanSpine2
+    100058: //RootNode
+    400000: Base Human
+    400002: Base HumanHead
+    400004: Base HumanLCalf
+    400006: Base HumanLCollarbone
+    400008: Base HumanLFoot
+    400010: Base HumanLForearm
+    400012: Base HumanLPalm
+    400014: Base HumanLPalmFingers
+    400016: Base HumanLPalmIKTarget
+    400018: Base HumanLPalmThumb
+    400020: Base HumanLPlatform
+    400022: Base HumanLThigh
+    400024: Base HumanLUpperarm
+    400026: Base HumanNeck
+    400028: Base HumanPelvis
+    400030: Base HumanRArmCollarbone
+    400032: Base HumanRArmForearm
+    400034: Base HumanRArmPalm
+    400036: Base HumanRArmUpperarm
+    400038: Base HumanRCalf
+    400040: Base HumanRFoot
+    400042: Base HumanRibcage
+    400044: Base HumanRPalmFingers
+    400046: Base HumanRPalmIKTarget
+    400048: Base HumanRPalmThumb
+    400050: Base HumanRPlatform
+    400052: Base HumanRThigh
+    400054: Base HumanSpine1
+    400056: Base HumanSpine2
+    400058: //RootNode
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
