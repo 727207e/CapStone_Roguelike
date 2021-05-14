@@ -1137,7 +1137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 682190345}
-  audioListener: {fileID: 0}
+  healthPoint: 1000
+  audioListener: {fileID: 682190350}
 --- !u!4 &178136537
 Transform:
   m_ObjectHideFlags: 0
@@ -5609,6 +5610,12 @@ PrefabInstance:
 --- !u!1 &682190345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6492170067347419796, guid: 5a1261342c3f9ed419a9033734278eba,
+    type: 3}
+  m_PrefabInstance: {fileID: 682190344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &682190350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5974362315620729415, guid: 5a1261342c3f9ed419a9033734278eba,
     type: 3}
   m_PrefabInstance: {fileID: 682190344}
   m_PrefabAsset: {fileID: 0}

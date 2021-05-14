@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterStats : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class CharacterStats : MonoBehaviour
 
     public Stat damage;
     public Stat armor;
+
 
     void Awake()
 
@@ -28,7 +30,6 @@ public class CharacterStats : MonoBehaviour
     {
         damage  -= armor.GetValue();
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
-
         currentHealth -= damage;
         Debug.Log(transform.name + " takes " + damage + " damage.");
 
@@ -36,6 +37,7 @@ public class CharacterStats : MonoBehaviour
         {
             Die();
         }
+
     }
     
     public virtual void Die()
