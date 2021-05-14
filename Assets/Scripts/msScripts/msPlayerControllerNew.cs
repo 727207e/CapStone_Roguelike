@@ -10,8 +10,13 @@ public class msPlayerControllerNew : MonoBehaviour
     public float walkSpeed = 2.5f; //이동속도 기본 10.0f
     public float jumpHeight = 5f; //점프 높이 기본 10.0f
     public float acceleration = 1.2f; //가속력 기본 1.2f
-    public enum Weapon {OneHandGun, MachineGun, LaserGun}; //총기의 종류. 시작시 지정해주고 이것을 gunManager한테 넘겨줌으로써 총기 생성
-    public float healthPoint = 1000f; //캐릭터 체력 기본 1000f. 
+    public float initHealthPoint = 1000f;
+    public float initAbilityPoint = 100f;
+    public float healthPoint; //캐릭터 체력 기본 1000f. 
+    public float AbilityPoint;
+
+    public enum Weapon { OneHandGun, MachineGun, LaserGun, None }; //총기의 종류. 시작시 지정해주고 이것을 gunManager한테 넘겨줌으로써 총기 생성
+    public Weapon currentWeapon;
 
     //땅과 접촉하는 것을 검사하는 것과 관련된 속성
     public Transform groundCheckTransform;
@@ -21,10 +26,6 @@ public class msPlayerControllerNew : MonoBehaviour
     public Transform targetTransform;
     public LayerMask mouseAimMask;
     public LayerMask groundMask;
-
-    //총에 필요한 속성
-    public GameObject bulletPrefab; //사용하는 총알 이후 총이랑 따로 분리해야함.
-    public Transform muzzleTransform; //총알이 발사되는 곳
 
     //아래 속성들은 모두 반동제어에 관련되어 사용됨. 아마도 사용하지 않을 것으로 생각됨.
     public AnimationCurve recoilCurve; //반동 커브. 사용하지 않을 예정.
@@ -51,12 +52,25 @@ public class msPlayerControllerNew : MonoBehaviour
     }
 
 
+     void Awake()
+    {
+        //모든 함수들 중 가장 먼저 처리되어야하는 경우 이쪽에 등록.
+        //여기에 있는 코드를 Start에 넣을 경우 다른 함수가 먼저 처리되는 경우가 발생할 수 있음.
+        currentWeapon = Weapon.MachineGun;
+        Debug.Log(currentWeapon);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+
+        healthPoint = initHealthPoint;
+        AbilityPoint = initAbilityPoint;
+
     }
 
     // Update is called once per frame
@@ -79,14 +93,14 @@ public class msPlayerControllerNew : MonoBehaviour
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
         }
 
-        //발사 Fire1 = 마우스 왼쪽 클릭
-        if (Input.GetButtonDown("Fire1")) 
-        {
-            Fire();
-        }
-
         PlayerDied();
         DebugPlayer();
+    }
+
+    private void initPlayerStat()
+    {
+        //플레이어 생성시 만들어지는 플레이어 초기화 함수이다.
+        //
     }
 
     //이동함수
@@ -118,17 +132,6 @@ public class msPlayerControllerNew : MonoBehaviour
         //m_rigidBody.MovePosition(transform.position + velocity * m_moveSpeed * Time.deltaTime);
 
         animator.SetFloat("Speed", velocity.magnitude);
-    }
-
-    //gunManager 개발시 분리 필요함
-    private void Fire()
-    {
-        //recoilTimer = Time.time;
-
-        var go = Instantiate(bulletPrefab);
-        go.transform.position = muzzleTransform.position;
-        var bullet = go.GetComponent<msBulletNew>();
-        bullet.Fire(go.transform.position, muzzleTransform.eulerAngles, gameObject.layer);
     }
 
     /*private void LateUpdate()
@@ -171,6 +174,7 @@ public class msPlayerControllerNew : MonoBehaviour
     //IK 애니메이션 관련 함수
     private void OnAnimatorIK()
     {
+        
         // Weapon Aim at Target IK
         animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
         animator.SetIKPosition(AvatarIKGoal.RightHand, targetTransform.position);
@@ -178,6 +182,7 @@ public class msPlayerControllerNew : MonoBehaviour
         // Look at target IK
         animator.SetLookAtWeight(1);
         animator.SetLookAtPosition(targetTransform.position);
+        
     }
 
     private void PlayerDied()

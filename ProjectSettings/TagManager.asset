@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Map
+  - Monster_Spawn_Point
   - Gate
+  - Coin
   layers:
   - Default
   - TransparentFX
