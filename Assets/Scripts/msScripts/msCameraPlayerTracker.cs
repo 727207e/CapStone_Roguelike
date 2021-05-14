@@ -7,6 +7,21 @@ public class msCameraPlayerTracker : MonoBehaviour
     public float cameraSpeed = 5.0f;
 
     public GameObject player;
+    public msPlayerControllerNew msPCN;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Debug.Log("플레이어 캐릭터가 현재 존재합니다.");
+        }
+        else
+        {
+            Debug.LogError("플레이어 캐릭터가 존재하지 않습니다.");
+        }
+        msPCN = player.GetComponent<msPlayerControllerNew>();
+    }
 
     void Update()
     {

@@ -10,8 +10,19 @@ public class msPlayerControllerNew : MonoBehaviour
     public float walkSpeed = 2.5f; //이동속도 기본 10.0f
     public float jumpHeight = 5f; //점프 높이 기본 10.0f
     public float acceleration = 1.2f; //가속력 기본 1.2f
-    public enum Weapon {OneHandGun, MachineGun, LaserGun}; //총기의 종류. 시작시 지정해주고 이것을 gunManager한테 넘겨줌으로써 총기 생성
-    public float healthPoint = 1000f; //캐릭터 체력 기본 1000f. 
+    public float dashAcceleration = 500f;
+    public float toughness = 0f; //강인함. 넉백에 관여함. 수치가 높을 수록 넉백이 줄어든다.
+
+    public float initHealthPoint = 1000f; //플레이어가 가진 최대 체력을 의미. 이것을 통해 계산하는 함수가 많아서 만듬
+    public float initAbilityPoint = 100f; //플레이어가 가진 최대 기력을 의미. 위와 동일
+    public float healthPoint; //캐릭터 체력 기본 1000f. 이 수치는 플레이어의 게임 내에서의 현재 체력을 의미함.
+    public float AbilityPoint; //위와 동일.
+
+    private bool isInvincibleTime = false; //무적인지 판정함
+
+
+    public enum Weapon { OneHandGun, MachineGun, LaserGun, None }; //총기의 종류. 시작시 지정해주고 이것을 gunManager한테 넘겨줌으로써 총기 생성
+    public Weapon currentWeapon;
 
     //땅과 접촉하는 것을 검사하는 것과 관련된 속성
     public Transform groundCheckTransform;
@@ -21,18 +32,6 @@ public class msPlayerControllerNew : MonoBehaviour
     public Transform targetTransform;
     public LayerMask mouseAimMask;
     public LayerMask groundMask;
-
-    //총에 필요한 속성
-    public GameObject bulletPrefab; //사용하는 총알 이후 총이랑 따로 분리해야함.
-    public Transform muzzleTransform; //총알이 발사되는 곳
-
-    //아래 속성들은 모두 반동제어에 관련되어 사용됨. 아마도 사용하지 않을 것으로 생각됨.
-    public AnimationCurve recoilCurve; //반동 커브. 사용하지 않을 예정.
-    public float recoilDuration = 0.25f; //반동 시간
-    public float recoilMaxRotation = 45f; //반동 회전각
-    private float recoilTimer;
-    public Transform rightLowerArm; 
-    public Transform rightHand;
 
     //애니메이터, 카메라, 리지드 바디 관련
     //private float inputMovement;
@@ -51,12 +50,25 @@ public class msPlayerControllerNew : MonoBehaviour
     }
 
 
+     void Awake()
+    {
+        //모든 함수들 중 가장 먼저 처리되어야하는 경우 이쪽에 등록.
+        //여기에 있는 코드를 Start에 넣을 경우 다른 함수가 먼저 처리되는 경우가 발생할 수 있음.
+        currentWeapon = Weapon.MachineGun;
+        Debug.Log(currentWeapon);
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         rbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
+
+        healthPoint = initHealthPoint;
+        AbilityPoint = initAbilityPoint;
+
     }
 
     // Update is called once per frame
@@ -79,14 +91,15 @@ public class msPlayerControllerNew : MonoBehaviour
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
         }
 
-        //발사 Fire1 = 마우스 왼쪽 클릭
-        if (Input.GetButtonDown("Fire1")) 
-        {
-            Fire();
-        }
-
         PlayerDied();
         DebugPlayer();
+        PlayerDash();
+    }
+
+    private void initPlayerStat()
+    {
+        //플레이어 생성시 만들어지는 플레이어 초기화 함수이다.
+        //
     }
 
     //이동함수
@@ -120,38 +133,6 @@ public class msPlayerControllerNew : MonoBehaviour
         animator.SetFloat("Speed", velocity.magnitude);
     }
 
-    //gunManager 개발시 분리 필요함
-    private void Fire()
-    {
-        //recoilTimer = Time.time;
-
-        var go = Instantiate(bulletPrefab);
-        go.transform.position = muzzleTransform.position;
-        var bullet = go.GetComponent<msBulletNew>();
-        bullet.Fire(go.transform.position, muzzleTransform.eulerAngles, gameObject.layer);
-    }
-
-    /*private void LateUpdate()
-    {
-        // Recoil Animation
-        if (recoilTimer < 0)
-        {
-            return;
-        }
-
-        float curveTime = (Time.time - recoilTimer) / recoilDuration;
-        if (curveTime > 1f)
-        {
-            recoilTimer = -1;
-        }
-        else
-        {
-            rightLowerArm.Rotate(Vector3.forward, recoilCurve.Evaluate(curveTime) * recoilMaxRotation, Space.Self);
-        }
-
-
-    }*/
-
     //움직임, 회전, 그라운드 체크를 수행함.
     private void FixedUpdate()
     {
@@ -168,9 +149,10 @@ public class msPlayerControllerNew : MonoBehaviour
         animator.SetBool("isGrounded", isGrounded);
     }
 
-    //IK 애니메이션 관련 함수
+    //IK 애니메이션 관련 함수 - 이후 삭제 예정
     private void OnAnimatorIK()
     {
+        /*
         // Weapon Aim at Target IK
         animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1);
         animator.SetIKPosition(AvatarIKGoal.RightHand, targetTransform.position);
@@ -178,13 +160,14 @@ public class msPlayerControllerNew : MonoBehaviour
         // Look at target IK
         animator.SetLookAtWeight(1);
         animator.SetLookAtPosition(targetTransform.position);
+        */
     }
 
     private void PlayerDied()
     {
-        //플레이어가 체력이 0이되거나, -50이하의 낙사를 하게되면 사망한다.
+        //플레이어가 체력이 0이되거나, 플레이어의 y축 가속도가 -50을 넘어가면 사망함.
         //이후 
-        if (healthPoint <= 0 || transform.position.y < -50)
+        if (healthPoint <= 0 || rbody.velocity.y < -100)
         {
             healthPoint = 0;
             Destroy(gameObject);
@@ -223,4 +206,61 @@ public class msPlayerControllerNew : MonoBehaviour
             
         }
     }
+
+    //플레이어가 데미지를 입었을 경우의 함수, 넉백을 주고 라이프를 깎는다.
+    public void PlayerDamaged(float damage)
+    {
+        healthPoint -= damage;
+        rbody.AddForce(new Vector3(-1, 0.5f, 0) * (500f-toughness)); //넉백의 구현
+    }
+
+    public void PlayerDash()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            rbody.AddForce(new Vector3(1 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0, 0) * dashAcceleration);
+        }
+    }
+
+    //플레이어와 충돌한 오브젝트와 반응을 수행한다.
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyAttack"))
+        {
+            //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
+            Debug.Log("공격받았습니다.");
+            PlayerDamaged(100);
+            Destroy(other.gameObject);
+            isInvincibleTime = true;
+            StartCoroutine("InvincibleTime");
+        }
+        
+    }
+
+    public  IEnumerator InvincibleTime() {
+        int countTime = 0;
+
+        while(countTime < 10)
+        {
+            if (countTime % 2 == 0)
+            {
+
+            }
+            else
+            {
+
+            }
+
+            yield return new WaitForSeconds(0.2f);
+
+            countTime++;
+        }
+
+        isInvincibleTime = false;
+        Debug.Log("무적 시간 종료");
+        //무적시간 종료
+
+        yield return null;
+    }
+
 }

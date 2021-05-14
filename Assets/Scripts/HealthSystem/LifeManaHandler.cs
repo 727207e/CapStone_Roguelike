@@ -5,53 +5,62 @@ using UnityEngine.UI;
 
 public class LifeManaHandler : MonoBehaviour
 {
+    public GameObject player;
+    public msPlayerControllerNew msPCN;
+
     public Image lifeBar;
     public Image manaBar;
     public Text lifeText;
     public Text manaText;
 
-    public float myLife;
-    public float myMana;
-
-    public float currentLife;
-    public float currentMana;
-    public float calculateLife;
+    public float calculateHealthPoint;
 
     void Start()
     {
-        currentLife = myLife;
-        currentMana = myMana;
+
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Debug.Log("플레이어 캐릭터가 현재 존재합니다.");
+        }
+        else
+        {
+            Debug.LogError("플레이어 캐릭터가 존재하지 않습니다.");
+        }
+        msPCN = player.GetComponent<msPlayerControllerNew>();
     }
 
 
     void Update()
     {
-        calculateLife = currentLife / myLife;
-        lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateLife, Time.deltaTime);
-        lifeText.text = "" + (int)currentLife;
+        calculateHealthPoint = msPCN.healthPoint / msPCN.initHealthPoint;
+        lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateHealthPoint, Time.deltaTime);
+        lifeText.text = "" + (int)msPCN.healthPoint;
 
-        if( currentMana < myMana)
+        if( msPCN.AbilityPoint < msPCN.initAbilityPoint)
         {
             manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            currentMana = Mathf.MoveTowards(currentMana / myMana, 1f, Time.deltaTime * 0.01f) * myMana;
+            msPCN.AbilityPoint = Mathf.MoveTowards(msPCN.AbilityPoint / msPCN.AbilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
         }
 
-        if (currentMana<0)
+        if (msPCN.AbilityPoint < 0)
         {
-            currentMana = 0;
+            msPCN.AbilityPoint = 0;
         }
 
-        manaText.text = "" + Mathf.FloorToInt(currentMana);
+        manaText.text = "" + Mathf.FloorToInt(msPCN.AbilityPoint);
     }
 
     public void Damage(float damage)
     {
-        currentLife -= damage;
+        msPCN.healthPoint -= damage;
+        Debug.Log("현재 남은 체력 " + msPCN.healthPoint);
     }
 
     public void ReduceMana(float mana)
     {
-        currentMana -= mana;
-        manaBar.fillAmount -= mana / myMana;
+        msPCN.AbilityPoint -= mana;
+        Debug.Log("현재 남은 마나 " + msPCN.AbilityPoint);
+        manaBar.fillAmount -= mana / msPCN.initAbilityPoint;
     }   
 }

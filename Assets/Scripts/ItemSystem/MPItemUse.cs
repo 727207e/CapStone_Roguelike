@@ -4,21 +4,37 @@ using UnityEngine;
 
 public class MPItemUse : MonoBehaviour
 {
+    public GameObject player;
+    public msPlayerControllerNew msPCN;
+
+    void Start()
+    {
+        player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            Debug.Log("플레이어 캐릭터가 현재 존재합니다.");
+        }
+        else
+        {
+            Debug.LogError("플레이어 캐릭터가 존재하지 않습니다.");
+        }
+        msPCN = player.GetComponent<msPlayerControllerNew>();
+    }
+
     void Update()
     {
-        LifeManaHandler lifeManaHandler = GameObject.Find("HealthSystem").GetComponent<LifeManaHandler>();
 
         if (Input.inputString == (transform.parent.GetComponent<Slot>().num + 1).ToString()) 
         {
             // 아이템 사용
-            lifeManaHandler.currentMana += 10;
-            if (lifeManaHandler.currentMana >= 50)
+            msPCN.AbilityPoint += 10;
+            if (msPCN.AbilityPoint >= 50)
             {
-                lifeManaHandler.currentMana = 50;
+                msPCN.AbilityPoint = 50;
             }
 
             Debug.Log(" MP 상승 , slotNumber : " + (transform.parent.GetComponent<Slot>().num + 1));
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }
