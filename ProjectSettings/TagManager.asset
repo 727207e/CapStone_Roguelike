@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Map
   - Gate
+  - Shop
+  - Item
+  - Weapon
   layers:
   - Default
   - TransparentFX

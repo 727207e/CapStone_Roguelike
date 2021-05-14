@@ -7,6 +7,8 @@ public class GameManager : MonoBehaviour
     private static GameManager instance = null;
 
     public GameObject player; // 플레이어
+    public float healthPoint = 1000; //체력
+
 
     public Transform audioListener;
 
@@ -56,4 +58,11 @@ public class GameManager : MonoBehaviour
             audioListener.position = player.transform.position;
         }
     }
+
+    private void LoadDataFromJson()
+    {
+        //JSON 파일에서 플레이어 데이터를 가져오는 경우 수행하는 함수이다.
+    }
+
+
 }
