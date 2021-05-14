@@ -167,7 +167,11 @@ PrefabInstance:
     - target: {fileID: 5974362315620729415, guid: 5a1261342c3f9ed419a9033734278eba,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:Assets/Scenes/Dungeon/Dungeon.unity
       value: 4
+=======
+      value: 3
+>>>>>>> Stashed changes:Assets/Scenes/Dungeon/Dungeon SceneTest.unity
       objectReference: {fileID: 0}
     - target: {fileID: 5974362315620729415, guid: 5a1261342c3f9ed419a9033734278eba,
         type: 3}
@@ -3234,6 +3238,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Dungeon/Dungeon.unity
   m_GameObject: {fileID: 1904205997}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -3287,6 +3292,17 @@ MonoBehaviour:
         m_CallState: 2
   m_IsOn: 0
 --- !u!1 &1948647967
+=======
+  m_GameObject: {fileID: 227796669}
+  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &568930998
+>>>>>>> Stashed changes:Assets/Scenes/Dungeon/Dungeon SceneTest.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3390,6 +3406,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+<<<<<<< Updated upstream:Assets/Scenes/Dungeon/Dungeon.unity
   m_Children:
   - {fileID: 2071146726}
   m_Father: {fileID: 449223946}
@@ -3400,6 +3417,81 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 18.44, y: 0, z: 0}
+--- !u!1 &1894775022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1894775024}
+  - component: {fileID: 1894775023}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1894775023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894775022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b3e035272861754f81ba82d16171186, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stage_Position: 0
+  player: {fileID: 246723}
+  maps:
+  - {fileID: 7753231091343708492, guid: 214090a6f7b4ad643a123b083e1a8abd, type: 3}
+  - {fileID: 2113911130939121916, guid: 854b604f5b895ce41a340eaa64bb9239, type: 3}
+  - {fileID: 1345148822687392481, guid: 7e159f566ced67241bab43d9064e2a57, type: 3}
+  - {fileID: 2660668373580431219, guid: 16bc5f2bef16aea428596971d197d066, type: 3}
+  - {fileID: 7509052124961652787, guid: fb025209266e04a42bab1a98f1b480e9, type: 3}
+  - {fileID: 6841403578524853986, guid: a6b0d6d7960558e45b7bb09abf8bdc73, type: 3}
+  - {fileID: 1618004654007289109, guid: a3efb9a479dfad94b92ca8eed44be106, type: 3}
+  - {fileID: 3653410223541805299, guid: 09aa13d1ac7192c40ba207399ed1d1f6, type: 3}
+  - {fileID: 676478751056110066, guid: e3cb258da9ef4a744ae9e3a9bc5f2cbd, type: 3}
+  - {fileID: 3460780706159936368, guid: 03ef951b4b8e5594194f77ff23f23cae, type: 3}
+  - {fileID: 8949188975107402891, guid: db447093802df364097dd704ea34e345, type: 3}
+  - {fileID: 5131582650046482766, guid: 13cb31a028ee5964bb6357433d600456, type: 3}
+  - {fileID: 4026007437506876767, guid: 4a778c25bbfeac6468afeb0df14d07c3, type: 3}
+  - {fileID: 8388763975166405151, guid: da6cb93e8d43aeb48a570a3cd5b16961, type: 3}
+  - {fileID: 2571193971246059332, guid: 8a7421888356f814c8e447c947f17d30, type: 3}
+  map_List: []
+  healing_map: {fileID: 4919423631992807649, guid: 43700752ef58541439b92831b130eb2e,
+    type: 3}
+  monster: {fileID: 2584917786474114627, guid: 11809b56cd8462047b0771c354b25307, type: 3}
+  monster_count: 0
+  gates:
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!4 &1894775024
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1894775022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.8, y: -4, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> Stashed changes:Assets/Scenes/Dungeon/Dungeon SceneTest.unity
 --- !u!1001 &2068846728
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3411,6 +3503,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Stage1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7753231091343708492, guid: 214090a6f7b4ad643a123b083e1a8abd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7753231091343708493, guid: 214090a6f7b4ad643a123b083e1a8abd,
         type: 3}
@@ -3450,7 +3547,11 @@ PrefabInstance:
     - target: {fileID: 7753231091343708493, guid: 214090a6f7b4ad643a123b083e1a8abd,
         type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream:Assets/Scenes/Dungeon/Dungeon.unity
       value: 7
+=======
+      value: 6
+>>>>>>> Stashed changes:Assets/Scenes/Dungeon/Dungeon SceneTest.unity
       objectReference: {fileID: 0}
     - target: {fileID: 7753231091343708493, guid: 214090a6f7b4ad643a123b083e1a8abd,
         type: 3}
@@ -3607,5 +3708,84 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream:Assets/Scenes/Dungeon/Dungeon.unity
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &9174734358574535031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16992188
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.328125
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.921875
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581240, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9174734360076581241, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 246723}
+    - target: {fileID: 9174734360076581242, guid: b90037edcad8a5f4da667943336f4292,
+        type: 3}
+      propertyPath: m_Name
+      value: GameManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b90037edcad8a5f4da667943336f4292, type: 3}
+>>>>>>> Stashed changes:Assets/Scenes/Dungeon/Dungeon SceneTest.unity
