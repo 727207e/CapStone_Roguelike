@@ -435,6 +435,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 100
   player_Move_Bool: 0
+  rig: {fileID: 0}
+  movement: {x: 0, y: 0, z: 0}
 --- !u!65 &884225104
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -646,6 +648,9 @@ MonoBehaviour:
   - {fileID: 5978000731433533344, guid: fb025209266e04a42bab1a98f1b480e9, type: 3}
   - {fileID: 5978000731433533344, guid: a6b0d6d7960558e45b7bb09abf8bdc73, type: 3}
   - {fileID: 5978000731433533344, guid: a3efb9a479dfad94b92ca8eed44be106, type: 3}
+  room_count: 0
+  old_room: {fileID: 0}
+  new_room: {fileID: 0}
 --- !u!4 &1141618735
 Transform:
   m_ObjectHideFlags: 0
@@ -673,6 +678,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 884225102}
+  healthPoint: 1000
+  audioListener: {fileID: 0}
 --- !u!1 &1592442132
 GameObject:
   m_ObjectHideFlags: 0

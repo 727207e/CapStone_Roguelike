@@ -4663,7 +4663,6 @@ MonoBehaviour:
   manaBar: {fileID: 1672773654}
   lifeText: {fileID: 534082811}
   manaText: {fileID: 2028065723}
-  BloodScreen: {fileID: 0}
   calculateHealthPoint: 0
 --- !u!1 &2015453227
 GameObject:
