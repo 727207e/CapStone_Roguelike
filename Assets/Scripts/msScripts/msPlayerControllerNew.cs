@@ -123,10 +123,10 @@ public class msPlayerControllerNew : MonoBehaviour
             velocity = (moveHorizontal).normalized;
         }
 
-        if (Input.GetKey(KeyCode.LeftShift)) //캐릭터가 시프트를 누르면 가속한다.
+        /*if (Input.GetKey(KeyCode.LeftShift)) //캐릭터가 시프트를 누르면 가속한다.
         {
             velocity *= acceleration;
-        }
+        }*/
         transform.Translate(velocity * walkSpeed * Time.deltaTime, Space.World);
         //m_rigidBody.MovePosition(transform.position + velocity * m_moveSpeed * Time.deltaTime);
 
@@ -216,7 +216,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public void PlayerDash()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             rbody.AddForce(new Vector3(1 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0, 0) * dashAcceleration);
         }
