@@ -20,9 +20,12 @@ public class gateOpenControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< HEAD
         if (mapscript.instance == null)
             print("dd");
 
+=======
+>>>>>>> main
         // 몬스터가 없으면
         if (mapscript.instance.monster_count == 0)
         {

@@ -3,7 +3,12 @@ guid: 293e9b02ad7e55c42858dd55de87da20
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
+<<<<<<< HEAD
   defaultReferences: []
+=======
+  defaultReferences:
+  - open_Gate: {fileID: 102122, guid: 153f3e43b3732374b885d0cc2773ae05, type: 3}
+>>>>>>> main
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

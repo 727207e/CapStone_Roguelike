@@ -2133,8 +2133,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_Sprite: {fileID: 597093033119097804, guid: 40a6f3865d6458d46bc647c580d6832a, type: 3}
   m_Type: 0
+=======
+  m_Sprite: {fileID: 21300246, guid: 40a6f3865d6458d46bc647c580d6832a, type: 3}
+  m_Type: 1
+>>>>>>> main
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3162,9 +3167,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< HEAD
   m_Sprite: {fileID: 9081508309854333124, guid: 8341562bfbed81e43b7ce75b57bfbee5,
     type: 3}
   m_Type: 0
+=======
+  m_Sprite: {fileID: 21300246, guid: 40a6f3865d6458d46bc647c580d6832a, type: 3}
+  m_Type: 1
+>>>>>>> main
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -7178,7 +7188,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+<<<<<<< HEAD
   healthPoint: 1000
+=======
+>>>>>>> main
   audioListener: {fileID: 5170947110428091480}
 --- !u!1 &5170947110957494526
 GameObject:
@@ -43266,8 +43279,13 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7242898755281481163}
   m_HandleRect: {fileID: 7242898755281481160}
   m_Direction: 2
+<<<<<<< HEAD
   m_Value: 0.9999998
   m_Size: 0.5639033
+=======
+  m_Value: 1
+  m_Size: 0.56390333
+>>>>>>> main
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
