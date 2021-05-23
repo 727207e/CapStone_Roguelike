@@ -349,7 +349,7 @@ MonoBehaviour:
     type: 3}
   monster_type_M: {fileID: 2584917786474114627, guid: 11809b56cd8462047b0771c354b25307,
     type: 3}
-  monster_Type_R: {fileID: 4527395853194557787, guid: d666f61f72c12144e933ad2f8feb9ee7,
+  monster_Type_R: {fileID: 4527395853194557787, guid: ad9d01e444d9a9c4d8ac5d83442786bf,
     type: 3}
   monster_count: 0
   gates:

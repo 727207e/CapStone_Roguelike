@@ -141,8 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HP: 0
-  coin: {fileID: 0}
-  position: 0
+  coin: {fileID: 1435128896743559756, guid: dd847020969ab9343bfee55542042c84, type: 3}
 --- !u!114 &8013688767654836401
 MonoBehaviour:
   m_ObjectHideFlags: 0
