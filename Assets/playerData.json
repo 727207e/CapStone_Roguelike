@@ -1,0 +1,22 @@
+{
+    "Money_1": 500,
+    "Money_2": 100,
+    "Health_Hp_Max": 50,
+    "Health_Mp_Max": 50,
+    "Health_Strong": 50,
+    "Health_Armor": 50,
+    "Damage_Critical": 50,
+    "Controller_MoveSpeed": 50,
+    "Controller_JumpPower": 50,
+    "Controller_AttackSpeed": 50,
+    "OwnGun": [
+        {
+            "GunDamage": 50,
+            "GunRange": 50
+        },
+        {
+            "GunDamage": 50,
+            "GunRange": 50
+        }
+    ]
+}
