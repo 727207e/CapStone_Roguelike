@@ -347,7 +347,10 @@ MonoBehaviour:
   map_List: []
   healing_map: {fileID: 4919423631992807649, guid: 43700752ef58541439b92831b130eb2e,
     type: 3}
-  monster: {fileID: 2584917786474114627, guid: 11809b56cd8462047b0771c354b25307, type: 3}
+  monster_type_M: {fileID: 2584917786474114627, guid: 11809b56cd8462047b0771c354b25307,
+    type: 3}
+  monster_Type_R: {fileID: 4527395853194557787, guid: d666f61f72c12144e933ad2f8feb9ee7,
+    type: 3}
   monster_count: 0
   gates:
   - {fileID: 0}

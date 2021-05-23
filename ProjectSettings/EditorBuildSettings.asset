@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/2_StroyTelling.unity
     guid: 7b0d1a9eed50df740ad7fda3f80f8492
   - enabled: 1
-    path: Assets/Scenes/LabScene/LabScene.unity
+    path: Assets/Scenes/LabScene/LJSLabScene.unity
     guid: b72596f4c958c864ab820fd06da3dd3d
   - enabled: 1
     path: Assets/Scenes/Injection/Injection.unity

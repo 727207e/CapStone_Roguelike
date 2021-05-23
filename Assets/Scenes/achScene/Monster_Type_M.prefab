@@ -15,8 +15,9 @@ GameObject:
   - component: {fileID: 2584917786474114686}
   - component: {fileID: 426845559628033685}
   - component: {fileID: 2983818202844623590}
+  - component: {fileID: 3615637773938067259}
   m_Layer: 0
-  m_Name: Monster
+  m_Name: Monster_Type_M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,7 +112,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &426845559628033685
 MonoBehaviour:
@@ -145,3 +146,19 @@ MonoBehaviour:
   needArrowIndicator: 1
   needDistanceText: 1
   indicator: {fileID: 0}
+--- !u!114 &3615637773938067259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2584917786474114627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a19cc083656c324e9c75030e1a632a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  dis: 0
+  attack_Delay: 0
+  timer: 0
