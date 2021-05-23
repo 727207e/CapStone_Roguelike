@@ -21,7 +21,8 @@ public class mapscript : MonoBehaviour
     public GameObject[] map_List;
     public GameObject healing_map;
 
-    public GameObject monster;
+    public GameObject monster_type_M;
+    public GameObject monster_Type_R;
     private GameObject[] monsters_Point;
     private GameObject[] monsters_List;
 
@@ -125,9 +126,20 @@ public class mapscript : MonoBehaviour
         {
             if (monsters_Point[i] != null)
             {
+                // 0이면 근접 1이면 원거리
+                int rand = Random.Range(0, 2);
                 // 몬스터 생성 한 뒤 배열에 집어넣기
-                monsters_List[i] = Instantiate(monster, map_List[stage_Position].transform) as GameObject;
-                monsters_List[i].transform.position = monsters_Point[i].transform.position;
+                if (rand == 0)
+                {
+                    monsters_List[i] = Instantiate(monster_type_M, map_List[stage_Position].transform) as GameObject;
+                    monsters_List[i].transform.position = monsters_Point[i].transform.position;
+                }
+                else if (rand == 1)
+                {
+                    monsters_List[i] = Instantiate(monster_Type_R, map_List[stage_Position].transform) as GameObject;
+                    monsters_List[i].transform.position = monsters_Point[i].transform.position;
+                }
+                
 
                 monster_count++;
                 // 몬스터 생성지점 제거해서 추가생성 방지

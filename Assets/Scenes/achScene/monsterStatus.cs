@@ -6,7 +6,7 @@ public class monsterStatus : MonoBehaviour
 {
     public int HP;
     public GameObject coin;
-    public int position;
+    private int position;
     // Start is called before the first frame update
     void Start()
     {
