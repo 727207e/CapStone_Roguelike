@@ -17,6 +17,10 @@
         {
             "GunDamage": 50,
             "GunRange": 50
+        },
+        {
+            "GunDamage": 50,
+            "GunRange": 50
         }
     ]
 }

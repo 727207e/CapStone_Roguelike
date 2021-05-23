@@ -3,6 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
 
+
+	//-> DataManager 정보 정달
+
+	//-> Save
+
+	//-> Load
+
+	//-> Status -> DataManager 정보를 읽어옮.
+
 public class DataManager : MonoBehaviour
 {
     //저장 데이터 형식
