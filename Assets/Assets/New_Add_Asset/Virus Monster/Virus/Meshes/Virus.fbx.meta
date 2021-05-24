@@ -1,0 +1,226 @@
+fileFormatVersion: 2
+guid: e679c08cc485f1f47bfb4863a487cb17
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B_fire01
+    100002: B_fire02
+    100004: B_fire03
+    100006: B_fire04
+    100008: body
+    100010: C_fire
+    100012: //RootNode
+    100014: Covid_01
+    100016: F_fire01
+    100018: F_fire02
+    100020: F_fire03
+    100022: F_fire04
+    100024: F_fire05
+    100026: fire_head
+    100028: head
+    100030: jaw
+    100032: L_a_fire01
+    100034: L_a_fire02
+    100036: L_a_fire03
+    100038: L_a_fire04
+    100040: L_arm
+    100042: L_b_fire01
+    100044: L_b_fire02
+    100046: L_b_fire03
+    100048: L_b_fire04
+    100050: L_c_fire01
+    100052: L_c_fire02
+    100054: L_c_fire03
+    100056: L_c_fire04
+    100058: L_elbow
+    100060: L_hand
+    100062: LB_foot
+    100064: LB_tooth01
+    100066: LB_tooth02
+    100068: LB_tooth03
+    100070: LF_foot
+    100072: LU_tooth01
+    100074: LU_tooth02
+    100076: LU_tooth03
+    100078: R_a_fire01
+    100080: R_a_fire02
+    100082: R_a_fire03
+    100084: R_a_fire04
+    100086: R_arm
+    100088: R_b_fire01
+    100090: R_b_fire02
+    100092: R_b_fire03
+    100094: R_b_fire04
+    100096: R_c_fire01
+    100098: R_c_fire02
+    100100: R_c_fire03
+    100102: R_c_fire04
+    100104: R_elbow
+    100106: R_hand
+    100108: RB_foot
+    100110: RB_tooth01
+    100112: RB_tooth02
+    100114: RB_tooth03
+    100116: RF_foot
+    100118: root_base
+    100120: RU_tooth01
+    100122: RU_tooth02
+    100124: RU_tooth03
+    400000: B_fire01
+    400002: B_fire02
+    400004: B_fire03
+    400006: B_fire04
+    400008: body
+    400010: C_fire
+    400012: Covid_01
+    400014: //RootNode
+    400016: F_fire01
+    400018: F_fire02
+    400020: F_fire03
+    400022: F_fire04
+    400024: F_fire05
+    400026: fire_head
+    400028: head
+    400030: jaw
+    400032: L_a_fire01
+    400034: L_a_fire02
+    400036: L_a_fire03
+    400038: L_a_fire04
+    400040: L_arm
+    400042: L_b_fire01
+    400044: L_b_fire02
+    400046: L_b_fire03
+    400048: L_b_fire04
+    400050: L_c_fire01
+    400052: L_c_fire02
+    400054: L_c_fire03
+    400056: L_c_fire04
+    400058: L_elbow
+    400060: L_hand
+    400062: LB_foot
+    400064: LB_tooth01
+    400066: LB_tooth02
+    400068: LB_tooth03
+    400070: LF_foot
+    400072: LU_tooth01
+    400074: LU_tooth02
+    400076: LU_tooth03
+    400078: R_a_fire01
+    400080: R_a_fire02
+    400082: R_a_fire03
+    400084: R_a_fire04
+    400086: R_arm
+    400088: R_b_fire01
+    400090: R_b_fire02
+    400092: R_b_fire03
+    400094: R_b_fire04
+    400096: R_c_fire01
+    400098: R_c_fire02
+    400100: R_c_fire03
+    400102: R_c_fire04
+    400104: R_elbow
+    400106: R_hand
+    400108: RB_foot
+    400110: RB_tooth01
+    400112: RB_tooth02
+    400114: RB_tooth03
+    400116: RF_foot
+    400118: root_base
+    400120: RU_tooth01
+    400122: RU_tooth02
+    400124: RU_tooth03
+    2100000: M_sv3029_2
+    4300000: Covid_01
+    9500000: //RootNode
+    13700000: Covid_01
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_sv3029_2
+    second: {fileID: 2100000, guid: 5b43fdfd894fd71448527b78e9ca26f4, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
