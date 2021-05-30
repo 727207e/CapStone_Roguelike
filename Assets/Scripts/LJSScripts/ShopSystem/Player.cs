@@ -59,6 +59,8 @@ public class Player : MonoBehaviour
                 shop.Enter(this); // player 정보 자기자신에 접근
                 isShop = true; // 플래그변수 true로
             }
+
+
         }
     }
 

@@ -24,7 +24,7 @@ public class Shop : MonoBehaviour
     // Update is called once per frame
     public void Exit()
     {
-        uiGroup.anchoredPosition = Vector3.down * 1000;  // 화면아래로 위치시킨다.
+        uiGroup.anchoredPosition = Vector3.down * 2000;  // 화면아래로 위치시킨다.
     }
 
     public void Buy(int index) // 어떤 물건인지 판별
@@ -36,7 +36,10 @@ public class Shop : MonoBehaviour
             StartCoroutine(Talk()); // 코루틴 실행
             return;
             }
-                
+        else
+            StopCoroutine(Talk2());  // 이미 진행되고 있는 코루틴 제거
+            StartCoroutine(Talk2()); // 코루틴 실행
+
 
         enterPlayer.Coin -= price;
         Vector3 ranVec = Vector3.right * Random.Range(0, 0)
@@ -48,6 +51,12 @@ public class Shop : MonoBehaviour
     IEnumerator Talk()
     {
         talkText.text = talkData[1];  // 구매할수 없다는 메시지를
+        yield return new WaitForSeconds(2f);  // 코루틴으로 2초간 출력후
+        talkText.text = talkData[0]; // 원래의 메시지를 출력한다.
+    }
+    IEnumerator Talk2()
+    {
+        talkText.text = talkData[2];  // 구매할수 없다는 메시지를
         yield return new WaitForSeconds(2f);  // 코루틴으로 2초간 출력후
         talkText.text = talkData[0]; // 원래의 메시지를 출력한다.
     }
