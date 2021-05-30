@@ -234,7 +234,23 @@ public class msPlayerControllerNew : MonoBehaviour
             isInvincibleTime = true;
             StartCoroutine("InvincibleTime");
         }
-        
+
+        if (other.gameObject.CompareTag("BossAtt"))
+        {
+            //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
+            Debug.Log("보스에게 공격받았습니다.");
+
+            BossAttackDamage boss = other.gameObject.GetComponent<BossAttackDamage>();
+
+            if (boss)
+            {
+                PlayerDamaged(boss.Damage);
+            }
+
+            isInvincibleTime = true;
+            StartCoroutine("InvincibleTime");
+        }
+
     }
 
     public  IEnumerator InvincibleTime() {
