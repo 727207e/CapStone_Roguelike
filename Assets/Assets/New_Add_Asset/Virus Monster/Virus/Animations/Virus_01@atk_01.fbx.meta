@@ -1,526 +1,17 @@
 fileFormatVersion: 2
 guid: 007a891bde5f7094780df0c9dfd44204
 ModelImporter:
-<<<<<<< Updated upstream
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
-      1: 100000
-    second: B_fire01
-  - first:
-      1: 100002
-    second: B_fire02
-  - first:
-      1: 100004
-    second: B_fire03
-  - first:
-      1: 100006
-    second: B_fire04
-  - first:
-      1: 100008
-    second: body
-  - first:
-      1: 100010
-    second: C_fire
-  - first:
-      1: 100012
-    second: //RootNode
-  - first:
-      1: 100014
-    second: F_fire01
-  - first:
-      1: 100016
-    second: F_fire02
-  - first:
-      1: 100018
-    second: F_fire03
-  - first:
-      1: 100020
-    second: F_fire04
-  - first:
-      1: 100022
-    second: F_fire05
-  - first:
-      1: 100024
-    second: fire_head
-  - first:
-      1: 100026
-    second: head
-  - first:
-      1: 100028
-    second: jaw
-  - first:
-      1: 100030
-    second: L_a_fire01
-  - first:
-      1: 100032
-    second: L_a_fire02
-  - first:
-      1: 100034
-    second: L_a_fire03
-  - first:
-      1: 100036
-    second: L_a_fire04
-  - first:
-      1: 100038
-    second: L_arm
-  - first:
-      1: 100040
-    second: L_b_fire01
-  - first:
-      1: 100042
-    second: L_b_fire02
-  - first:
-      1: 100044
-    second: L_b_fire03
-  - first:
-      1: 100046
-    second: L_b_fire04
-  - first:
-      1: 100048
-    second: L_c_fire01
-  - first:
-      1: 100050
-    second: L_c_fire02
-  - first:
-      1: 100052
-    second: L_c_fire03
-  - first:
-      1: 100054
-    second: L_c_fire04
-  - first:
-      1: 100056
-    second: L_elbow
-  - first:
-      1: 100058
-    second: L_hand
-  - first:
-      1: 100060
-    second: LB_foot
-  - first:
-      1: 100062
-    second: LB_tooth01
-  - first:
-      1: 100064
-    second: LB_tooth02
-  - first:
-      1: 100066
-    second: LB_tooth03
-  - first:
-      1: 100068
-    second: LF_foot
-  - first:
-      1: 100070
-    second: LU_tooth01
-  - first:
-      1: 100072
-    second: LU_tooth02
-  - first:
-      1: 100074
-    second: LU_tooth03
-  - first:
-      1: 100076
-    second: R_a_fire01
-  - first:
-      1: 100078
-    second: R_a_fire02
-  - first:
-      1: 100080
-    second: R_a_fire03
-  - first:
-      1: 100082
-    second: R_a_fire04
-  - first:
-      1: 100084
-    second: R_arm
-  - first:
-      1: 100086
-    second: R_b_fire01
-  - first:
-      1: 100088
-    second: R_b_fire02
-  - first:
-      1: 100090
-    second: R_b_fire03
-  - first:
-      1: 100092
-    second: R_b_fire04
-  - first:
-      1: 100094
-    second: R_c_fire01
-  - first:
-      1: 100096
-    second: R_c_fire02
-  - first:
-      1: 100098
-    second: R_c_fire03
-  - first:
-      1: 100100
-    second: R_c_fire04
-  - first:
-      1: 100102
-    second: R_elbow
-  - first:
-      1: 100104
-    second: R_hand
-  - first:
-      1: 100106
-    second: RB_foot
-  - first:
-      1: 100108
-    second: RB_tooth01
-  - first:
-      1: 100110
-    second: RB_tooth02
-  - first:
-      1: 100112
-    second: RB_tooth03
-  - first:
-      1: 100114
-    second: RF_foot
-  - first:
-      1: 100116
-    second: root_base
-  - first:
-      1: 100118
-    second: RU_tooth01
-  - first:
-      1: 100120
-    second: RU_tooth02
-  - first:
-      1: 100122
-    second: RU_tooth03
-  - first:
-      4: 400000
-    second: B_fire01
-  - first:
-      4: 400002
-    second: B_fire02
-  - first:
-      4: 400004
-    second: B_fire03
-  - first:
-      4: 400006
-    second: B_fire04
-  - first:
-      4: 400008
-    second: body
-  - first:
-      4: 400010
-    second: C_fire
-  - first:
-      4: 400012
-    second: //RootNode
-  - first:
-      4: 400014
-    second: F_fire01
-  - first:
-      4: 400016
-    second: F_fire02
-  - first:
-      4: 400018
-    second: F_fire03
-  - first:
-      4: 400020
-    second: F_fire04
-  - first:
-      4: 400022
-    second: F_fire05
-  - first:
-      4: 400024
-    second: fire_head
-  - first:
-      4: 400026
-    second: head
-  - first:
-      4: 400028
-    second: jaw
-  - first:
-      4: 400030
-    second: L_a_fire01
-  - first:
-      4: 400032
-    second: L_a_fire02
-  - first:
-      4: 400034
-    second: L_a_fire03
-  - first:
-      4: 400036
-    second: L_a_fire04
-  - first:
-      4: 400038
-    second: L_arm
-  - first:
-      4: 400040
-    second: L_b_fire01
-  - first:
-      4: 400042
-    second: L_b_fire02
-  - first:
-      4: 400044
-    second: L_b_fire03
-  - first:
-      4: 400046
-    second: L_b_fire04
-  - first:
-      4: 400048
-    second: L_c_fire01
-  - first:
-      4: 400050
-    second: L_c_fire02
-  - first:
-      4: 400052
-    second: L_c_fire03
-  - first:
-      4: 400054
-    second: L_c_fire04
-  - first:
-      4: 400056
-    second: L_elbow
-  - first:
-      4: 400058
-    second: L_hand
-  - first:
-      4: 400060
-    second: LB_foot
-  - first:
-      4: 400062
-    second: LB_tooth01
-  - first:
-      4: 400064
-    second: LB_tooth02
-  - first:
-      4: 400066
-    second: LB_tooth03
-  - first:
-      4: 400068
-    second: LF_foot
-  - first:
-      4: 400070
-    second: LU_tooth01
-  - first:
-      4: 400072
-    second: LU_tooth02
-  - first:
-      4: 400074
-    second: LU_tooth03
-  - first:
-      4: 400076
-    second: R_a_fire01
-  - first:
-      4: 400078
-    second: R_a_fire02
-  - first:
-      4: 400080
-    second: R_a_fire03
-  - first:
-      4: 400082
-    second: R_a_fire04
-  - first:
-      4: 400084
-    second: R_arm
-  - first:
-      4: 400086
-    second: R_b_fire01
-  - first:
-      4: 400088
-    second: R_b_fire02
-  - first:
-      4: 400090
-    second: R_b_fire03
-  - first:
-      4: 400092
-    second: R_b_fire04
-  - first:
-      4: 400094
-    second: R_c_fire01
-  - first:
-      4: 400096
-    second: R_c_fire02
-  - first:
-      4: 400098
-    second: R_c_fire03
-  - first:
-      4: 400100
-    second: R_c_fire04
-  - first:
-      4: 400102
-    second: R_elbow
-  - first:
-      4: 400104
-    second: R_hand
-  - first:
-      4: 400106
-    second: RB_foot
-  - first:
-      4: 400108
-    second: RB_tooth01
-  - first:
-      4: 400110
-    second: RB_tooth02
-  - first:
-      4: 400112
-    second: RB_tooth03
-  - first:
-      4: 400114
-    second: RF_foot
-  - first:
-      4: 400116
-    second: root_base
-  - first:
-      4: 400118
-    second: RU_tooth01
-  - first:
-      4: 400120
-    second: RU_tooth02
-  - first:
-      4: 400122
-    second: RU_tooth03
-  - first:
-      74: 7400000
-    second: atk_01
-  - first:
-      95: 9500000
-    second: //RootNode
+      74: 1827226128182048838
+    second: Take 001
   externalObjects: {}
   materials:
     materialImportMode: 1
-=======
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: B_fire01
-    100002: B_fire02
-    100004: B_fire03
-    100006: B_fire04
-    100008: body
-    100010: C_fire
-    100012: //RootNode
-    100014: F_fire01
-    100016: F_fire02
-    100018: F_fire03
-    100020: F_fire04
-    100022: F_fire05
-    100024: fire_head
-    100026: head
-    100028: jaw
-    100030: L_a_fire01
-    100032: L_a_fire02
-    100034: L_a_fire03
-    100036: L_a_fire04
-    100038: L_arm
-    100040: L_b_fire01
-    100042: L_b_fire02
-    100044: L_b_fire03
-    100046: L_b_fire04
-    100048: L_c_fire01
-    100050: L_c_fire02
-    100052: L_c_fire03
-    100054: L_c_fire04
-    100056: L_elbow
-    100058: L_hand
-    100060: LB_foot
-    100062: LB_tooth01
-    100064: LB_tooth02
-    100066: LB_tooth03
-    100068: LF_foot
-    100070: LU_tooth01
-    100072: LU_tooth02
-    100074: LU_tooth03
-    100076: R_a_fire01
-    100078: R_a_fire02
-    100080: R_a_fire03
-    100082: R_a_fire04
-    100084: R_arm
-    100086: R_b_fire01
-    100088: R_b_fire02
-    100090: R_b_fire03
-    100092: R_b_fire04
-    100094: R_c_fire01
-    100096: R_c_fire02
-    100098: R_c_fire03
-    100100: R_c_fire04
-    100102: R_elbow
-    100104: R_hand
-    100106: RB_foot
-    100108: RB_tooth01
-    100110: RB_tooth02
-    100112: RB_tooth03
-    100114: RF_foot
-    100116: root_base
-    100118: RU_tooth01
-    100120: RU_tooth02
-    100122: RU_tooth03
-    400000: B_fire01
-    400002: B_fire02
-    400004: B_fire03
-    400006: B_fire04
-    400008: body
-    400010: C_fire
-    400012: //RootNode
-    400014: F_fire01
-    400016: F_fire02
-    400018: F_fire03
-    400020: F_fire04
-    400022: F_fire05
-    400024: fire_head
-    400026: head
-    400028: jaw
-    400030: L_a_fire01
-    400032: L_a_fire02
-    400034: L_a_fire03
-    400036: L_a_fire04
-    400038: L_arm
-    400040: L_b_fire01
-    400042: L_b_fire02
-    400044: L_b_fire03
-    400046: L_b_fire04
-    400048: L_c_fire01
-    400050: L_c_fire02
-    400052: L_c_fire03
-    400054: L_c_fire04
-    400056: L_elbow
-    400058: L_hand
-    400060: LB_foot
-    400062: LB_tooth01
-    400064: LB_tooth02
-    400066: LB_tooth03
-    400068: LF_foot
-    400070: LU_tooth01
-    400072: LU_tooth02
-    400074: LU_tooth03
-    400076: R_a_fire01
-    400078: R_a_fire02
-    400080: R_a_fire03
-    400082: R_a_fire04
-    400084: R_arm
-    400086: R_b_fire01
-    400088: R_b_fire02
-    400090: R_b_fire03
-    400092: R_b_fire04
-    400094: R_c_fire01
-    400096: R_c_fire02
-    400098: R_c_fire03
-    400100: R_c_fire04
-    400102: R_elbow
-    400104: R_hand
-    400106: RB_foot
-    400108: RB_tooth01
-    400110: RB_tooth02
-    400112: RB_tooth03
-    400114: RF_foot
-    400116: root_base
-    400118: RU_tooth01
-    400120: RU_tooth02
-    400122: RU_tooth03
-    7400000: Take 001
-    9500000: //RootNode
-  externalObjects: {}
-  materials:
-    importMaterials: 1
->>>>>>> Stashed changes
-    materialName: 0
+    materialName: 3
     materialSearch: 1
-    materialLocation: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -542,54 +33,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-<<<<<<< Updated upstream
-    clipAnimations:
-    - serializedVersion: 16
-      name: atk_01
-      takeName: Take 001
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 70
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events:
-      - time: 0.14933333
-        functionName: GetMessageEffect
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 1100
-        messageOptions: 0
-      - time: 0.9934553
-        functionName: AnimationMoveEnd
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-=======
     clipAnimations: []
->>>>>>> Stashed changes
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -597,15 +41,11 @@ ModelImporter:
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
-<<<<<<< Updated upstream
     sortHierarchyByName: 1
-=======
->>>>>>> Stashed changes
-    importVisibility: 1
+    importVisibility: 0
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
-<<<<<<< Updated upstream
+    importCameras: 0
+    importLights: 0
     fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
@@ -617,45 +57,24 @@ ModelImporter:
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
     meshOptimizationFlags: -1
-=======
-    swapUVChannels: 0
-    generateSecondaryUV: 0
-    useFileUnits: 1
-    optimizeMeshForGPU: 1
-    keepQuads: 0
-    weldVertices: 1
-    preserveHierarchy: 0
->>>>>>> Stashed changes
-    indexFormat: 0
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 1
-<<<<<<< Updated upstream
-=======
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
->>>>>>> Stashed changes
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-<<<<<<< Updated upstream
   referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
-=======
-  importAnimation: 1
-  copyAvatar: 0
-  humanDescription:
-    serializedVersion: 2
->>>>>>> Stashed changes
     human: []
     skeleton: []
     armTwist: 0.5
@@ -665,24 +84,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-<<<<<<< Updated upstream
     globalScale: 1
-=======
->>>>>>> Stashed changes
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-<<<<<<< Updated upstream
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
-  avatarSetup: 1
-=======
-  animationType: 2
-  humanoidOversampling: 1
->>>>>>> Stashed changes
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
