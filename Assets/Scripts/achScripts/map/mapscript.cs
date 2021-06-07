@@ -12,22 +12,27 @@ public class mapscript : MonoBehaviour
             return _instance;
         }
     }
+    //맵
     private int map_Total_Count = 17;
     public int stage_Position = 0;
 
+    //플레이어
     public GameObject player;
 
+    // 맵 리스트
     public GameObject[] maps = new GameObject[15];
     public GameObject[] map_List;
     public GameObject healing_map;
 
+    // 몬스터 관련 M: 근거리 R: 원거리
     public GameObject monster_type_M;
     public GameObject monster_Type_R;
     private GameObject[] monsters_Point;
     private GameObject[] monsters_List;
-
+    // 남은 몬스터 갯수
     public int monster_count = 0;
 
+    // 문
     public GameObject[] gates = new GameObject[2];
 
     // Start is called before the first frame update
@@ -35,6 +40,7 @@ public class mapscript : MonoBehaviour
     {
         _instance = this;
 
+        //맵 랜덤하게 생성
         map_List = new GameObject[map_Total_Count];
         monsters_List = new GameObject[10];
         randomized_map();
@@ -58,6 +64,7 @@ public class mapscript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) == true && monster_count <= 0)
             previousMap();
 
+        //몬스터 생성
         monsters_Spawn();
     }
 
@@ -67,7 +74,6 @@ public class mapscript : MonoBehaviour
         stage_Position++;
         map_List[stage_Position - 1].SetActive(false);
         map_List[stage_Position].SetActive(true);
-        Debug.Log("위치: " + (stage_Position + 1));
         player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_1").position;
 
         // 페이드
@@ -80,7 +86,6 @@ public class mapscript : MonoBehaviour
         stage_Position--;
         map_List[stage_Position + 1].SetActive(false);
         map_List[stage_Position].SetActive(true);
-        Debug.Log("위치: " + (stage_Position + 1));
         player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_2").position;
 
         //페이드

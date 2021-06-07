@@ -16,6 +16,7 @@ public class FadeController : MonoBehaviour
     }
 
     public Image fadepnl;
+    public float timer;
 
     IEnumerator fadeout()
     {
