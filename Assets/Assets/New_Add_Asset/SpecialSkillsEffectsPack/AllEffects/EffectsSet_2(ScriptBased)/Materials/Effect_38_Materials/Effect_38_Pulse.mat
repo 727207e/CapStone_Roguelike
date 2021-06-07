@@ -152,5 +152,5 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _NoiseValue: {r: 1, g: 1, b: 1, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
-    - _TintColor: {r: 0.15686275, g: 0.72156864, b: 5.992157, a: 1}
+    - _TintColor: {r: 7.924528, g: 3.5821369, b: 1.0840158, a: 1}
     - _TintColor2: {r: 1, g: 1, b: 1, a: 1}

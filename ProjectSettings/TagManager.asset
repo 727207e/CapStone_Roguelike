@@ -13,8 +13,8 @@ TagManager:
   - Shop
   - Weapon
   - Item
-  - RandomBox
-  - NPC
+  - Enemy
+  - PlayerAttack
   layers:
   - Default
   - TransparentFX
@@ -25,19 +25,19 @@ TagManager:
   - 
   - 
   - Player
-  - Light
-  - MouseTarget
   - Ground
+  - MouseTarget
+  - Light
+  - PlayerDamaged
+  - Enemy
+  - EnemyAttack
   - 
   - 
   - 
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Post Processing
   - 
   - 
   - 

@@ -14,7 +14,7 @@ public class msGunManager : MonoBehaviour
     public GameObject gun3; //차후 이름 변경
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         thisTransform = GetComponent<Transform>();
 
@@ -74,5 +74,5 @@ public class msGunManager : MonoBehaviour
             Debug.LogError("플레이어 캐릭터가 존재하지 않습니다.");
         }
         msPCN = player.GetComponent<msPlayerControllerNew>();
-    }
+    }*/
 }
