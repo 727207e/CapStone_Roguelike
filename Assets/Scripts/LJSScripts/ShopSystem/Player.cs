@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Player : MonoBehaviour
 {
     public GameObject[] weapons; // 무기관련 배열함수 선언1
     public bool[] hasWeapons; //무기관련 배열함수 선언2
+
+    public LifeManaHandler lifemanahandler;
+    public GameObject player;
+
 
     GameObject nearObject; // 트리거된 아이템을 위한 선언
     bool iDown;
@@ -13,24 +19,27 @@ public class Player : MonoBehaviour
 
     public int Coin;  // 재화
     public int Coin2;  // 영구적재화
-    public int Ammo;  // 방어력
+    public float Ammo;  // 방어력
     public int Health;  // 체력
+    public float Attack; //공격력
 
     public int MaxCoin;  // 최대재화 
     public int MaxCoin2;  // 최대영구적재화
     public int MaxAmmo; // 최대방어력
     public int MaxHealth;  // 최대체력
+    public int MaxAttack; //최대공격력
 
 
 
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
+        lifemanahandler = GameObject.Find("Player").GetComponent<LifeManaHandler>();
         GetInput();
         Interation(); // 상호작용함수
     }
@@ -60,6 +69,22 @@ public class Player : MonoBehaviour
                 isShop = true; // 플래그변수 true로
             }
 
+            else if (nearObject.tag == "RandomBox")
+            {
+                Shop shop = nearObject.GetComponent<Shop>();
+                shop.Enter(this); // player 정보 자기자신에 접근
+                Destroy(nearObject);
+
+
+            }
+
+            else if (nearObject.tag == "NPC")
+            {
+                Shop shop = nearObject.GetComponent<Shop>();
+             //   shop.Enter(this); // player 정보 자기자신에 접근
+                Destroy(nearObject);
+               // lifemanahandler.HpHeal(100);
+            }
 
         }
     }
@@ -101,13 +126,17 @@ public class Player : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Weapon" || other.tag == "Shop")
+        if (other.tag == "Weapon" || other.tag == "Shop" || other.tag == "RandomBox" || other.tag == "NPC")
             nearObject = other.gameObject;
          }
 
     void OnTriggerExit(Collider other)
     {
         if (other.tag == "Weapon")
+            nearObject = null;
+        else if (other.tag == "RandomBox")
+            nearObject = null;
+        else if (other.tag == "NPC")
             nearObject = null;
         else if (other.tag == "Shop") {
             Shop shop = nearObject.GetComponent<Shop>();

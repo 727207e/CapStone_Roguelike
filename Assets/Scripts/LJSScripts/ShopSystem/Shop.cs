@@ -11,7 +11,8 @@ public class Shop : MonoBehaviour
     public Transform[] itemPos;  //위치배열변수
     public string[] talkData;
     public Text talkText;
-
+    public msPlayerControllerNew msPCN;
+    public LifeManaHandler lifemanahandler;
 
     Player enterPlayer;
 
@@ -26,6 +27,13 @@ public class Shop : MonoBehaviour
     {
         uiGroup.anchoredPosition = Vector3.down * 2000;  // 화면아래로 위치시킨다.
     }
+
+    private void Update()
+    {
+        lifemanahandler = GameObject.Find("Player").GetComponent<LifeManaHandler>();
+    }
+
+
 
     public void Buy(int index) // 어떤 물건인지 판별
     {
@@ -45,6 +53,22 @@ public class Shop : MonoBehaviour
         Vector3 ranVec = Vector3.right * Random.Range(0, 0)
                         + Vector3.forward * Random.Range(0, 0);
         Instantiate(itemObj[index], itemPos[index].position + ranVec, itemPos[index].rotation);
+
+    }
+
+    public void BuyPotion(int index) // 어떤 물건인지 판별
+    {
+        int price = itemPrice[index]; // 선택한 아이템 가격 인덱스
+        if (price > enterPlayer.Coin)
+        {
+            StopCoroutine(Talk());  // 이미 진행되고 있는 코루틴 제거
+            StartCoroutine(Talk()); // 코루틴 실행
+            
+            return;
+        }
+        else
+            StopCoroutine(Talk2());  // 이미 진행되고 있는 코루틴 제거
+        StartCoroutine(Talk2()); // 코루틴 실행
 
     }
 
