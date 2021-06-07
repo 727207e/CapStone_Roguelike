@@ -21,5 +21,11 @@ public class BossController : MonoBehaviour
         {
             bossPaternStatus.ShowTheBoss();
         }
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            bossPaternStatus.BossHp = 30;
+        }
+
     }
 }

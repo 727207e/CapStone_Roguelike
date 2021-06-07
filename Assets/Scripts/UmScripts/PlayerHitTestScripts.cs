@@ -37,6 +37,10 @@ public class PlayerHitTestScripts : MonoBehaviour
 
     }
 
+    public void PlayerOnHit(int num)
+    {
+        print("player hit");
+    }
 
     public IEnumerator InvincibleTime()
     {

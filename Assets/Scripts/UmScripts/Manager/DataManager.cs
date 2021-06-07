@@ -14,12 +14,43 @@ using System.IO;
 
 public class DataManager : MonoBehaviour
 {
+    private static DataManager instance = null;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+
+            //씬 전환이 되어도 파괴되지 않는다.
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            //씬 전환이후 그 씬에도 gamemanager가 있을수 있음.
+            //따라서 새로운 씬의 gamemanager 파괴
+            Destroy(this.gameObject);
+
+        }
+    }
+
+    public static DataManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+
     //저장 데이터 형식
     [System.Serializable]
     public class Data
     {
-        public int Money_1; // 유저 돈
-        public int Money_2; //
+        public int Money; // 유저 돈
         public int Health_Hp_Max;
         public int Health_Mp_Max;
         public int Health_Strong; // 강인함
@@ -41,6 +72,10 @@ public class DataManager : MonoBehaviour
 
     public Data data;
 
+    public void Start()
+    {
+        LoadData();
+    }
 
     public void GameSave()
     {

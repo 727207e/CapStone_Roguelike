@@ -12,8 +12,34 @@ public class Shop : MonoBehaviour
     public string[] talkData;
     public Text talkText;
 
-
     Player enterPlayer;
+
+    /// ////////////////////////////////////////////////////////////////////////
+    /// 돈관리 하고 난 이후 필요한 업데이트
+    /// 
+    /// 지금은 돈만 업데이트 하니까 List에 돈이 사용되는 UI를 집어넣었습니다.
+    /// 이후엔 필요한 Ui갱신이 있으면 넣으면 됩니다.
+    /// 또는 더 필요한 갱신이 없다면 List<Text> 대신 gameobject만 넣으셔도 될꺼같습니다.
+    /// 
+    
+    /// 서버에서 돈을 빼면 Text를 갱신합니다.
+    public List<Text> UiText;
+
+
+
+
+    public void Start()
+    {
+        //게임을 시작하면 Data를 Load 합니다.
+        DataManager.Instance.LoadData();
+
+        //로드 이후 UI창을 업데이트합니다.
+        UpdateUi();
+    }
+
+
+
+
 
     public void Enter(Player player)
     {
@@ -41,7 +67,25 @@ public class Shop : MonoBehaviour
             StartCoroutine(Talk2()); // 코루틴 실행
 
 
-        enterPlayer.Coin -= price;
+
+
+        //enterPlayer.Coin -= price;
+
+        ///////////////////////////////////////////////////////////////////////////////////서버에서 돈 관리
+        DataManager.Instance.data.Money -= price;
+
+        DataManager.Instance.GameSave(); // 저장
+
+        UpdateUi(); //Ui 갱신
+
+        //로드는 게임 재시작, 또는 다른 특이사항에 진행합니다.
+        //(불필요한 로드)
+        ////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
         Vector3 ranVec = Vector3.right * Random.Range(0, 0)
                         + Vector3.forward * Random.Range(0, 0);
         Instantiate(itemObj[index], itemPos[index].position + ranVec, itemPos[index].rotation);
@@ -61,5 +105,13 @@ public class Shop : MonoBehaviour
         talkText.text = talkData[0]; // 원래의 메시지를 출력한다.
     }
 
-
+    /// /////////////////////////////////////////////////////////////////////////////////////텍스트 갱신
+    public void UpdateUi()
+    {
+        for(int i = 0; i < UiText.Count; i++)
+        {
+            //텍스트 갱신
+            UiText[i].text = DataManager.Instance.data.Money.ToString();
+        }
+    }
 }

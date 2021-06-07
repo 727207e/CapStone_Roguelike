@@ -10,7 +10,7 @@ public class BossPlayerDistanceDetected : MonoBehaviour
         if (other.transform.tag == "Player")
         {
             //공격 범위안으로 들어옴
-            transform.parent.GetComponent<BossPartentScripts>()
+            transform.parent.transform.parent.GetComponent<BossPartentScripts>()
                 .attack_DistanceLimitToPlayer = true;
         }
     }
@@ -20,7 +20,7 @@ public class BossPlayerDistanceDetected : MonoBehaviour
         if(other.transform.tag == "Player")
         {
             //공격 범위밖으로 나감
-            transform.parent.GetComponent<BossPartentScripts>()
+            transform.parent.transform.parent.GetComponent<BossPartentScripts>()
                 .attack_DistanceLimitToPlayer = false;
 
         }
