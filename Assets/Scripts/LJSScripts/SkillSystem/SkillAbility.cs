@@ -9,25 +9,25 @@ public class SkillAbility : MonoBehaviour
     [Header("Ability 1")]
     public Image abilityImage1;
     public float cooldown1 = 5;
-    bool isCooldown = false;
+    public bool isCooldown = false;
     public KeyCode ability1;
 
     [Header("Ability 2")]
     public Image abilityImage2;
     public float cooldown2 = 5;
-    bool isCooldown2 = false;
+    public bool isCooldown2 = false;
     public KeyCode ability2;
 
     [Header("Ability 3")]
     public Image abilityImage3;
     public float cooldown3 = 10;
-    bool isCooldown3 = false;
+    public bool isCooldown3 = false;
     public KeyCode ability3;
 
     [Header("Ability 4")]
     public Image abilityImage4;
     public float cooldown4 = 15;
-    bool isCooldown4 = false;
+    public bool isCooldown4 = false;
     public KeyCode ability4;
 
 
@@ -51,11 +51,12 @@ public class SkillAbility : MonoBehaviour
 
     void Ability1()
     {
-        if(Input.GetKey(ability1) && isCooldown == false)
+        /*if(Input.GetKeyDown(KeyCode.Alpha1) && isCooldown == false)
         {
+            Debug.Log(isCooldown);
             isCooldown = true;
             abilityImage1.fillAmount = 1;
-        }
+        }*/
 
         if(isCooldown)
         {
@@ -72,11 +73,11 @@ public class SkillAbility : MonoBehaviour
 
     void Ability2()
     {
-        if (Input.GetKey(ability2) && isCooldown2 == false)
+        /*if (Input.GetKeyDown(KeyCode.Alpha2) && isCooldown2 == false)
         {
             isCooldown2 = true;
             abilityImage2.fillAmount = 1;
-        }
+        }*/
 
         if (isCooldown2)
         {
@@ -93,11 +94,11 @@ public class SkillAbility : MonoBehaviour
 
     void Ability3()
     {
-        if (Input.GetKey(ability3) && isCooldown3 == false)
+        /*if (Input.GetKeyDown(KeyCode.Alpha3) && isCooldown3 == false)
         {
             isCooldown3 = true;
             abilityImage3.fillAmount = 1;
-        }
+        }*/
 
         if (isCooldown3)
         {
@@ -114,11 +115,11 @@ public class SkillAbility : MonoBehaviour
 
     void Ability4()
     {
-        if (Input.GetKey(ability4) && isCooldown4 == false)
+        /*if (Input.GetKeyDown(KeyCode.Alpha4) && isCooldown4 == false)
         {
             isCooldown4 = true;
             abilityImage4.fillAmount = 1;
-        }
+        }*/
 
         if (isCooldown4)
         {

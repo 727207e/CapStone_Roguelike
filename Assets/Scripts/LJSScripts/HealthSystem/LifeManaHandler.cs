@@ -40,18 +40,18 @@ public class LifeManaHandler : MonoBehaviour
         lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateHealthPoint, Time.deltaTime);
         lifeText.text = "" + (int)msPCN.healthPoint;
 
-        if (msPCN.AbilityPoint < msPCN.initAbilityPoint)
+        if (msPCN.abilityPoint < msPCN.initAbilityPoint)
         {
             manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            msPCN.AbilityPoint = Mathf.MoveTowards(msPCN.AbilityPoint / msPCN.AbilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
+            msPCN.abilityPoint = Mathf.MoveTowards(msPCN.abilityPoint / msPCN.abilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
         }
 
-        if (msPCN.AbilityPoint < 0)
+        if (msPCN.abilityPoint < 0)
         {
-            msPCN.AbilityPoint = 0;
+            msPCN.abilityPoint = 0;
         }
 
-        manaText.text = "" + Mathf.FloorToInt(msPCN.AbilityPoint);
+        manaText.text = "" + Mathf.FloorToInt(msPCN.abilityPoint);
     }
 
     public void Damage(float damage)
@@ -62,8 +62,8 @@ public class LifeManaHandler : MonoBehaviour
 
     public void ReduceMana(float mana)
     {
-        msPCN.AbilityPoint -= mana;
-        Debug.Log("현재 남은 마나 " + msPCN.AbilityPoint);
+        msPCN.abilityPoint -= mana;
+        Debug.Log("현재 남은 마나 " + msPCN.abilityPoint);
         manaBar.fillAmount -= mana / msPCN.initAbilityPoint;
     }
 

@@ -27,10 +27,10 @@ public class MPItemUse : MonoBehaviour
         if (Input.inputString == (transform.parent.GetComponent<Slot>().num + 1).ToString()) 
         {
             // 아이템 사용
-            msPCN.AbilityPoint += 10;
-            if (msPCN.AbilityPoint >= 50)
+            msPCN.abilityPoint += 10;
+            if (msPCN.abilityPoint >= 50)
             {
-                msPCN.AbilityPoint = 50;
+                msPCN.abilityPoint = 50;
             }
 
             Debug.Log(" MP 상승 , slotNumber : " + (transform.parent.GetComponent<Slot>().num + 1));
