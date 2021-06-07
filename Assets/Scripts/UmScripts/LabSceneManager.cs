@@ -20,21 +20,25 @@ public class LabSceneManager : MonoBehaviour
     {
         mainCamera = GameObject.Find("Main Camera");
         Player = GameObject.Find("Player");
+        if(Player != null)
+        {
+
+            //위치 저장
+            oldPos = Player.transform.position;
+        }
 
 
         //바닥의 길이를 가져온다(x = y 이기 때문에 x를 가져옴)
         //루트2 를 곱함(피타고라스 빗변공식)
         blockLength = MapGround.transform.localScale.x/2 * Mathf.Sqrt(2) - range;
 
-        //위치 저장
-        oldPos = Player.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         //위치 저장
-        newPos = Player.transform.position;
+        //newPos = Player.transform.position;
 
         if (oldPos != newPos)
         {

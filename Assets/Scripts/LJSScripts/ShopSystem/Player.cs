@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
     
     void Update()
     {
-        lifemanahandler = GameObject.Find("Player").GetComponent<LifeManaHandler>();
+        //lifemanahandler = GameObject.Find("Player").GetComponent<LifeManaHandler>();
         GetInput();
         Interation(); // 상호작용함수
     }
