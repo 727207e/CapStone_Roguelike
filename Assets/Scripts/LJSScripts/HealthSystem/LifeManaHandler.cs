@@ -36,6 +36,8 @@ public class LifeManaHandler : MonoBehaviour
 
     void Update()
     {
+        
+
         calculateHealthPoint = msPCN.healthPoint / msPCN.initHealthPoint;
         lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateHealthPoint, Time.deltaTime);
         lifeText.text = "" + (int)msPCN.healthPoint;
@@ -51,7 +53,7 @@ public class LifeManaHandler : MonoBehaviour
             msPCN.AbilityPoint = 0;
         }
 
-        manaText.text = "" + Mathf.FloorToInt(msPCN.AbilityPoint);
+       // manaText.text = "" + Mathf.FloorToInt(msPCN.AbilityPoint);
     }
 
     public void Damage(float damage)
@@ -67,6 +69,12 @@ public class LifeManaHandler : MonoBehaviour
         manaBar.fillAmount -= mana / msPCN.initAbilityPoint;
     }
 
+
+    public void HpHeal(float heal)
+    {
+        msPCN.healthPoint += heal;
+        Debug.Log("현재 남은 체력 " + msPCN.healthPoint);
+    }
 
 }
 

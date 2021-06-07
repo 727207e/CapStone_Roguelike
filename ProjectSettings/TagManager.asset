@@ -10,6 +10,11 @@ TagManager:
   - FxTemporaire
   - Monster_Spawn_Point
   - BossAtt
+  - Shop
+  - Weapon
+  - Item
+  - RandomBox
+  - NPC
   layers:
   - Default
   - TransparentFX

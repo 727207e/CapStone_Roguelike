@@ -94,6 +94,9 @@ public class msPlayerControllerNew : MonoBehaviour
         PlayerDied();
         DebugPlayer();
         PlayerDash();
+
+        if (healthPoint > initHealthPoint)
+            healthPoint = initHealthPoint;
     }
 
     private void initPlayerStat()
