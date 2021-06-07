@@ -27,12 +27,12 @@ public class gateOpenControl : MonoBehaviour
             if (gameObject.name == "LGate")
             {
                 gates[0] = Instantiate(open_Gate, map.transform) as GameObject;
-                gates[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 5, 0);
+                gates[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 10, 0);
             }
             if (gameObject.name == "RGate")
             {
                 gates[1] = Instantiate(open_Gate, map.transform) as GameObject;
-                gates[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 5, 0);
+                gates[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 10, 0);
             }
             Destroy(gameObject);
         }

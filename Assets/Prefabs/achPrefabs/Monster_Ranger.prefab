@@ -162,9 +162,11 @@ GameObject:
   - component: {fileID: 196519580887840760}
   - component: {fileID: 1619369891956721906}
   - component: {fileID: 8207702568920869957}
+  - component: {fileID: -6955812987331320250}
+  - component: {fileID: 5969843086125447530}
   m_Layer: 0
-  m_Name: Covid_01
-  m_TagString: Untagged
+  m_Name: Monster_Ranger
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,7 +180,7 @@ Transform:
   m_GameObject: {fileID: 269912543949292952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 2944046859510296745}
   - {fileID: 610086177512804465}
@@ -195,7 +197,7 @@ Animator:
   m_GameObject: {fileID: 269912543949292952}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: e679c08cc485f1f47bfb4863a487cb17, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 04e93e4145d4d6a46abb471fb96262f5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -215,8 +217,52 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05024632, y: 0.0539719, z: 0.05133487}
-  m_Center: {x: -0.00012245495, y: 0.05686734, z: -0.021852663}
+  m_Size: {x: 0.06, y: 0.08, z: 0.06}
+  m_Center: {x: 0, y: 0.055, z: -0.025}
+--- !u!54 &-6955812987331320250
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269912543949292952}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 88
+  m_CollisionDetection: 0
+--- !u!114 &5969843086125447530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 269912543949292952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cf875aff48661844b66b655cc96aacc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 2270634117585076335, guid: 557ea3726ec05ae4a86cb901845f8fc3, type: 3}
+  fire_Pos: {fileID: 4813518354336598818}
+  target: {fileID: 0}
+  distance: 0
+  sight_Range: 20
+  timer: 0
+  patrol_State: 1
+  detected: 0
+  patrol_min: 5
+  patrol_max: 10
+  left_right_idle: 4
+  direction: {x: 0, y: 0, z: 0}
+  attack_Delay: 0
+  attack_Speed: 3
+  attack_state: 0
+  atk_timer: 0
 --- !u!1 &476328259900866811
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,9 +453,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6668574510993113505}
+  - component: {fileID: 7794849295717429792}
   m_Layer: 0
   m_Name: body
-  m_TagString: Untagged
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,9 +476,23 @@ Transform:
   - {fileID: 4017328013931849954}
   - {fileID: 1371122064028953216}
   - {fileID: 7084297079335232318}
+  - {fileID: 7455929537322927238}
   m_Father: {fileID: 610086177512804465}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &7794849295717429792
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225970229173503372}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.04
+  m_Center: {x: 0, y: 0.005, z: 0.002}
 --- !u!1 &1302205248118909958
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +967,7 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -917,6 +979,7 @@ SkinnedMeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1272,6 +1335,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 405735494657707916}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4813518354336598818
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7455929537322927238}
+  m_Layer: 0
+  m_Name: FirePos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7455929537322927238
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813518354336598818}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6668574510993113505}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5043927032456572960
 GameObject:

@@ -7,6 +7,10 @@ TagManager:
   - Map
   - Gate
   - EnemyAttack
+  - Coin
+  - Monster_Spawn_Point
+  - Monster
+  - Trap
   layers:
   - Default
   - TransparentFX
