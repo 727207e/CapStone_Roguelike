@@ -35,8 +35,8 @@ public class Boss_UI_HpBar : MonoBehaviour
         Hp_InImage_Rect = Hp_InImage.GetComponent<RectTransform>();
 
         //이미지 크기를 화면 크기에 맞춘다.
-        Hp_BackImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 12);
-        Hp_InImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 12);
+        Hp_BackImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 15);
+        Hp_InImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 15);
 
         //체력바
         Hp_InImage_Filled = Hp_InImage.GetComponent<Image>();
@@ -62,9 +62,8 @@ public class Boss_UI_HpBar : MonoBehaviour
     {
         Start();
         StartCoroutine(theFill());
-
-
     }
+
     IEnumerator theFill()
     {
         //Hp바 채워지는 모션
