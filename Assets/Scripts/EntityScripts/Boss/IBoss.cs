@@ -11,8 +11,6 @@ public interface IBoss
     void Attack();
 
     int BossHp { get; set; }
-    int BossAttackPower { get; set; }
-
     List<GameObject> cameraMovingWalk_Camera { get; set; }
 
 }

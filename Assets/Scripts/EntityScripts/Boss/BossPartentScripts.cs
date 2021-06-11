@@ -13,7 +13,6 @@ public class BossPartentScripts : MonoBehaviour, IBoss
 
     /// /////////////////////////////////////////////////////////Interface 정보
     public int BossHp { get; set; }
-    public int BossAttackPower { get; set; }
     public List<GameObject> cameraMovingWalk_Camera { get; set; }
 
     /// /////////////////////////////////////////////////////// 애니메이션
@@ -57,6 +56,7 @@ public class BossPartentScripts : MonoBehaviour, IBoss
 
     protected GameObject canvas_Boss;
     protected GameObject canvas_BossText;
+    protected GameObject canvas_Boss_Hp_Bar;
 
     protected GameObject target;
 
@@ -64,6 +64,8 @@ public class BossPartentScripts : MonoBehaviour, IBoss
     Vector3 velocity = Vector3.zero;
 
     public EffectController effectController_;
+
+    public GameObject hitCollider;
 
 
     //다음 패턴 변경시 체력
@@ -78,13 +80,20 @@ public class BossPartentScripts : MonoBehaviour, IBoss
 
     protected virtual void Start()
     {
+        //공격을 받지않음
+        hitCollider.SetActive(false);
 
         cameraMovingWalk_Camera = CameraMoveingPos;
         _camera = GameObject.Find("Main Camera");
         _animator = transform.Find("Body").GetComponent<Animator>();
 
         canvas_Boss = _camera.transform.Find("BossCanvas").gameObject;
-        canvas_BossText = _camera.transform.Find("BossCanvas").Find("Image").gameObject;
+        canvas_BossText = _camera.transform.Find("BossCanvas").Find("Boss_Text").gameObject;
+        canvas_Boss_Hp_Bar = _camera.transform.Find("BossCanvas").Find("Boss_HpBar").gameObject;
+
+        //hp바 와 boss 연결
+        canvas_Boss_Hp_Bar.GetComponent<Boss_UI_HpBar>().theBoss = this;
+        canvas_Boss_Hp_Bar.GetComponent<Boss_UI_HpBar>().BossHPBarSettint();
 
         target = GameObject.FindGameObjectWithTag("Player");
 
@@ -128,6 +137,9 @@ public class BossPartentScripts : MonoBehaviour, IBoss
         //케릭터 웃음
         _animator.SetBool("Laugh", true);
 
+        //Hp바 등장씬
+        canvas_Boss_Hp_Bar.SetActive(true);
+        canvas_Boss_Hp_Bar.GetComponent<Boss_UI_HpBar>().FilltheHpBar();
 
         //텍스트 등장
         StartCoroutine(TextShowCoroutine());
@@ -144,7 +156,7 @@ public class BossPartentScripts : MonoBehaviour, IBoss
         canvas_BossText.SetActive(false);
         _animator.SetBool("Laugh", false);
         _animation_Appear = true;
-
+        hitCollider.SetActive(true);
         ////////////////////////////////////////////////////////추후 변경
         ///
 
@@ -280,4 +292,5 @@ public class BossPartentScripts : MonoBehaviour, IBoss
             _animator.SetTrigger("Death");
         }
     }
+
 }

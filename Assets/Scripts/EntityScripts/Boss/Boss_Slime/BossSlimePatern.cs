@@ -23,7 +23,6 @@ public class BossSlimePatern : BossPartentScripts
     protected override void Start()
     {
         BossHp = 100;
-        BossAttackPower = 50;
         attack_Delay = 1.5f;
         move_Delay = 1f;
         the_Next_Partern_HP_Limit = 30;
