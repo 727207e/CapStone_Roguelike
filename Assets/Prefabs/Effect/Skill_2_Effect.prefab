@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 830809295177686726}
   - component: {fileID: 200023462893049796}
+  - component: {fileID: 1536502298}
   m_Layer: 0
   m_Name: Skill_2_Effect
   m_TagString: Untagged
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeTime: 3
+--- !u!65 &1536502298
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830809295177686725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.663375, y: 4.663374, z: 25.255932}
+  m_Center: {x: -0.0000019073486, y: 0.05550289, z: 13.460107}
 --- !u!1001 &1529755165791244806
 PrefabInstance:
   m_ObjectHideFlags: 0
