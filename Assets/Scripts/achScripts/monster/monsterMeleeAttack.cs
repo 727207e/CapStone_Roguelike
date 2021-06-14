@@ -18,7 +18,8 @@ public class monsterMeleeAttack : MonoBehaviour
 
     private Vector3 moveto_Position;        // 이동방향 설정용
     public Vector3 direction;              // 이동 방향으로 고개돌리기
-    
+    public Vector3 moving_direction;
+
     // 공격관련
     public float attack_Delay = 0.0f;       // 공격 딜레이
     public float attack_Speed = 3.0f;       // 공격속도(고정값)
@@ -51,26 +52,23 @@ public class monsterMeleeAttack : MonoBehaviour
         else
             timer += Time.deltaTime;
 
-        float moving_direction = 0;
-
         if (patrol_State)
         {
             animator.SetBool("Idle", false);
             animator.SetBool("Run", false);
 
             if (left_right_idle <= 1)               // 좌
-                moving_direction = Random.Range(transform.position.x - patrol_max, transform.position.x - patrol_min);
+                moving_direction = Vector3.left;
             else if (left_right_idle <= 3)          // 우
-                moving_direction = Random.Range(transform.position.x + patrol_min, transform.position.x + patrol_max);
+                moving_direction = Vector3.right;
             else                                    // 정지
             {
-                moving_direction = transform.position.x;
+                moving_direction = Vector3.zero;
                 animator.SetBool("Idle", true);
             }
 
             if (timer >= 2.0f)
             {
-                moveto_Position = new Vector3(moving_direction, transform.position.y, transform.position.z);
                 patrol_State = false;
                 timer = 0.0f;
             }
@@ -79,12 +77,12 @@ public class monsterMeleeAttack : MonoBehaviour
         {
             if (timer < 2.0f)
             {
-                if ((left_right_idle <= 1 && moveto_Position.x < transform.position.x) || (left_right_idle <= 3 && left_right_idle > 1 && moveto_Position.x > transform.position.x) || left_right_idle == 4)
-                {
-                    direction = (moveto_Position - transform.position).normalized;
-                    transform.LookAt(transform.position + direction);
-                    transform.Translate(direction * 1.5f * Time.deltaTime, Space.World);
-                }
+                //if ((left_right_idle <= 1 && moveto_Position.x < transform.position.x) || (left_right_idle <= 3 && left_right_idle > 1 && moveto_Position.x > transform.position.x) || left_right_idle == 4)
+                //{
+                    //direction = (moveto_Position - transform.position).normalized;
+                    transform.LookAt(transform.position + moving_direction);
+                    transform.Translate(moving_direction * 1.5f * Time.deltaTime, Space.World);
+                //}
             }
             else
             {
@@ -102,7 +100,11 @@ public class monsterMeleeAttack : MonoBehaviour
         // 공격 가능할때
         if (attack_state)
         {
-            animator.SetTrigger("Attack_M");
+            int rand = Random.Range(0, 2);
+            if (rand == 0)
+                animator.SetTrigger("Attack_M");
+            else
+                animator.SetTrigger("Attack_M2");
             attack_state = false;
         }
 
@@ -129,7 +131,12 @@ public class monsterMeleeAttack : MonoBehaviour
 
                 transform.LookAt(transform.position + direction);
 
-                transform.Translate(direction * 2.0f * Time.deltaTime, Space.World);
+                if (distance <= 2.0f)
+                {
+
+                }
+                else
+                    transform.Translate(direction * 2.0f * Time.deltaTime, Space.World);
             }
 
             else

@@ -26,11 +26,16 @@ public class monsterRangerAttack : MonoBehaviour
     public float attack_Speed = 3.0f;       // 공격속도(고정값)
     public int attack_state = 0;            // 공격상태 0: 공격 불가 1: 공격 가능 2: 공격 차징
     public float atk_timer = 0.0f;
+    public int clearCount = 0;
 
     // 애니메이션
     private Animator animator;              // 애니메이터 불러오기
 
+    private MRangerStatus mRangerStatus;
+
     private int stage_position;
+
+    public Vector3 moving_direction = Vector3.zero;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +46,9 @@ public class monsterRangerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        mRangerStatus = GetComponent<MRangerStatus>();
+        clearCount = mRangerStatus.clearCount;
+
         stage_position = mapscript.instance.stage_Position;
 
         target = GameObject.FindGameObjectWithTag("Player");
@@ -58,16 +66,50 @@ public class monsterRangerAttack : MonoBehaviour
 
     private void attack()
     {
-        if (attack_Delay >= attack_Speed && distance <= sight_Range)
+        int random_range = 1 + (int)(clearCount/4);
+        if (random_range > 4)
+            random_range = 4;
+        random_range = 4;
+        int index = Random.Range(0, random_range);
+        // 3방향 발사
+        if (index == 1)
         {
-            animator.SetTrigger("Attack_R");
-
+            fire_Pos.transform.Rotate(-45, 0, 0);
             Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
-
-            attack_Delay = 0.0f;
+            fire_Pos.transform.Rotate(90, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(-45, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
         }
+        // 2방향 발사
+        else if (index == 2)
+        {
+            fire_Pos.transform.Rotate(-15, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(30, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(-15, 0, 0);
+        }
+        // 5방향 발사
+        else if (index == 3)
+        {
+            fire_Pos.transform.Rotate(-45, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(90, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(-45, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(-90, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(180, 0, 0);
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            fire_Pos.transform.Rotate(-90, 0, 0);
+        }
+        // 그냥 한발쏘기
         else
-            attack_Delay += Time.deltaTime;
+        {
+            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+        }
     }
     public void patrol()
     {
@@ -76,26 +118,37 @@ public class monsterRangerAttack : MonoBehaviour
         else
             timer += Time.deltaTime;
 
-        float moving_direction = 0;
+
 
         if (patrol_State)
         {
             animator.SetBool("Idle", false);
             animator.SetBool("Run", false);
 
-            if (left_right_idle <= 1)               // 좌
-                moving_direction = Random.Range(transform.position.x - patrol_max, transform.position.x - patrol_min);
-            else if (left_right_idle <= 3)          // 우
-                moving_direction = Random.Range(transform.position.x + patrol_min, transform.position.x + patrol_max);
+            if (left_right_idle == 1)               // 상
+                moving_direction = Vector3.up;
+            else if (left_right_idle == 2)          // 하
+                moving_direction = Vector3.down;
+            else if (left_right_idle == 3)          // 좌
+                moving_direction = Vector3.left;
+            else if (left_right_idle == 4)          // 우
+                moving_direction = Vector3.right;
+            else if (left_right_idle == 5)          // 왼위
+                moving_direction = (Vector3.left + Vector3.up).normalized;
+            else if (left_right_idle == 6)          // 왼아
+                moving_direction = (Vector3.left + Vector3.down).normalized;
+            else if (left_right_idle == 7)          // 오위
+                moving_direction = (Vector3.right + Vector3.up).normalized;
+            else if (left_right_idle == 8)          // 오아
+                moving_direction = (Vector3.right + Vector3.down).normalized;
             else                                    // 정지
             {
-                moving_direction = transform.position.x;
+                moving_direction = Vector3.zero;
                 animator.SetBool("Idle", true);
             }
 
             if (timer >= 2.0f)
             {
-                moveto_Position = new Vector3(moving_direction, transform.position.y, transform.position.z);
                 patrol_State = false;
                 timer = 0.0f;
             }
@@ -104,17 +157,13 @@ public class monsterRangerAttack : MonoBehaviour
         {
             if (timer < 2.0f)
             {
-                if ((left_right_idle <= 1 && moveto_Position.x < transform.position.x) || (left_right_idle <= 3 && left_right_idle > 1 && moveto_Position.x > transform.position.x) || left_right_idle == 4)
-                {
-                    direction = (moveto_Position - transform.position).normalized;
-                    transform.LookAt(transform.position + direction);
-                    transform.Translate(direction * 1.0f * Time.deltaTime, Space.World);
-                }
+                    transform.LookAt(transform.position + moving_direction);
+                    transform.Translate(moving_direction * 2.0f * Time.deltaTime, Space.World);
             }
             else
             {
-                left_right_idle = Random.Range(0, 5);
-
+                left_right_idle = Random.Range(0, 9);
+                
                 patrol_State = true;
                 timer = 0.0f;
             }
@@ -137,7 +186,7 @@ public class monsterRangerAttack : MonoBehaviour
             atk_timer += Time.deltaTime;
             if (atk_timer >= 1.5f)
             {
-                Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+                attack();
                 atk_timer = 0.0f;
                 attack_state = 0;
             }
@@ -152,7 +201,7 @@ public class monsterRangerAttack : MonoBehaviour
                 {
                     animator.SetBool("Idle", true);
                     direction = Vector3.zero;
-                    transform.LookAt(target.transform.position);
+                    //transform.LookAt(target.transform.position);
                     transform.Translate(direction * 2.0f * Time.deltaTime, Space.World);
                 }
 
@@ -165,7 +214,12 @@ public class monsterRangerAttack : MonoBehaviour
 
                 transform.LookAt(transform.position + direction);
 
-                transform.Translate(direction * 2.0f * Time.deltaTime, Space.World);
+                if (distance <= 8.0f)
+                {
+
+                }
+                else
+                    transform.Translate(direction * 2.0f * Time.deltaTime, Space.World);
             }
 
             else
