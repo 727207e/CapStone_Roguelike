@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 803423ff7f8553b4ebf55cd0de35a7b0, type: 3}
+  m_Name: ArmorReinForce
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 21970170c989209488e6dc313ac6e4e8, type: 3}
+  stackSize: 0
+  title: "(B\uAE09)\uAC11\uC637 \uBCF4\uAC15"
+  quality: 1

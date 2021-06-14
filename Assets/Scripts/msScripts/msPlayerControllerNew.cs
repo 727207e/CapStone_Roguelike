@@ -3,10 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.UI;
 
 public class msPlayerControllerNew : MonoBehaviour
 {
-    private bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
+    private bool characterMoveMode = true; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
     private bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
 
     //캐릭터가 가지는 스탯
@@ -62,7 +63,11 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject skillThreeEffect;
     public GameObject skillFourEffect;
 
-     void Awake()
+
+
+
+
+    void Awake()
     {
         //모든 함수들 중 가장 먼저 처리되어야하는 경우 이쪽에 등록.
         //여기에 있는 코드를 Start에 넣을 경우 다른 함수가 먼저 처리되는 경우가 발생할 수 있음.
@@ -353,7 +358,7 @@ public class msPlayerControllerNew : MonoBehaviour
     {
         healthPoint -= damage;
         animator.SetTrigger("isDamage");
-        StartCoroutine(DamagedAnimationDelay());
+        StartCoroutine(DamagedAnimationDelay());        
         rbody.AddForce(new Vector3(-2.0f, 0.2f, 0) * (1000f-toughness),ForceMode.Acceleration); //넉백의 구현
     }
 
@@ -543,6 +548,7 @@ public class msPlayerControllerNew : MonoBehaviour
         yield return null;
     }
 
+
     public IEnumerator RollingAnimationDelay()
     {
         int countTime = 0;
@@ -660,5 +666,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         return time;
     }
+
+
 
 }
