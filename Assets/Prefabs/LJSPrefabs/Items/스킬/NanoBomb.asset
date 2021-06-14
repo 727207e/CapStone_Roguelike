@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3f25386ec1cc404fb9a8bb300a0d68d, type: 3}
+  m_Name: NanoBomb
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 5e059cb254e166541b904f2e0dadfb5c, type: 3}
+  stackSize: 0
+  title: "\uB098\uB178\uD3ED\uD0C4"
+  quality: 1

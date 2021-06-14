@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92cd523a15177fc469168e88cca076ee, type: 3}
+  m_Name: SelfGeneration
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: e819db372095d3a4daa236d849860314, type: 3}
+  stackSize: 0
+  title: "(S\uAE09)\uC790\uAC00\uBC1C\uC804"
+  quality: 3
