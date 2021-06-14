@@ -1,0 +1,217 @@
+fileFormatVersion: 2
+guid: f325cae1d5c22914491d473dceb2a3ee
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B_fire01
+    100002: B_fire02
+    100004: B_fire03
+    100006: B_fire04
+    100008: body
+    100010: C_fire
+    100012: //RootNode
+    100014: F_fire01
+    100016: F_fire02
+    100018: F_fire03
+    100020: F_fire04
+    100022: F_fire05
+    100024: fire_head
+    100026: head
+    100028: jaw
+    100030: L_a_fire01
+    100032: L_a_fire02
+    100034: L_a_fire03
+    100036: L_a_fire04
+    100038: L_arm
+    100040: L_b_fire01
+    100042: L_b_fire02
+    100044: L_b_fire03
+    100046: L_b_fire04
+    100048: L_c_fire01
+    100050: L_c_fire02
+    100052: L_c_fire03
+    100054: L_c_fire04
+    100056: L_elbow
+    100058: L_hand
+    100060: LB_foot
+    100062: LB_tooth01
+    100064: LB_tooth02
+    100066: LB_tooth03
+    100068: LF_foot
+    100070: LU_tooth01
+    100072: LU_tooth02
+    100074: LU_tooth03
+    100076: R_a_fire01
+    100078: R_a_fire02
+    100080: R_a_fire03
+    100082: R_a_fire04
+    100084: R_arm
+    100086: R_b_fire01
+    100088: R_b_fire02
+    100090: R_b_fire03
+    100092: R_b_fire04
+    100094: R_c_fire01
+    100096: R_c_fire02
+    100098: R_c_fire03
+    100100: R_c_fire04
+    100102: R_elbow
+    100104: R_hand
+    100106: RB_foot
+    100108: RB_tooth01
+    100110: RB_tooth02
+    100112: RB_tooth03
+    100114: RF_foot
+    100116: root_base
+    100118: RU_tooth01
+    100120: RU_tooth02
+    100122: RU_tooth03
+    400000: B_fire01
+    400002: B_fire02
+    400004: B_fire03
+    400006: B_fire04
+    400008: body
+    400010: C_fire
+    400012: //RootNode
+    400014: F_fire01
+    400016: F_fire02
+    400018: F_fire03
+    400020: F_fire04
+    400022: F_fire05
+    400024: fire_head
+    400026: head
+    400028: jaw
+    400030: L_a_fire01
+    400032: L_a_fire02
+    400034: L_a_fire03
+    400036: L_a_fire04
+    400038: L_arm
+    400040: L_b_fire01
+    400042: L_b_fire02
+    400044: L_b_fire03
+    400046: L_b_fire04
+    400048: L_c_fire01
+    400050: L_c_fire02
+    400052: L_c_fire03
+    400054: L_c_fire04
+    400056: L_elbow
+    400058: L_hand
+    400060: LB_foot
+    400062: LB_tooth01
+    400064: LB_tooth02
+    400066: LB_tooth03
+    400068: LF_foot
+    400070: LU_tooth01
+    400072: LU_tooth02
+    400074: LU_tooth03
+    400076: R_a_fire01
+    400078: R_a_fire02
+    400080: R_a_fire03
+    400082: R_a_fire04
+    400084: R_arm
+    400086: R_b_fire01
+    400088: R_b_fire02
+    400090: R_b_fire03
+    400092: R_b_fire04
+    400094: R_c_fire01
+    400096: R_c_fire02
+    400098: R_c_fire03
+    400100: R_c_fire04
+    400102: R_elbow
+    400104: R_hand
+    400106: RB_foot
+    400108: RB_tooth01
+    400110: RB_tooth02
+    400112: RB_tooth03
+    400114: RF_foot
+    400116: root_base
+    400118: RU_tooth01
+    400120: RU_tooth02
+    400122: RU_tooth03
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
