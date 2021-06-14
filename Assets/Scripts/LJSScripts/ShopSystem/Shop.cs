@@ -31,7 +31,7 @@ public class Shop : MonoBehaviour
     public void Start()
     {
         //게임을 시작하면 Data를 Load 합니다.
-        DataManager.Instance.LoadData();
+       //  DataManager.Instance.LoadData();
 
         //로드 이후 UI창을 업데이트합니다.
         UpdateUi();
@@ -72,9 +72,9 @@ public class Shop : MonoBehaviour
         //enterPlayer.Coin -= price;
 
         ///////////////////////////////////////////////////////////////////////////////////서버에서 돈 관리
-        DataManager.Instance.data.Money -= price;
+        // DataManager.Instance.data.Money -= price;
 
-        DataManager.Instance.GameSave(); // 저장
+        // DataManager.Instance.GameSave(); // 저장
 
         UpdateUi(); //Ui 갱신
 

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 629d2608ab2e0ec45b1ffa5884ac6fe0, type: 3}
+  m_Name: Flame
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 4c1082fef8088de4cae9c218f921339f, type: 3}
+  stackSize: 0
+  title: "\uD654\uC5FC\uC18C\uB3C5"
+  quality: 4

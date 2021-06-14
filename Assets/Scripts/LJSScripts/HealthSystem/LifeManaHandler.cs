@@ -12,15 +12,16 @@ public class LifeManaHandler : MonoBehaviour
     public Image manaBar;
     public Text lifeText;
     public Text manaText;
-    
 
+    public RectTransform uiGroup;
+    public Image bloodScreen;
 
+    bool activebloodScreen = false;
 
     public float calculateHealthPoint;
 
     void Start()
     {
-
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -36,16 +37,18 @@ public class LifeManaHandler : MonoBehaviour
 
     void Update()
     {
-        
+
+      
 
         calculateHealthPoint = msPCN.healthPoint / msPCN.initHealthPoint;
         lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateHealthPoint, Time.deltaTime);
         lifeText.text = "" + (int)msPCN.healthPoint;
 
+
         if (msPCN.abilityPoint < msPCN.initAbilityPoint)
         {
             manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            msPCN.abilityPoint = Mathf.MoveTowards(msPCN.abilityPoint / msPCN.abilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
+            msPCN.abilityPoint = Mathf.MoveTowards(msPCN.abilityPoint / msPCN.initAbilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
         }
 
         if (msPCN.abilityPoint < 0)
@@ -53,11 +56,16 @@ public class LifeManaHandler : MonoBehaviour
             msPCN.abilityPoint = 0;
         }
 
-       // manaText.text = "" + Mathf.FloorToInt(msPCN.AbilityPoint);
+        manaText.text = "" + Mathf.FloorToInt(msPCN.abilityPoint);
     }
 
     public void Damage(float damage)
     {
+
+        if (msPCN.healthPoint < msPCN.initHealthPoint)
+        {
+            StartCoroutine(ShowBloodScreen());
+        }
         msPCN.healthPoint -= damage;
         Debug.Log("현재 남은 체력 " + msPCN.healthPoint);
     }
@@ -76,5 +84,13 @@ public class LifeManaHandler : MonoBehaviour
         Debug.Log("현재 남은 체력 " + msPCN.healthPoint);
     }
 
+    IEnumerator ShowBloodScreen()
+    {
+        uiGroup.anchoredPosition = Vector3.zero;
+        bloodScreen.color = new Color(1, 0, 0, UnityEngine.Random.Range(0.2f, 0.3f));
+        yield return new WaitForSeconds(0.1f);
+        bloodScreen.color = Color.clear;
+        uiGroup.anchoredPosition = Vector3.down * 10000;
+    }
 }
 
