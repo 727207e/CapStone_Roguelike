@@ -1,11 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class InventoryScript : MonoBehaviour
 {
 
+    /// <summary>
+    /// ///////////////////////////////////////////// <<<<<<<<<<<<<<<<<<중요>>>>>>>>>>>>>>>
+    /// </summary>
+    //씬이동해도 가방에 있는 아이템들의 정보가 사라지는지 확인해볼것
+
+    //////////////////////////////////////////////////////
+
     private static InventoryScript instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+
+            //씬 전환이 되어도 파괴되지 않는다.
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            //씬 전환이후 그 씬에도 gamemanager가 있을수 있음.
+            //따라서 새로운 씬의 gamemanager 파괴
+            Destroy(this.gameObject);
+
+        }
+    }
+
     public static InventoryScript MyInstance
     {
         get
@@ -13,6 +40,8 @@ public class InventoryScript : MonoBehaviour
             if (instance == null)
             {
                 instance = FindObjectOfType<InventoryScript>();
+
+
             }
             return instance;
         }
@@ -40,7 +69,7 @@ public class InventoryScript : MonoBehaviour
 
     // 테스트를 위한 용도
     [SerializeField]
-    private Items[] items;
+    public List<Items> item;
 
 
     private void Update()
@@ -49,12 +78,12 @@ public class InventoryScript : MonoBehaviour
         // I 키를 누르면 가방이 BagButton에 추가됨.
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Bag bag = (Bag)Instantiate(items[0]);
+            Bag bag = (Bag)Instantiate(item[0]);
             bag.Initalize(20);
             bag.Use();
         }
 
-
+        /*
         // K 키를 누르면 가방에 가방아이템을 넣는다. 
        // if (Input.GetKeyDown(KeyCode.K))
         //{
@@ -262,7 +291,7 @@ public class InventoryScript : MonoBehaviour
             AddItem(gloves);
         }
 
-
+        */
     }
 
 
@@ -297,5 +326,24 @@ public class InventoryScript : MonoBehaviour
 
     }
 
+    void OnEnable()
+    {
+        // 씬 매니저의 sceneLoaded에 체인을 건다.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
 
+    // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        //씬 이름 체크(던전일 때는 유물 로드)
+        if (scene.name == "Dungeon")
+        {
+
+        }
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 }

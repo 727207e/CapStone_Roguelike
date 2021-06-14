@@ -19,6 +19,62 @@ public abstract class Items : ScriptableObject, IDescribable
     [SerializeField]
     private Quality quality;
 
+    [SerializeField]
+    public Sprite cardImage;
+
+    [SerializeField]
+    public int weight;
+
+    protected msOneHandGun HandGun;
+    protected msMachineGun MachinGun;
+    protected msCannon Cannon;
+    protected msPlayerControllerNew Player;
+
+    private int HandGun_Ammo;
+    private float HandGun_ReloadTime;
+
+    private int MachinGun_Ammo;
+    private float MachinGun_ReloadTime;
+
+    private int Cannon_Ammo;
+    private float Cannon_ReloadTime;
+    // Start is called before the first frame update
+    public void Start()
+    {
+        HandGun = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+            transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Pistol").
+            GetComponent<msOneHandGun>();
+
+        MachinGun = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+             transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Rifle").
+             GetComponent<msMachineGun>();
+
+        Cannon = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+            transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Cannon").
+            GetComponent<msCannon>();
+
+        Player = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+            GetComponent<msPlayerControllerNew>();
+
+
+        HandGun_Ammo = HandGun.fullAmmo;
+        HandGun_ReloadTime = HandGun.reloadTime;
+
+
+        MachinGun_Ammo = MachinGun.fullAmmo;
+        MachinGun_ReloadTime = MachinGun.reloadTime;
+
+
+        Cannon_Ammo = Cannon.fullAmmo;
+        Cannon_ReloadTime = Cannon.reloadTime;
+
+        if(HandGun == null)
+        {
+            Debug.Log("the target is null");
+        }
+    }
+
+
     public Sprite MyIcon
     {
         get
@@ -76,5 +132,27 @@ public abstract class Items : ScriptableObject, IDescribable
 
         return string.Format("<color={0}>{1}</color>", color, title);
     }
+
+    public virtual void theItemsEffect()
+    {
+
+    }
+
+    protected void HandControllAmmo(int num)
+    {
+        HandGun_Ammo += num;
+    }
+
+    protected void HandControllreloadTime(float num)
+    {
+        HandGun_ReloadTime += num;
+    }
+
+    protected void PlayerControllHp(int num)
+    {
+        Player.initHealthPoint += num;
+    }
+
+
 
 }

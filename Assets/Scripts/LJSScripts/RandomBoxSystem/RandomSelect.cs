@@ -23,6 +23,16 @@ public class RandomSelect : MonoBehaviour
     public Transform parent;
     public GameObject cardprefab;
 
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            GameObject backImage = new GameObject();
+        }
+    }
+
+
     public void ResultSelect()
     {
         for (int i = 0; i < 3; i++)
