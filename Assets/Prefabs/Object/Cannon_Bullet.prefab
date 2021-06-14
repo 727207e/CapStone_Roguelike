@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4723478486282601076}
   - component: {fileID: 4723478486282601079}
   - component: {fileID: 4723478486282601075}
-  - component: {fileID: -1480659705278043826}
+  - component: {fileID: 579328774753088099}
   m_Layer: 0
   m_Name: Cannon_Bullet
   m_TagString: PlayerAttack
@@ -111,7 +111,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-1480659705278043826
+--- !u!114 &579328774753088099
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,8 +120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4723478486282601078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fefccfaaa9a21747a5a9e57e2ba2633, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a5a2052d2742ce4c8b9069f18342af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 20
-  life: 1
+  bulletSpeed: 3000
+  bulletDamage: 0
+  splashEffect: {fileID: 3836532007299375241, guid: c82378a805368674dbc73a9ad35dd7db,
+    type: 3}

@@ -10,9 +10,9 @@ public class msPlayerControllerNew : MonoBehaviour
     private bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
 
     //캐릭터가 가지는 스탯
-    public float walkSpeed = 2.5f; //이동속도 기본 10.0f
-    public float jumpHeight = 5f; //점프 높이 기본 10.0f
-    public float acceleration = 1.2f; //가속력 기본 1.2f
+    public float walkSpeed = 10.0f; //이동속도 기본 10.0f
+    public float jumpHeight = 10.0f; //점프 높이 기본 10.0f
+    public float acceleration = 1.2f; //가속력 기본 1.2f --사용하지 않음--
     public float dashAcceleration = 500f;
     public float toughness = 0f; //강인함. 넉백에 관여함. 수치가 높을 수록 넉백이 줄어든다.
 
@@ -42,8 +42,6 @@ public class msPlayerControllerNew : MonoBehaviour
     public float groundCheckRadius = 0.2f;
     private bool isGrounded;
     public LayerMask groundMask;
-    private bool isRolling;
-    private bool isDamaged;
 
     //마우스와 에임 일체화과 관련된 속성
     public Transform targetTransform;
@@ -54,6 +52,8 @@ public class msPlayerControllerNew : MonoBehaviour
     private Rigidbody rbody;
     private Camera mainCamera;
     private RigBuilder rb;
+    private bool isRolling;
+    private bool isDamaged;
 
     //스킬 UI와의 연동을 위함
     public SkillAbility sklUI;
@@ -64,18 +64,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
      void Awake()
     {
-        //모든 함수들 중 가장 먼저 처리되어야하는 경우 이쪽에 등록.
-        //여기에 있는 코드를 Start에 넣을 경우 다른 함수가 먼저 처리되는 경우가 발생할 수 있음.
 
-        /*pistol.SetActive(true);
-        rifle.SetActive(false);
-        cannon.SetActive(false);
-        pistolIk.weight = 1.0f;
-        rifleIk.weight = 0.0f;
-        cannonIk.weight = 0.0f;
-
-        currentWeapon = 1;
-        Debug.Log(currentWeapon);*/
     }
 
     void Start()
@@ -102,11 +91,20 @@ public class msPlayerControllerNew : MonoBehaviour
         //스킬 UI는 하나밖에 없다고 생각해서 Find를 사용함.
         sklUI = GameObject.Find("SkillUI").GetComponent<SkillAbility>();
 
+        animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 0);
+        animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 1);
     }
 
     // Update is called once per frame
     void Update()
     {
+        DebugPlayer(); //디버깅
+
+        if (characterMoveMode == true)
+        {
+            return;
+        }
+
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -119,19 +117,43 @@ public class msPlayerControllerNew : MonoBehaviour
         //점프 기능을 수행
         if (Input.GetButtonDown("Jump") && isGrounded && isRolling==false && isDamaged==false)
         {
-            rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
+            //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
         }
 
         PlayerDied(); //사망처리
-        DebugPlayer(); //디버깅
-        PlayerDash(); //대시
-        
         WeaponControl(); //무기관리자
+    }
+
+    private void FixedUpdate()
+    {
+        if (characterMoveMode == true)
+        {
+            Player3DMove();
+            return;
+        }
+
+        //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
+        PlayerMove();
+        PlayerDash(); //대시
+
+        //플레이어 회전
+        rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
+
+        //그라운드 체크
+        isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
+        animator.SetBool("isGrounded", isGrounded);
+
+        SkillAbility(); //스킬체크
     }
 
     public void WeaponControl()
     {
+        if (isRolling == true || isDamaged == true)
+        {
+            return;
+        }
+
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currentWeapon--;
@@ -261,25 +283,14 @@ public class msPlayerControllerNew : MonoBehaviour
     //이동함수
     private void PlayerMove()
     {
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        Vector3 velocity = new Vector3(0, 0, 0);
 
         if (isRolling == false && isDamaged==false)
         {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-            Vector3 velocity = new Vector3(0, 0, 0);
-
-            if (characterMoveMode == true)//true면 z축 이동이 가능해진다.
-            {
-                Vector3 moveHorizontal = Vector3.right * h;
-                Vector3 moveVertical = Vector3.forward * v;
-                velocity = (moveHorizontal + moveVertical).normalized;
-                transform.LookAt(transform.position + velocity);
-            }
-            else
-            {
-                Vector3 moveHorizontal = Vector3.right * h;
-                velocity = (moveHorizontal).normalized;
-            }
+            Vector3 moveHorizontal = Vector3.right * h;
+            velocity = (moveHorizontal).normalized;
 
             transform.Translate(velocity * walkSpeed * Time.deltaTime, Space.World);
             //m_rigidBody.MovePosition(transform.position + velocity * m_moveSpeed * Time.deltaTime);
@@ -292,20 +303,50 @@ public class msPlayerControllerNew : MonoBehaviour
         
     }
 
-    //움직임, 회전, 그라운드 체크를 수행함.
-    private void FixedUpdate()
+    public void Player3DMove()
     {
-        //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
-        PlayerMove();
+        float m_moveSpeed = 10.0f;
+        rbody.constraints = RigidbodyConstraints.None;
 
-        //플레이어 회전
-        rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+        Vector3 velocity = new Vector3(0, 0, 0);
 
-        //그라운드 체크
-        isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
-        animator.SetBool("isGrounded", isGrounded);
+        pistol.SetActive(false);
+        rifle.SetActive(false);
+        cannon.SetActive(false);
 
-        SkillAbility(); //스킬체크
+        rb.enabled = false;
+
+        animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 1);
+        animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 0);
+
+        Vector3 moveHorizontal = Vector3.right * h;
+        Vector3 moveVertical = Vector3.forward * v;
+        velocity = (moveHorizontal + moveVertical).normalized;
+        transform.LookAt(transform.position + velocity);
+
+        transform.Translate(velocity * m_moveSpeed * Time.deltaTime, Space.World);
+
+        animator.SetFloat("Speed", velocity.magnitude);
+    }
+
+    public void WhenChangedAt3Dto2DInit()
+    {
+        animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 0);
+        animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 1);
+
+        pistol.SetActive(true);
+        rifle.SetActive(false);
+        cannon.SetActive(false);
+        pistolIk.weight = 1.0f;
+        rifleIk.weight = 0.0f;
+        cannonIk.weight = 0.0f;
+
+        currentWeapon = 1;
+        Debug.Log(currentWeapon);
+
+        rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ | RigidbodyConstraints.FreezePositionZ;
     }
 
     private void PlayerDied()
@@ -338,6 +379,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 characterMoveMode = false;
                 Debug.Log("디버깅 3 : 3D모드 OFF");
+                WhenChangedAt3Dto2DInit();
             }
             else
             {
@@ -402,7 +444,13 @@ public class msPlayerControllerNew : MonoBehaviour
                 sklUI.isCooldown3 = true;
                 sklUI.abilityImage3.fillAmount = 1;
                 StartCoroutine(SkillAnimationDelay(3, 10));
-                Instantiate(skillThreeEffect, transform.position, transform.rotation);
+                //Instantiate(skillThreeEffect, transform.position, transform.rotation);
+                var go = Instantiate(skillThreeEffect);
+                go.transform.position = transform.position;
+                go.transform.rotation = transform.rotation;
+                var effect = go.GetComponent<msSkill_3_Collision_Effect>();
+                effect.SetPlayerPosition(transform.position);
+                effect.ActiveEffect();
                 Debug.Log("3번 스킬 발동");
             }
             else
@@ -430,10 +478,10 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public void PlayerDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isRolling ==false)
         {
             StartCoroutine(RollingAnimationDelay());
-            rbody.AddForce(new Vector3(1 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0, 0) * dashAcceleration, ForceMode.Acceleration);
+            rbody.AddForce(new Vector3(Mathf.Sign(targetTransform.position.x - transform.position.x) * dashAcceleration * Time.deltaTime, 0, 0), ForceMode.Acceleration);
         }
     }
 
@@ -550,7 +598,7 @@ public class msPlayerControllerNew : MonoBehaviour
         animator.SetTrigger("isRolling");
         isRolling = true;
         rb.enabled = false;
-        //this.gameObject.layer = 12;
+        this.gameObject.layer = 12;
         //StartCoroutine("InvincibleTime");
 
 
@@ -589,7 +637,7 @@ public class msPlayerControllerNew : MonoBehaviour
         {
             cannon.SetActive(true);
         }
-        //this.gameObject.layer = 8;
+        this.gameObject.layer = 8;
 
 
         yield return null;
@@ -659,6 +707,19 @@ public class msPlayerControllerNew : MonoBehaviour
         }
 
         return time;
+    }
+
+    public void SetDimensionMod(int x)
+    {
+        if (x == 1)
+        {
+            characterMoveMode = false;
+            WhenChangedAt3Dto2DInit();
+        }
+        else if (x == 2)
+        {
+            characterMoveMode = true;
+        }
     }
 
 }
