@@ -23,12 +23,17 @@ public class msBullet1 : MonoBehaviour
     {
         Debug.Log(gameObject.transform);
         GetComponent<Rigidbody>().AddForce(gameObject.transform.forward * bulletSpeed);
-        Debug.Log("Bullet Fired with" + bulletDamage + " Damage");
+        //Debug.Log("Bullet Fired with" + bulletDamage + " Damage");
     }
 
     public void SetBulletDamage(int x)
     {
         bulletDamage = x;
-        Debug.Log("Set Bullet Damage " + bulletDamage);
+        //Debug.Log("Set Bullet Damage " + bulletDamage);
+    }
+
+    public int GetBulletDamage()
+    {
+        return bulletDamage;
     }
 }

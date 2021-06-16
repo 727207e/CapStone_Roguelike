@@ -8,6 +8,7 @@ public class msSkill_3_Collision_Effect : MonoBehaviour
     //public msPlayerControllerNew msPCN;
     public float effect_3_ReflectForce = 1000f;
     public Vector3 tempPlayerPosition;
+    public int skillDamage = 0;
     //public GameObject effectSelf;
 
     // Start is called before the first frame update
@@ -31,24 +32,24 @@ public class msSkill_3_Collision_Effect : MonoBehaviour
         
     }
 
-    public  void OnTriggerEnter(Collider collision)
+    public void OnTriggerEnter(Collider collision)
     {
        // Vector3 tempPlayerPos;
         Vector3 tempMonsterPos;
 
         if (collision.gameObject.tag == "Monster")
         {
-            Debug.Log("Effect 3 Activate Collider with Monster Tag");
-            Debug.Log(tempPlayerPosition);
+            //Debug.Log("Effect 3 Activate Collider with Monster Tag");
+            //Debug.Log(tempPlayerPosition);
             tempMonsterPos = collision.gameObject.GetComponent<Transform>().position;
-            Debug.Log(tempMonsterPos);
+            //Debug.Log(tempMonsterPos);
 
             Vector3 tempVectorDirection = tempMonsterPos - tempPlayerPosition;
             tempVectorDirection = tempVectorDirection.normalized;
-            Debug.Log(tempVectorDirection);
+            //Debug.Log(tempVectorDirection);
 
             collision.gameObject.GetComponent<Rigidbody>().AddForce(tempVectorDirection * effect_3_ReflectForce);
-            Debug.Log("Add Forced");
+            //Debug.Log("Add Forced");
 
 
         }
@@ -57,6 +58,11 @@ public class msSkill_3_Collision_Effect : MonoBehaviour
     public void SetPlayerPosition(Vector3 position)
     {
         tempPlayerPosition = position;
+    }
+
+    public void SetSkillDamage(int x)
+    {
+        skillDamage = x;
     }
 
     public void ActiveEffect()

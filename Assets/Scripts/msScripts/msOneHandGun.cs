@@ -68,7 +68,7 @@ public class msOneHandGun : MonoBehaviour
                         bullet.SetBulletDamage(pistolDamage);
                         bullet.FireBullet();
                         //Instantiate(bulletPrefab, muzzleTransform.position, muzzleTransform.rotation);
-                        //muzzleFlash.Emit(1);
+                        muzzleFlash.Emit(1);
                         currentAmmo--;
                         Debug.Log("남은 장탄량 : " + currentAmmo);
                     }

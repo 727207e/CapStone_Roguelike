@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 830809295177686726}
   - component: {fileID: 200023462893049796}
   - component: {fileID: 1536502298}
+  - component: {fileID: 1124646173}
   m_Layer: 0
   m_Name: Skill_2_Effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &830809295177686726
 Transform:
   m_ObjectHideFlags: 0
@@ -61,6 +62,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.663375, y: 4.663374, z: 25.255932}
   m_Center: {x: -0.0000019073486, y: 0.05550289, z: 13.460107}
+--- !u!114 &1124646173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 830809295177686725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e29ef892cef6247aa1a25586ebd9ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillDamage: 0
 --- !u!1001 &1529755165791244806
 PrefabInstance:
   m_ObjectHideFlags: 0
