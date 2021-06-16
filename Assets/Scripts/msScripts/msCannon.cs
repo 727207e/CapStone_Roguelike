@@ -6,7 +6,8 @@ public class msCannon : MonoBehaviour
 {
     public GameObject bulletPrefab; //사용하는 총알 이후 총이랑 따로 분리해야함.
     public Transform muzzleTransform; //총알이 발사되는 곳
-    public ParticleSystem muzzleFlash;
+    //public ParticleSystem muzzleFlash;
+    //public ParticleSystem muzzleFlash2;
 
     public int fullAmmo = 5;
     public int currentAmmo;
@@ -66,6 +67,7 @@ public class msCannon : MonoBehaviour
                         bullet.FireBullet();
                         //Instantiate(bulletPrefab, muzzleTransform.position, muzzleTransform.rotation);
                         //muzzleFlash.Emit(1);
+                        //muzzleFlash2.Emit(1);
                         currentAmmo--;
                         Debug.Log("남은 장탄량 : " + currentAmmo);
                     }

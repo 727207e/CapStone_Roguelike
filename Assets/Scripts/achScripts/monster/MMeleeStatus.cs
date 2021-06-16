@@ -84,11 +84,19 @@ public class MMeleeStatus : MonoBehaviour
         }
     }
 
+    public void MonsterDamaged(int x)
+    {
+        curHP -= x;
+        Debug.Log("데미지를 "+ x + "입었습니다.");
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Bullet")
         {
             // 체력 감소
+            curHP -= other.gameObject.GetComponent<msBullet1>().bulletDamage;
+            Debug.Log("데미지를 입었습니다.");
         }
 
         if (other.tag == "skill_1")

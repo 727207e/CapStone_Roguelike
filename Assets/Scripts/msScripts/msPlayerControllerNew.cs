@@ -22,6 +22,7 @@ public class msPlayerControllerNew : MonoBehaviour
     public float abilityPoint; //위와 동일.
 
     public float invincibleTime = 1.0f; //무적 유지 시간.
+    public GameObject invincibleEffect; //무적 효과
 
     //IK 조작 관련
     public UnityEngine.Animations.Rigging.Rig pistolIk;
@@ -54,6 +55,7 @@ public class msPlayerControllerNew : MonoBehaviour
     private RigBuilder rb;
     private bool isRolling;
     private bool isDamaged;
+    private bool isDead;
 
     //스킬 UI와의 연동을 위함
     public SkillAbility sklUI;
@@ -61,6 +63,14 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject skillTwoEffect;
     public GameObject skillThreeEffect;
     public GameObject skillFourEffect;
+    public float skill_1_Energe = 30;
+    public float skill_2_Energe = 50;
+    public float skill_3_Energe = 20;
+    public float skill_4_Energe = 0;
+    public int skill_1_Damage = 40;
+    public int skill_2_Damage = 100;
+    public int skill_3_Damage = 20;
+    public int skill_4_Heal;
 
      void Awake()
     {
@@ -69,6 +79,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
     void Start()
     {
+        invincibleEffect.SetActive(false);
         rb = GetComponent<RigBuilder>();
 
         pistol.SetActive(true);
@@ -100,6 +111,11 @@ public class msPlayerControllerNew : MonoBehaviour
     {
         DebugPlayer(); //디버깅
 
+        if (isDead == true)
+        {
+            return;
+        }
+
         if (characterMoveMode == true)
         {
             return;
@@ -127,6 +143,11 @@ public class msPlayerControllerNew : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isDead == true)
+        {
+            return;
+        }
+
         if (characterMoveMode == true)
         {
             Player3DMove();
@@ -333,8 +354,10 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public void WhenChangedAt3Dto2DInit()
     {
+        rb.enabled = true;
         animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 0);
         animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 1);
+        this.gameObject.layer = 8;
 
         pistol.SetActive(true);
         rifle.SetActive(false);
@@ -356,9 +379,10 @@ public class msPlayerControllerNew : MonoBehaviour
         if (healthPoint <= 0 || rbody.velocity.y < -100)
         {
             healthPoint = 0;
-            animator.SetTrigger("isDead");
-            Destroy(gameObject);
             Debug.Log("플레이어가 사망하였습니다.");
+            animator.SetTrigger("isDead");
+            StartCoroutine(PlayerDeadDelay());
+            
         }
     }
 
@@ -412,8 +436,15 @@ public class msPlayerControllerNew : MonoBehaviour
                 sklUI.isCooldown = true;
                 sklUI.abilityImage1.fillAmount = 1;
                 StartCoroutine(SkillAnimationDelay(1, 10f));
-                Instantiate(skillOneEffect, skillOneTransform, transform.rotation);
+                var go = Instantiate(skillOneEffect);
+                go.transform.position = skillOneTransform;
+                go.transform.rotation = transform.rotation;
+                var effect = go.GetComponent<msSkill_1_Collision_Effect>();
+                effect.SetSkillDamage(skill_1_Damage);
+                effect.ActiveEffect();
                 Debug.Log("1번 스킬 발동");
+                abilityPoint -= skill_1_Energe;
+
             }
             else
             {
@@ -428,8 +459,14 @@ public class msPlayerControllerNew : MonoBehaviour
                 sklUI.isCooldown2 = true;
                 sklUI.abilityImage2.fillAmount = 1;
                 StartCoroutine(SkillAnimationDelay(2, 10));
-                Instantiate(skillTwoEffect, skillTwoTransform, transform.rotation);
+                var go = Instantiate(skillTwoEffect);
+                go.transform.position = skillTwoTransform;
+                go.transform.rotation = transform.rotation;
+                var effect = go.GetComponent<msSkill_2_Collision_Effect>();
+                effect.SetSkillDamage(skill_2_Damage);
+                effect.ActiveEffect();
                 Debug.Log("2번 스킬 발동");
+                abilityPoint -= skill_2_Energe;
             }
             else
             {
@@ -450,8 +487,10 @@ public class msPlayerControllerNew : MonoBehaviour
                 go.transform.rotation = transform.rotation;
                 var effect = go.GetComponent<msSkill_3_Collision_Effect>();
                 effect.SetPlayerPosition(transform.position);
+                effect.SetSkillDamage(20);
                 effect.ActiveEffect();
                 Debug.Log("3번 스킬 발동");
+                abilityPoint -= skill_3_Energe;
             }
             else
             {
@@ -467,6 +506,12 @@ public class msPlayerControllerNew : MonoBehaviour
                 sklUI.abilityImage4.fillAmount = 1;
                 StartCoroutine(SkillAnimationDelay(4, 10));
                 Instantiate(skillFourEffect, skillFourTransform, transform.rotation);
+                float tempHalfInitHealth = initHealthPoint * 0.5f;
+                healthPoint += tempHalfInitHealth;
+                if (healthPoint > initHealthPoint)
+                {
+                    healthPoint = initHealthPoint;
+                }
                 Debug.Log("4번 스킬 발동");
             }
             else
@@ -492,11 +537,21 @@ public class msPlayerControllerNew : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyAttack"))
         {
             //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
-            Debug.Log("공격받았습니다.");
+            Debug.Log("적 투사체에 의해 공격받았습니다.");
             PlayerDamaged(100); //플레이어 타격 계산 시행
             Destroy(other.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)
             StartCoroutine("InvincibleTime"); //무적시간 실행
         }
+
+        /*if (other.gameObject.CompareTag("Monster"))
+        {
+            //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
+            Debug.Log("적의 물리적 충돌에 의해 공격받았습니다.");
+            int tempDamage = other.gameObject.GetComponent<MMeleeStatus>().Damage;
+            PlayerDamaged(tempDamage); //플레이어 타격 계산 시행
+            Destroy(other.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)
+            StartCoroutine("InvincibleTime"); //무적시간 실행
+        }*/
 
         if (other.gameObject.CompareTag("BossAtt"))
         {
@@ -515,32 +570,33 @@ public class msPlayerControllerNew : MonoBehaviour
 
     }
 
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Monster"))
+        {
+            //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
+            Debug.Log("적의 물리적 충돌에 의해 공격받았습니다.");
+            int tempDamage = collision.gameObject.GetComponent<MMeleeStatus>().Damage;
+            PlayerDamaged(tempDamage); //플레이어 타격 계산 시행
+            Debug.Log(tempDamage + "의 데미지를 받았습니다.");
+            //Destroy(collision.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)
+            StartCoroutine("InvincibleTime"); //무적시간 실행
+        }
+    }
+
     public  IEnumerator InvincibleTime() {
         //int countTime = 0;
 
         Debug.Log("무적 시간 시작");
         this.gameObject.layer = 12; //레이어를 PlayerDamaged로 전환하여 Enemy와의 충돌 판정을 무시함.
-
-        /* 깜빡거림 구현용
-        while (countTime < 10)
-        {
-            if (countTime % 2 == 0)
-            {
-
-            }
-            else
-            {
-
-            }
-
-            countTime++;
-        }*/
+        invincibleEffect.SetActive(true);
 
         yield return new WaitForSeconds(invincibleTime);
 
 
         Debug.Log("무적 시간 종료");
         this.gameObject.layer = 8;
+        invincibleEffect.SetActive(false);
         //무적시간 종료
 
         yield return null;
@@ -689,6 +745,33 @@ public class msPlayerControllerNew : MonoBehaviour
         }
         this.gameObject.layer = 8;
 
+
+        yield return null;
+    }
+
+    public IEnumerator PlayerDeadDelay()
+    {
+        animator.SetTrigger("isDamaged");
+        isDead = true;
+        rb.enabled = false;
+        this.gameObject.layer = 12;
+
+        if (currentWeapon == 1)
+        {
+            pistol.SetActive(false);
+        }
+        else if (currentWeapon == 2)
+        {
+            rifle.SetActive(false);
+        }
+        else
+        {
+            cannon.SetActive(false);
+        }
+
+        yield return new WaitForSeconds(1.0f);
+
+        Destroy(gameObject);
 
         yield return null;
     }
