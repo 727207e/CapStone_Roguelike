@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: -6594310827753004343}
   m_Layer: 0
   m_Name: Monster_Type_R
-  m_TagString: Untagged
+  m_TagString: PlayerAttack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,8 +140,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06a79e9d67a2ae142bf79aa710442492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
+  maxHP: 100
+  curHP: 100
   coin: {fileID: 1435128896743559756, guid: dd847020969ab9343bfee55542042c84, type: 3}
+  Damage: 50
+  clearCount: 0
+  hpBar: {fileID: 0}
 --- !u!114 &8013688767654836401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,11 +175,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf875aff48661844b66b655cc96aacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   bullet: {fileID: 2270634117585076335, guid: 557ea3726ec05ae4a86cb901845f8fc3, type: 3}
   fire_Pos: {fileID: 1970596058309070014}
-  dis: 0
+  target: {fileID: 0}
+  distance: 0
+  sight_Range: 20
+  timer: 0
+  patrol_State: 1
+  detected: 0
+  patrol_min: 5
+  patrol_max: 10
+  left_right_idle: 4
+  direction: {x: 0, y: 0, z: 0}
   attack_Delay: 0
+  attack_Speed: 3
+  attack_state: 0
+  atk_timer: 0
+  clearCount: 0
+  moving_direction: {x: 0, y: 0, z: 0}
 --- !u!54 &-6594310827753004343
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -131,7 +131,7 @@ public class monsterMeleeAttack : MonoBehaviour
 
                 transform.LookAt(transform.position + direction);
 
-                if (distance <= 2.0f)
+                if (distance <= 5f)
                 {
 
                 }

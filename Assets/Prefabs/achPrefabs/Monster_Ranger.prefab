@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 1619369891956721906}
   - component: {fileID: -6955812987331320250}
   - component: {fileID: 5969843086125447530}
-  - component: {fileID: 5231377667884654331}
+  - component: {fileID: 7660013727856689706}
   m_Layer: 0
   m_Name: Monster_Ranger
   m_TagString: Monster
@@ -253,7 +253,7 @@ MonoBehaviour:
   atk_timer: 0
   clearCount: 0
   moving_direction: {x: 0, y: 0, z: 0}
---- !u!114 &5231377667884654331
+--- !u!114 &7660013727856689706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -262,13 +262,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 269912543949292952}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13ddd35f5858b414b99ca79e78ca7778, type: 3}
+  m_Script: {fileID: 11500000, guid: 06a79e9d67a2ae142bf79aa710442492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 80
   curHP: 80
-  coin: {fileID: 1435128896743559756, guid: dd847020969ab9343bfee55542042c84, type: 3}
-  Damage: 30
+  coin: {fileID: 4228809310172651546, guid: a7b9ed29f0069894b86ba07fd412fddc, type: 3}
+  Damage: 50
   clearCount: 0
   hpBar: {fileID: 7163004366279715593}
 --- !u!1 &476328259900866811
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 7794849295717429792}
   m_Layer: 0
   m_Name: body
-  m_TagString: Monster
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

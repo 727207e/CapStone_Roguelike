@@ -31,7 +31,7 @@ public class monsterRangerAttack : MonoBehaviour
     // 애니메이션
     private Animator animator;              // 애니메이터 불러오기
 
-    private MRangerStatus mRangerStatus;
+    private MonsterStatus monsterStatus;
 
     private int stage_position;
 
@@ -46,8 +46,8 @@ public class monsterRangerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mRangerStatus = GetComponent<MRangerStatus>();
-        clearCount = mRangerStatus.clearCount;
+        monsterStatus = GetComponent<MonsterStatus>();
+        clearCount = monsterStatus.clearCount;
 
         stage_position = mapscript.instance.stage_Position;
 
@@ -69,7 +69,6 @@ public class monsterRangerAttack : MonoBehaviour
         int random_range = 1 + (int)(clearCount/4);
         if (random_range > 4)
             random_range = 4;
-        random_range = 4;
         int index = Random.Range(0, random_range);
         // 3방향 발사
         if (index == 1)
@@ -108,7 +107,10 @@ public class monsterRangerAttack : MonoBehaviour
         // 그냥 한발쏘기
         else
         {
-            Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation).transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            GameObject rangeratk = Instantiate(bullet, fire_Pos.transform.position, fire_Pos.transform.rotation);//.transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            rangeratk.transform.SetParent(mapscript.instance.map_List[stage_position].transform);
+            enemyBullet enemyBullet = rangeratk.GetComponent<enemyBullet>();
+            enemyBullet.damage = monsterStatus.Damage;
         }
     }
     public void patrol()
