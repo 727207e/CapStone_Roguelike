@@ -60,7 +60,14 @@ public class InjectionSceneManager : MonoBehaviour
         }
 
 
-        SceneManager.LoadScene("Dungeon");
+        GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_Dungeon;
+
+        StartCoroutine(GameManager.Instance.fadeIn());
+    }
+
+    void MoveScene_Dungeon()
+    {
+        GameManager.Instance.MoveScene("Dungeon");
     }
 
     IEnumerator MakeZoominCamera()

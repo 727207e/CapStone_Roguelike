@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class StroyTellingManager : MonoBehaviour
 {
@@ -144,8 +143,17 @@ public class StroyTellingManager : MonoBehaviour
 
     void moveLabScene()
     {
-        SceneManager.LoadScene("LabScene SceneMoveTest");
+        GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_ToLabScene;
+
+        StartCoroutine(GameManager.Instance.fadeIn());
     }
+
+
+    void MoveScene_ToLabScene()
+    {
+        GameManager.Instance.MoveScene("LabScene SceneMoveTest");
+    }
+
 
     void ImageChange()
     {

@@ -85,6 +85,10 @@ public class msPlayerControllerNew : MonoBehaviour
         rbody = GetComponent<Rigidbody>();
         mainCamera = Camera.main;
 
+        if (mainCamera == null)
+            mainCamera = GameObject.Find("Main Camera").GetComponent<Camera>();
+
+
         healthPoint = initHealthPoint;
         abilityPoint = initAbilityPoint;
 

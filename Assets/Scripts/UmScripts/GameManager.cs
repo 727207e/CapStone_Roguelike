@@ -1,6 +1,9 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -9,6 +12,11 @@ public class GameManager : MonoBehaviour
     public GameObject player; // 플레이어
     public float healthPoint = 1000; //체력
 
+    public GameObject main_Camera;
+
+    public Image fadeInAndOutPlane;
+
+    public Action FadeInAndOutAfterFuction;
 
     public Transform audioListener;
 
@@ -44,10 +52,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if(GameObject.Find("Player") != null)
+        if(player == null)
         {
             player = GameObject.Find("Player");
         }
+
+        if(main_Camera == null)
+        {
+            main_Camera = GameObject.Find("Main Camera");
+        }
+         
+        if(fadeInAndOutPlane == null)
+        {
+            fadeInAndOutPlane = main_Camera.transform.Find("CameraBlockCanvas").
+                transform.Find("FadePlane").GetComponent<Image>() ;
+        }
+
     }
 
     void Update()
@@ -64,5 +84,87 @@ public class GameManager : MonoBehaviour
         //JSON 파일에서 플레이어 데이터를 가져오는 경우 수행하는 함수이다.
     }
 
+    //////////////////////////////////////////////////////////Scene에 관련된 함수들
+    /// <summary>
+    /// 
+    /// </summary>
+    
+    public void MoveScene(string theSceneName)
+    {
+        SceneManager.LoadScene(theSceneName);
+    }
+
+
+
+    public IEnumerator fadeIn()
+    {
+        float _time = 0;
+        
+        Color color = fadeInAndOutPlane.color;
+
+        while(_time < 1)
+        {
+            _time += Time.deltaTime;
+
+            color.a =  _time;
+
+            fadeInAndOutPlane.color = color;
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        //저장된 함수 실행(씬 전환)
+        FadeInAndOutAfterFuction();
+    }
+
+    public IEnumerator fadeOut()
+    {
+        float _time = 0;
+
+        Color color = fadeInAndOutPlane.color;
+
+        while (_time < 1)
+        {
+            _time += Time.deltaTime;
+
+            color.a = (1-_time);
+
+            fadeInAndOutPlane.color = color;
+
+            yield return null;
+        }
+    }
+
+
+    void OnEnable()
+    {
+        // 씬 매니저의 sceneLoaded에 체인을 건다.
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Start();
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "2_StroyTelling":
+
+                StartCoroutine(fadeOut());
+
+
+                break;
+            default:
+                break;
+        }
+    
+    }
+
+    void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
 }

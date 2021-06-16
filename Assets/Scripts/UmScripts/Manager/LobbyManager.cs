@@ -1,12 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class LobbyManager : MonoBehaviour
 {
     public GameObject Screen_GameTitle;
-    public GameObject Screen_LoadGame;
+    //public GameObject Screen_LoadGame;
     public GameObject Screen_NewGame;
     public GameObject Screen_Option;
 
@@ -51,7 +50,7 @@ public class LobbyManager : MonoBehaviour
 
     void ScreenActive_MakeFalse()
     {
-        Screen_LoadGame.SetActive(false);
+        //Screen_LoadGame.SetActive(false);
         Screen_NewGame.SetActive(false);
         Screen_Option.SetActive(false);
 
@@ -74,7 +73,7 @@ public class LobbyManager : MonoBehaviour
 
     public void MoveScene_ToStroyTelling()
     {
-        SceneManager.LoadScene("2_StroyTelling");
+        GameManager.Instance.MoveScene("2_StroyTelling");
     }
 
     public void BTN_BackToMenu()
@@ -85,14 +84,19 @@ public class LobbyManager : MonoBehaviour
 
     public void BTN_NewGame()
     {
-        MoveScene_ToStroyTelling();
+        //함수 저장
+        GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_ToStroyTelling;
+
+        //Fade in
+        StartCoroutine(GameManager.Instance.fadeIn());
+
     }
 
-    public void BTN_LoadGame()
-    {
-        ScreenActive_MakeFalse();
-        Screen_LoadGame.SetActive(true);
-    }
+    //public void BTN_LoadGame()
+    //{
+    //    ScreenActive_MakeFalse();
+    //    Screen_LoadGame.SetActive(true);
+    //}
 
     public void BTN_Option()
     {
@@ -102,6 +106,6 @@ public class LobbyManager : MonoBehaviour
 
     public void BTN_Quit()
     {
-
+        Application.Quit();
     }
 }

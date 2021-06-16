@@ -6,28 +6,26 @@ public class BossHitScripts : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == ("Bullet"))
+        if (other.transform.tag == ("PlayerAttack"))
         {
-            int damage = 5;
+            int damage = 0;
+
+            //캐논일 경우
+            if (other.GetComponent<msBullet_Cannon>() != null)
+            {
+                damage = other.GetComponent<msBullet_Cannon>().bulletDamage;
+            }
 
 
-            //총알 공격력을 가져온다
-            /*
-            
-            damage = other.GetComponent<msBulletNew>().bulletDamage;
+            //총알일 경우
+            else if(other.GetComponent<msBullet1>() != null)
+            {
+                damage = other.GetComponent<msBullet1>().bulletDamage;
+            }
 
-             */
-
-
-
-            ////////////////////////////////////////////////보스
-            ///
 
             //체력 감소
             transform.parent.parent.GetComponent<IBoss>().BossHp -= damage;
-
-
-
 
 
 
@@ -37,12 +35,6 @@ public class BossHitScripts : MonoBehaviour
             /*
             other.GetComponent<msBulletNew>().BulletDisappear();
             */
-
-
-            print("hit");
-            print(transform.parent.parent.GetComponent<IBoss>().BossHp);
-
-
 
             //////////////////////////////////////지울것
             Destroy(other.gameObject);
