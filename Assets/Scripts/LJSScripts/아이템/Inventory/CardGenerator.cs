@@ -47,6 +47,8 @@ public class CardGenerator : MonoBehaviour
 
     void SumthePercent()
     {
+        total = 0;
+
         for (int i = 0; i < TotalCardList.Count; i++)
         {
             // 스크립트가 활성화 되면 카드 덱의 모든 카드의 총 가중치를 구한다
@@ -62,6 +64,7 @@ public class CardGenerator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.K))
         {
+
             SumthePercent();
 
             //캔버스 생성
@@ -121,11 +124,15 @@ public class CardGenerator : MonoBehaviour
 
         selectNum = Mathf.RoundToInt(total * Random.Range(0.0f, 1.0f));
 
+        print("select " + selectNum);
+
         for (int i = 0; i < TotalCardList.Count; i++)
         {
             weight += TotalCardList[i].weight;
             if (selectNum <= weight)
             {
+                print("num" + i);
+
                 Items temp = TotalCardList[i];
                 return temp;
             }

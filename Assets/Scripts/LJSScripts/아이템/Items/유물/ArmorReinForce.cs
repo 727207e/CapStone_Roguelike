@@ -21,11 +21,5 @@ public class ArmorReinForce : Items
     }
 
 
-    public override void theItemsEffect()
-    {
-        base.theItemsEffect();
-
-        Player.initHealthPoint += 400;
-    }
 
 }
