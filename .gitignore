@@ -58,3 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*.meta
+Assets/Assets/New_Add_Asset/SpecialSkillsEffectsPack/Patch/Decals/HDRPdecal.unitypackage.meta
