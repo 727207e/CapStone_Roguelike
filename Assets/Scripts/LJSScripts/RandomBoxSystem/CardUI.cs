@@ -21,7 +21,8 @@ public class CardUI : MonoBehaviour, IPointerDownHandler
     {
         SelectCard();
         cardGenerator = GameObject.Find("CardGenerator").GetComponent<CardGenerator>();
-        inventoryScript = GameObject.Find("Canvas Inventory").transform.Find("Inventory")
+        inventoryScript = GameObject.Find("캐랙티한테고정으로달릴UI").
+            transform.Find("체력바,하단스킬창,아템창").transform.Find("Inventory")
             .GetComponent<InventoryScript>();
     }
 

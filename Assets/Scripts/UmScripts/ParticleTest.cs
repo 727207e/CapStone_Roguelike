@@ -9,10 +9,13 @@ public class ParticleTest : MonoBehaviour
 
     private void OnParticleCollision(GameObject other)
     {
-        if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player" && onhitTrigger)
         {
             onhitTrigger = false;
-            other.GetComponent<PlayerHitTestScripts>().PlayerOnHit(Damage);
+
+            other.GetComponent<msPlayerControllerNew>().PlayerDamaged(Damage);
+
         }
     }
+
 }

@@ -151,7 +151,7 @@ public class StroyTellingManager : MonoBehaviour
 
     void MoveScene_ToLabScene()
     {
-        GameManager.Instance.MoveScene("LabScene SceneMoveTest");
+        GameManager.Instance.MoveScene("3_LabScene");
     }
 
 

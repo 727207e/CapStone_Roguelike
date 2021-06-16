@@ -33,19 +33,19 @@ public abstract class Items : ScriptableObject, IDescribable
 
     public void Init()
     {
-        HandGun = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+        HandGun = GameManager.Instance.player.transform.Find("MainPlayerCharacter").
             transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Pistol").
             GetComponent<msOneHandGun>();
 
-        MachinGun = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+        MachinGun = GameManager.Instance.player.transform.Find("MainPlayerCharacter").
              transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Rifle").
              GetComponent<msMachineGun>();
 
-        Cannon = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+        Cannon = GameManager.Instance.player.transform.Find("MainPlayerCharacter").
             transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Cannon").
             GetComponent<msCannon>();
 
-        Player = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
+        Player = GameManager.Instance.player.transform.Find("MainPlayerCharacter").
             GetComponent<msPlayerControllerNew>();
 
     }

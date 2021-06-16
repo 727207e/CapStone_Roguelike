@@ -67,7 +67,7 @@ public class InjectionSceneManager : MonoBehaviour
 
     void MoveScene_Dungeon()
     {
-        GameManager.Instance.MoveScene("Dungeon");
+        GameManager.Instance.MoveScene("DungeonScene");
     }
 
     IEnumerator MakeZoominCamera()

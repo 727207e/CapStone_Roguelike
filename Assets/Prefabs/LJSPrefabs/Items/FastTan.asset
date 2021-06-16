@@ -16,3 +16,5 @@ MonoBehaviour:
   stackSize: 0
   title: "(C\uAE09)\uACE0\uC18D\uD0C4"
   quality: 0
+  cardImage: {fileID: 21300000, guid: ed988fe7cd8923040b07e50da3e4e51e, type: 3}
+  weight: 10

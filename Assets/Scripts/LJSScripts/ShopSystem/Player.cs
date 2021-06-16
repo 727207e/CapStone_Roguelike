@@ -102,11 +102,19 @@ public class Player : MonoBehaviour
                 Shop shop = nearObject.GetComponent<Shop>();
                 shop.Enter(this); // player 정보 자기자신에 접근
                 isShop = true; // 플래그변수 true로
-                SceneManager.LoadScene("InjectionLJS");
 
+                GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_ToInjection;
+
+                StartCoroutine(GameManager.Instance.fadeIn());
             }
         }
     }
+
+    void MoveScene_ToInjection()
+    {
+        GameManager.Instance.MoveScene("4_InjectionScene");
+    }
+
 
     void OnTriggerEnter(Collider other)
     {

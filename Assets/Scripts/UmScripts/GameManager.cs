@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     {
         if(player == null)
         {
-            player = GameObject.Find("Player");
+            player = GameObject.Find("MainCharacterSys 1");
         }
 
         if(main_Camera == null)
