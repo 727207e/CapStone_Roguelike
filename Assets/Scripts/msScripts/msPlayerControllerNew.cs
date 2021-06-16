@@ -580,7 +580,7 @@ public class msPlayerControllerNew : MonoBehaviour
         {
             //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
             Debug.Log("적의 물리적 충돌에 의해 공격받았습니다.");
-            int tempDamage = collision.gameObject.GetComponent<MMeleeStatus>().Damage;
+            int tempDamage = collision.gameObject.GetComponent<MonsterStatus>().Damage;
             PlayerDamaged(tempDamage); //플레이어 타격 계산 시행
             Debug.Log(tempDamage + "의 데미지를 받았습니다.");
             //Destroy(collision.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)

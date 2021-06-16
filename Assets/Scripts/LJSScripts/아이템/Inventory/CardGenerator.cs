@@ -85,7 +85,11 @@ public class CardGenerator : MonoBehaviour
 
         //카드 이미지 대입
         theCardObj.transform.Find("Front").transform.Find("CardImage").
-            GetComponent<Image>().sprite = RandomCardSelectresult[0].cardImage;
+            GetComponent<Image>().sprite = RandomCardSelectresult[count].cardImage;
+
+        //카드 이름 대입
+        theCardObj.transform.Find("Front").transform.Find("CardName").
+            GetComponent<Text>().text = RandomCardSelectresult[count].theName();
 
         //카드에 번호 부여
         theCardObj.GetComponent<CardUI>().theNumber = count;

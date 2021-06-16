@@ -30,16 +30,8 @@ public abstract class Items : ScriptableObject, IDescribable
     protected msCannon Cannon;
     protected msPlayerControllerNew Player;
 
-    private int HandGun_Ammo;
-    private float HandGun_ReloadTime;
 
-    private int MachinGun_Ammo;
-    private float MachinGun_ReloadTime;
-
-    private int Cannon_Ammo;
-    private float Cannon_ReloadTime;
-    // Start is called before the first frame update
-    public void Start()
+    public void Init()
     {
         HandGun = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
             transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Pistol").
@@ -56,22 +48,6 @@ public abstract class Items : ScriptableObject, IDescribable
         Player = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
             GetComponent<msPlayerControllerNew>();
 
-
-        HandGun_Ammo = HandGun.fullAmmo;
-        HandGun_ReloadTime = HandGun.reloadTime;
-
-
-        MachinGun_Ammo = MachinGun.fullAmmo;
-        MachinGun_ReloadTime = MachinGun.reloadTime;
-
-
-        Cannon_Ammo = Cannon.fullAmmo;
-        Cannon_ReloadTime = Cannon.reloadTime;
-
-        if(HandGun == null)
-        {
-            Debug.Log("the target is null");
-        }
     }
 
 
@@ -106,8 +82,7 @@ public abstract class Items : ScriptableObject, IDescribable
             slot = value;
         }
     }
-
-    public virtual string GetDescription()
+    public string theName()
     {
         string color = string.Empty;
 
@@ -133,22 +108,28 @@ public abstract class Items : ScriptableObject, IDescribable
         return string.Format("<color={0}>{1}</color>", color, title);
     }
 
+
+    public virtual string GetDescription()
+    {
+        return theName();
+    }
+
     public virtual void theItemsEffect()
     {
-
+        Init();
     }
 
-    protected void HandControllAmmo(int num)
+    public void HandControllAmmo(int num)
     {
-        HandGun_Ammo += num;
+        HandGun.fullAmmo += num;
     }
 
-    protected void HandControllreloadTime(float num)
+    public void HandControllreloadTime(float num)
     {
-        HandGun_ReloadTime += num;
+        HandGun.reloadTime += num;
     }
 
-    protected void PlayerControllHp(int num)
+    public void PlayerControllHp(float num)
     {
         Player.initHealthPoint += num;
     }

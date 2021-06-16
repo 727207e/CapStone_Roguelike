@@ -45,7 +45,7 @@ public class RandomSelect : MonoBehaviour
             cardUI.CardUISet(result[i]);
         }
     }
-  
+    
     public Card RandomCard()
     {
         int weight = 0;
