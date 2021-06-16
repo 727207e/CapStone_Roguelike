@@ -131,4 +131,9 @@ public class MonsterStatus : MonoBehaviour
 
         }
     }
+
+    public void Damaged(int x)
+    {
+        curHP -= x;
+    }
 }

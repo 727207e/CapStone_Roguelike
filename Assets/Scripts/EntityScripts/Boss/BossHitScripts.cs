@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BossHitScripts : MonoBehaviour
 {
+    public GameObject parentObjWithHP;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.tag == ("PlayerAttack"))
@@ -14,6 +16,7 @@ public class BossHitScripts : MonoBehaviour
             if (other.GetComponent<msBullet_Cannon>() != null)
             {
                 damage = other.GetComponent<msBullet_Cannon>().bulletDamage;
+                Debug.Log("보스가 " + damage + "의 데미지를 입었음");
             }
 
 
@@ -21,6 +24,7 @@ public class BossHitScripts : MonoBehaviour
             else if(other.GetComponent<msBullet1>() != null)
             {
                 damage = other.GetComponent<msBullet1>().bulletDamage;
+                Debug.Log("보스가 " + damage + "의 데미지를 입었음");
             }
 
 
@@ -42,5 +46,18 @@ public class BossHitScripts : MonoBehaviour
 
 
         }
+    }
+
+    public void Damaged(int x)
+    {
+        if (parentObjWithHP.GetComponent<BossSlimePatern>() != null)
+        {
+            parentObjWithHP.GetComponent<BossSlimePatern>().BossHp -= x;
+        }
+        if (parentObjWithHP.GetComponent<BossWalkSlimePatern>() != null)
+        {
+            parentObjWithHP.GetComponent<BossWalkSlimePatern>().BossHp -= x;
+        }
+        Debug.Log("보스가 " + x + "의 데미지를 입었음");
     }
 }

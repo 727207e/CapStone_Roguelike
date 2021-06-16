@@ -18,4 +18,11 @@ public class SpecialGloves : Items
 
         Player.invincibleTime += 0.5f;
     }
+
+    public override void theItemsEffect()
+    {
+        base.theItemsEffect();
+        Player.initHealthPoint += 500;
+        Player.invincibleTime += 0.5f;
+    }
 }

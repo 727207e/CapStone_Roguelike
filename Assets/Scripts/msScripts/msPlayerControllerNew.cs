@@ -72,6 +72,8 @@ public class msPlayerControllerNew : MonoBehaviour
     public int skill_3_Damage = 20;
     public int skill_4_Heal;
 
+    //UI관련 연동
+
      void Awake()
     {
 
@@ -249,7 +251,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
                     currentUsedWeapon = pistol;
 
-                    Debug.Log("1번 장비 장착");
+                    //Debug.Log("1번 장비 장착");
 
                 }
                 break;
@@ -265,7 +267,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
                     currentUsedWeapon = rifle;
 
-                    Debug.Log("2번 장비 장착");
+                    //Debug.Log("2번 장비 장착");
 
 
                 }
@@ -283,13 +285,13 @@ public class msPlayerControllerNew : MonoBehaviour
 
                     currentUsedWeapon = cannon;
 
-                    Debug.Log("3번 장비 장착");
+                    //Debug.Log("3번 장비 장착");
                 }
                 break;
 
             default:
                 {
-                    Debug.Log("예기치 못한 에러");
+                    //Debug.Log("예기치 못한 에러");
                 }
                 break;
 
@@ -423,8 +425,9 @@ public class msPlayerControllerNew : MonoBehaviour
     {
         healthPoint -= damage;
         animator.SetTrigger("isDamage");
+        rbody.AddForce(new Vector3(-2.0f, 0.2f, 0) * (1000f - toughness), ForceMode.Acceleration);
         StartCoroutine(DamagedAnimationDelay());
-        rbody.AddForce(new Vector3(-2.0f, 0.2f, 0) * (1000f-toughness),ForceMode.Acceleration); //넉백의 구현
+         //넉백의 구현
     }
 
     public void SkillAbility()
@@ -541,8 +544,8 @@ public class msPlayerControllerNew : MonoBehaviour
         if (other.gameObject.CompareTag("EnemyAttack"))
         {
             //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
-            Debug.Log("적 투사체에 의해 공격받았습니다.");
-            PlayerDamaged(100); //플레이어 타격 계산 시행
+            //Debug.Log("적 투사체에 의해 공격받았습니다.");
+            PlayerDamaged(other.gameObject.GetComponent<enemyBullet>().damage); //플레이어 타격 계산 시행
             Destroy(other.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)
             StartCoroutine("InvincibleTime"); //무적시간 실행
         }
@@ -560,7 +563,7 @@ public class msPlayerControllerNew : MonoBehaviour
         if (other.gameObject.CompareTag("BossAtt"))
         {
             //여기서 적 개체 발사한 오브젝트의 함수를 사용한다.
-            Debug.Log("보스에게 공격받았습니다.");
+            //Debug.Log("보스에게 공격받았습니다.");
 
             BossAttackDamage boss = other.gameObject.GetComponent<BossAttackDamage>();
 
@@ -586,6 +589,19 @@ public class msPlayerControllerNew : MonoBehaviour
             //Destroy(collision.gameObject); //대상 오브젝트 파괴 (경우에 따라 다름)
             StartCoroutine("InvincibleTime"); //무적시간 실행
         }
+    }
+
+    /*public void OnParticleCollision(GameObject other)
+    {
+            Debug.Log("Player Damaged by boss's Particle Effect");
+            PlayerDamaged(other.GetComponent<msParticleCollisionWithPlayer>().damage);
+            StartCoroutine("InvincibleTime");
+    }*/
+
+    public void OnPlayerDamaged(int x)
+    {
+        PlayerDamaged(x);
+        StartCoroutine("InvincibleTime");
     }
 
     public  IEnumerator InvincibleTime() {
@@ -807,6 +823,19 @@ public class msPlayerControllerNew : MonoBehaviour
         {
             characterMoveMode = true;
         }
+    }
+
+    public void SetPlayerDisabled(int x)
+    {
+        if (x == 0)
+        {
+            gameObject.SetActive(true);
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
+        
     }
 
 }

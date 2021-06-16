@@ -55,7 +55,7 @@ public class msCannon : MonoBehaviour
                 {
                     if (currentAmmo == 0)
                     {
-                        Debug.Log("재장전이 필요합니다.");
+                        //Debug.Log("재장전이 필요합니다.");
                     }
                     else
                     {
@@ -69,12 +69,12 @@ public class msCannon : MonoBehaviour
                         //muzzleFlash.Emit(1);
                         //muzzleFlash2.Emit(1);
                         currentAmmo--;
-                        Debug.Log("남은 장탄량 : " + currentAmmo);
+                        //Debug.Log("남은 장탄량 : " + currentAmmo);
                     }
                 }
                 else
                 {
-                    Debug.Log("재장전 중입니다.");
+                    //Debug.Log("재장전 중입니다.");
                 }
             }
             timer = 0.0f;
