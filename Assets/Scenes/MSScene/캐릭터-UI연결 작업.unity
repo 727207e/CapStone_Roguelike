@@ -12762,7 +12762,7 @@ GameObject:
   - component: {fileID: 677764535}
   - component: {fileID: 677764534}
   m_Layer: 5
-  m_Name: "\uCE90\uB799\uD2F0\uD55C\uD14C\uACE0\uC815\uC73C\uB85C\uB2EC\uB9B4UI"
+  m_Name: CharacterCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12843,8 +12843,8 @@ RectTransform:
   - {fileID: 1258920315}
   - {fileID: 1923593571}
   - {fileID: 1930796208}
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1438507143}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -12928,7 +12928,7 @@ PrefabInstance:
     - target: {fileID: 4227180732100650360, guid: 7eae497312ef2ae44ba74ee97d9adb12,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4227180732100650360, guid: 7eae497312ef2ae44ba74ee97d9adb12,
         type: 3}
@@ -12950,6 +12950,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: MainCharacterSys 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4227180733167556806, guid: 7eae497312ef2ae44ba74ee97d9adb12,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227180733167556806, guid: 7eae497312ef2ae44ba74ee97d9adb12,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227180733167556806, guid: 7eae497312ef2ae44ba74ee97d9adb12,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7eae497312ef2ae44ba74ee97d9adb12, type: 3}
 --- !u!1 &690851103
@@ -12969,7 +12984,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &690851104
 Camera:
   m_ObjectHideFlags: 0
@@ -13359,8 +13374,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1629572961}
   m_HandleRect: {fileID: 1629572960}
   m_Direction: 2
-  m_Value: -0.0000009560646
-  m_Size: 0.72193617
+  m_Value: -0.000026004958
+  m_Size: 0.36910406
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -18856,7 +18871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00010585785, y: 159.60013}
+  m_AnchoredPosition: {x: -0.00010585785, y: 159.60411}
   m_SizeDelta: {x: 0, y: 575.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!23 &1109000309
@@ -22119,6 +22134,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426861911}
   m_CullTransparentMesh: 0
+--- !u!4 &1438507143 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4227180732100650360, guid: 7eae497312ef2ae44ba74ee97d9adb12,
+    type: 3}
+  m_PrefabInstance: {fileID: 690326354}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1449534373 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 406746, guid: 8c919b8abeec09d459650b1256964150,
@@ -25319,8 +25340,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.5762038, z: 1}
+  m_Center: {x: 0, y: 0.2881019, z: 0}
 --- !u!23 &1809637554
 MeshRenderer:
   m_ObjectHideFlags: 0

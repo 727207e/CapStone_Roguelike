@@ -53,6 +53,14 @@ public class msSkill_3_Collision_Effect : MonoBehaviour
 
 
         }
+
+
+
+        if (collision.gameObject.tag == "EnemeyHitBos")
+                {
+                    collision.gameObject.GetComponent<BossHitScripts>().Damaged(skillDamage);
+                }
+
     }
 
     public void SetPlayerPosition(Vector3 position)

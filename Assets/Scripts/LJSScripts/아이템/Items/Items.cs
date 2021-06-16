@@ -45,8 +45,11 @@ public abstract class Items : ScriptableObject, IDescribable
             transform.Find("WeaponHolder").transform.Find("WeaponPivot").transform.Find("Cannon").
             GetComponent<msCannon>();
 
-        Player = GameObject.Find("MainCharacterSys").transform.Find("MainPlayerCharacter").
-            GetComponent<msPlayerControllerNew>();
+        Player = GameObject.FindWithTag("Player").GetComponent<msPlayerControllerNew>();
+
+        /*HandGun = Player.pistol.GetComponent<msOneHandGun>();
+        MachinGun = Player.rifle.GetComponent<msMachineGun>();
+        Cannon = Player.cannon.GetComponent<msCannon>();*/
 
     }
 

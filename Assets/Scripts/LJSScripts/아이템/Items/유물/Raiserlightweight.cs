@@ -9,4 +9,12 @@ public class Raiserlightweight : Items
     {
         return base.GetDescription() + string.Format("\n 레이저의 능력이 환경에 적합하게 변화합니다. \n 레이저 쿨타임 10초 감소, 에너지 소모량 20 감소\n 데미지 30 감소");
     }
+
+    public override void theItemsEffect()
+    {
+        base.theItemsEffect();
+        Player.skill_2_Damage -= 30;
+        Player.skill_2_Energe -= 20;
+        //레이저 쿨타임 감소
+    }
 }

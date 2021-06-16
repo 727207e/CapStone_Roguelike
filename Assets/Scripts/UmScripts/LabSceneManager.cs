@@ -19,7 +19,7 @@ public class LabSceneManager : MonoBehaviour
     void Start()
     {
         mainCamera = GameObject.Find("Main Camera");
-        Player = GameObject.Find("Player");
+        Player = GameObject.FindWithTag("Player");
         if(Player != null)
         {
 
@@ -32,6 +32,7 @@ public class LabSceneManager : MonoBehaviour
         //루트2 를 곱함(피타고라스 빗변공식)
         blockLength = MapGround.transform.localScale.x/2 * Mathf.Sqrt(2) - range;
 
+        Player.GetComponent<msPlayerControllerNew>().SetPlayerDisabled(1);
     }
 
     // Update is called once per frame

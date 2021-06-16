@@ -35,11 +35,17 @@ public class msBullet_Cannon : MonoBehaviour
 
     public void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.layer == LayerMask.NameToLayer("Ground") || coll.gameObject.tag == "Monster")
+        if (coll.gameObject.layer == LayerMask.NameToLayer("Ground") || coll.gameObject.tag == "Monster"|| coll.gameObject.tag == "EnemeyHitBos")
         {
-            Debug.Log("Trigger Enter");
+            //Debug.Log("Trigger Enter");
             Vector3 pos = gameObject.transform.position;
-            Instantiate(splashEffect, pos, Quaternion.identity);
+            //Instantiate(splashEffect, pos, Quaternion.identity);
+            var go = Instantiate(splashEffect);
+            go.transform.position = pos;
+            go.transform.rotation = Quaternion.identity;
+            var effect = go.GetComponent<msCannonSplashEffect>();
+            effect.SetSkillDamage(bulletDamage/2);
+            effect.ActiveEffect();
             Destroy(gameObject);
         }
     }

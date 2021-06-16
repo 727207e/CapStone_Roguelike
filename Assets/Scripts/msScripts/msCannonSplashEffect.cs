@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class msSkill_1_Collision_Effect : MonoBehaviour
+public class msCannonSplashEffect : MonoBehaviour
 {
-    public int skillDamage = 0;
+    public int skillDamage=0;
 
     // Start is called before the first frame update
     void Start()
@@ -39,4 +39,6 @@ public class msSkill_1_Collision_Effect : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+
+
 }
