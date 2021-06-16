@@ -82,14 +82,28 @@ public class MRangerStatus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet")
+        // 총알공격
+        if (other.tag == "PlayerAttack")
         {
-            // 체력 감소
+            msBullet1 msBullet1 = other.GetComponent<msBullet1>();
+            if (msBullet1 != null)
+            {
+                int damage = msBullet1.bulletDamage;
+                curHP -= damage;
+                Destroy(other.gameObject);
+            }
+            enemyBullet ebul = other.GetComponent<enemyBullet>();
+            curHP -= ebul.damage;
+            Destroy(other.gameObject);
+
+            animator.SetTrigger("Damaged");
+
         }
 
-        if (other.tag == "skill_1")
+        // 혹시 트랩으로 떨어지면
+        if (other.tag == "Trap")
         {
-
+            curHP = 0;
         }
 
         if (other.tag == "skill_2")

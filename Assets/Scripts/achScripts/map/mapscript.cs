@@ -22,14 +22,9 @@ public class mapscript : MonoBehaviour
     // 맵 리스트
     public List<GameObject> maps = new List<GameObject>();
     public List<GameObject> map_List = new List<GameObject>();
-    public GameObject healing_map;
+    public List<GameObject> boss = new List<GameObject>();
     public GameObject beforeBoss;
 
-    // 몬스터 관련 M: 근거리 R: 원거리
-    public GameObject monster_type_M;
-    public GameObject monster_Type_R;
-    //private GameObject[] monsters_Point;
-    //private GameObject[] monsters_List;
     // 남은 몬스터 갯수
     public int monster_count = 0;
 
@@ -40,6 +35,8 @@ public class mapscript : MonoBehaviour
     void Start()
     {
         _instance = this;
+
+        player = GameObject.FindGameObjectWithTag("Player");
 
         //monsters_List = new GameObject[10];
         randomized_map();
@@ -54,6 +51,7 @@ public class mapscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         // 좌클릭시 다음맵 우클릭시 이전맵
         // 범위 벗어나는 값에대해서는 설정안해둬서 오류남
         // 맵이동 테스트용으로 넣은것이므로 추후에 지울것
@@ -114,5 +112,8 @@ public class mapscript : MonoBehaviour
                 maps.RemoveAt(random_count);
             }
         }
+        random_count = Random.Range(0, 2);
+        map_List.Add(Instantiate(boss[random_count], Vector3.zero, Quaternion.identity) as GameObject);
+        map_List[8].SetActive(false);
     }
 }

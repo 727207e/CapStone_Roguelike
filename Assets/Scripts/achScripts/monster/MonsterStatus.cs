@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MMeleeStatus : MonoBehaviour
+public class MonsterStatus : MonoBehaviour
 {
     public int maxHP = 100;
     public int curHP = 100;
@@ -45,6 +45,9 @@ public class MMeleeStatus : MonoBehaviour
 
     void Update()
     {
+        if (curHP <= 0)
+            curHP = 0;
+
         hpBar.rectTransform.localScale = new Vector3((float)curHP / (float)maxHP, 1f, 1f);
 
         if (curHP <= 0 && alive)
@@ -86,14 +89,36 @@ public class MMeleeStatus : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Bullet")
+        // 총알공격
+        if (other.tag == "PlayerAttack")
         {
-            // 체력 감소
+            msBullet1 msBullet1 = other.GetComponent<msBullet1>();
+            if (msBullet1 != null)
+            {
+                int damage = msBullet1.bulletDamage;
+                curHP -= damage;
+                Destroy(other.gameObject);
+            }
+
+            enemyBullet ebul = other.GetComponent<enemyBullet>();
+            curHP -= ebul.damage;
+            Destroy(other.gameObject);
+
+            animator.SetTrigger("Damaged");
+            // 캐넌 판정 아직 덜만들어짐
+            /*
+            else
+            {
+                msBullet_Cannon bullet_Cannon = other.GetComponent<msBullet_Cannon>();
+                int damage = bullet_Cannon.bulletDamage;
+            }
+            */
         }
 
-        if (other.tag == "skill_1")
+        // 혹시 트랩으로 떨어지면
+        if (other.tag == "Trap")
         {
-
+            curHP = 0;
         }
 
         if (other.tag == "skill_2")
