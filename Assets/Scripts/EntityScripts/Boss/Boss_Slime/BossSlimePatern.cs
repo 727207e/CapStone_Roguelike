@@ -22,7 +22,7 @@ public class BossSlimePatern : BossPartentScripts
 
     protected override void Start()
     {
-        BossHp = 100;
+        BossHp = 10000;
         attack_Delay = 1.5f;
         move_Delay = 1f;
         the_Next_Partern_HP_Limit = 30;
@@ -51,7 +51,7 @@ public class BossSlimePatern : BossPartentScripts
                 if (attack_DistanceLimitToPlayer == false)
                 {
                     //target을 향해 간다
-                    BossMove();
+                    //BossMove();
                 }
 
                 //사거리에 들어오면 움직임 멈춤

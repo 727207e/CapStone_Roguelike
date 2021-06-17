@@ -13,7 +13,7 @@ public class ParticleTest : MonoBehaviour
         {
             onhitTrigger = false;
 
-            other.GetComponent<msPlayerControllerNew>().PlayerDamaged(Damage);
+            //other.GetComponent<msPlayerControllerNew>().PlayerDamaged(Damage);
 
         }
     }

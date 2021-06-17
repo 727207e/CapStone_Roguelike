@@ -23,6 +23,7 @@ public class Boss_UI_HpBar : MonoBehaviour
 
     bool Hp_bar_Trigger = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,8 +36,8 @@ public class Boss_UI_HpBar : MonoBehaviour
         Hp_InImage_Rect = Hp_InImage.GetComponent<RectTransform>();
 
         //이미지 크기를 화면 크기에 맞춘다.
-        Hp_BackImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 15);
-        Hp_InImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 15);
+        Hp_BackImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 25);
+        Hp_InImage_Rect.sizeDelta = new Vector2(UI_Width, UI_Height / 25);
 
         //체력바
         Hp_InImage_Filled = Hp_InImage.GetComponent<Image>();

@@ -148,18 +148,6 @@ public class GameManager : MonoBehaviour
     {
         Start();
 
-        switch (SceneManager.GetActiveScene().name)
-        {
-            case "2_StroyTelling":
-
-                StartCoroutine(fadeOut());
-
-
-                break;
-            default:
-                break;
-        }
-    
     }
 
     void OnDisable()

@@ -65,10 +65,10 @@ MonoBehaviour:
     value: -100
   intensityX:
     overrideState: 1
-    value: 0
+    value: 1
   intensityY:
     overrideState: 1
-    value: 0
+    value: 1
   centerX:
     overrideState: 1
     value: 0

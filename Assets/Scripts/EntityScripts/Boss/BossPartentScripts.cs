@@ -85,6 +85,13 @@ public class BossPartentScripts : MonoBehaviour, IBoss
 
         cameraMovingWalk_Camera = CameraMoveingPos;
         _camera = GameObject.Find("Main Camera");
+
+        if (_camera == null) 
+        {
+            _camera = GameObject.Find("MainCameraWithPostProcessing");
+        }
+
+
         _animator = transform.Find("Body").GetComponent<Animator>();
 
         canvas_Boss = _camera.transform.Find("BossCanvas").gameObject;
