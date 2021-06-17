@@ -14,6 +14,6 @@ public class DevScripts : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
-            GameManager.Instance.MoveScene("3_LabScene");
+            GameManager.Instance.NextSceneFadein("3_LabScene");
     }
 }

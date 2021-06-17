@@ -92,7 +92,7 @@ public class StroyTellingManager : MonoBehaviour
             if(Story_nowStory_Num > Story_nowStory_Finish)
             {
                 //씬 이동
-                moveLabScene();
+                GameManager.Instance.NextSceneFadein("3_LabScene");
             }
 
             //이미지 변경
@@ -135,23 +135,10 @@ public class StroyTellingManager : MonoBehaviour
             //스킵 후 이동
             if (Input.GetKeyDown(KeyCode.K))
             {
-                moveLabScene();
+                GameManager.Instance.NextSceneFadein("3_LabScene");
             }
         }   
 
-    }
-
-    void moveLabScene()
-    {
-        GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_ToLabScene;
-
-        StartCoroutine(GameManager.Instance.fadeIn());
-    }
-
-
-    void MoveScene_ToLabScene()
-    {
-        GameManager.Instance.MoveScene("3_LabScene");
     }
 
 

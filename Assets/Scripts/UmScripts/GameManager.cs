@@ -20,11 +20,9 @@ public class GameManager : MonoBehaviour
 
     public Transform audioListener;
 
+    //이동될 씬 이름
+    string theScenename;
 
-    /// <summary>
-    /// ///////////플레이어 움직임 저지
-    /// </summary>
-    /// 
 
     public bool thePlayerController_Block = false;
 
@@ -97,13 +95,22 @@ public class GameManager : MonoBehaviour
     /// <summary>
     /// 
     /// </summary>
-    
-    public void MoveScene(string theSceneName)
+
+    public void NextSceneFadein(string theSceneName)
     {
-        SceneManager.LoadScene(theSceneName);
+        theScenename = theSceneName;
+
+        FadeInAndOutAfterFuction += MoveScene;
+
+        StartCoroutine(fadeIn());
+
     }
 
 
+    public void MoveScene()
+    {
+        SceneManager.LoadScene(theScenename);
+    }
 
     public IEnumerator fadeIn()
     {

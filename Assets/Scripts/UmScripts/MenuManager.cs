@@ -151,4 +151,24 @@ public class MenuManager : MonoBehaviour
 		AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Sfx);
 	}
 
+	public void diePlayerContinue()
+    {
+
+    }
+
+	public void diePlayerQuit()
+    {
+
+    }
+
+	public void victoryPlayerContinue()
+    {
+
+    }
+
+	public void victoryPlayerQuit()
+    {
+
+    }
+
 }

@@ -71,11 +71,6 @@ public class LobbyManager : MonoBehaviour
         }
     }
 
-    public void MoveScene_ToStroyTelling()
-    {
-        GameManager.Instance.MoveScene("2_StroyTelling");
-    }
-
     public void BTN_BackToMenu()
     {
         ScreenActive_MakeFalse();
@@ -84,12 +79,7 @@ public class LobbyManager : MonoBehaviour
 
     public void BTN_NewGame()
     {
-        //함수 저장
-        GameManager.Instance.FadeInAndOutAfterFuction += MoveScene_ToStroyTelling;
-
-        //Fade in
-        StartCoroutine(GameManager.Instance.fadeIn());
-
+        GameManager.Instance.NextSceneFadein("2_StroyTelling");
     }
 
     //public void BTN_LoadGame()
