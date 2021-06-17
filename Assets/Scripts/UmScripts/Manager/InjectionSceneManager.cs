@@ -23,17 +23,17 @@ public class InjectionSceneManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Postprofile.TryGetSettings(out _Lens);
+        Postprofile.TryGetSettings(out _Lens);
 
         //렌즈 초기화
-        //_Lens.intensity.value = 0f;
-        //_Lens.scale.value = 1f;
+        _Lens.intensity.value = 0f;
+        _Lens.scale.value = 1f;
 
         //카메라 위치 초기화
         Camera.transform.position = startPoint.transform.position;
 
 
-        //StartCoroutine(MakeSmallerIntensityAndScale());
+        StartCoroutine(MakeSmallerIntensityAndScale());
 
         StartCoroutine(MakeZoominCamera());
 
@@ -58,7 +58,6 @@ public class InjectionSceneManager : MonoBehaviour
             yield return null;
 
         }
-
         GameManager.Instance.NextSceneFadein("DungeonScene");
     }
 

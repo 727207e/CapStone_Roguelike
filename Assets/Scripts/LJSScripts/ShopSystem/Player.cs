@@ -33,6 +33,8 @@ public class Player : MonoBehaviour
     private float h;
     private float v;
 
+    public bool theSceneMove = true;
+
     [SerializeField]
     private Text actionText;  // 행동을 보여 줄 텍스트
 
@@ -103,7 +105,11 @@ public class Player : MonoBehaviour
                 shop.Enter(this); // player 정보 자기자신에 접근
                 isShop = true; // 플래그변수 true로
 
-                GameManager.Instance.NextSceneFadein("4_InjectionScene");
+                if (theSceneMove)
+                {
+                    print("tt");
+                    GameManager.Instance.NextSceneFadein("4_InjectionScene");
+                }
             }
         }
     }
