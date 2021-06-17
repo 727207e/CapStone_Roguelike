@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.UI;
 
 public class msPlayerControllerNew : MonoBehaviour
 {
-    private bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
-    private bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
+    public bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
+    public bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
 
     //캐릭터가 가지는 스탯
     public float walkSpeed = 10.0f; //이동속도 기본 10.0f
@@ -24,6 +25,8 @@ public class msPlayerControllerNew : MonoBehaviour
     public float invincibleTime = 1.0f; //무적 유지 시간.
     public GameObject invincibleEffect; //무적 효과
 
+    public LifeManaHandler LMH;
+
     //IK 조작 관련
     public UnityEngine.Animations.Rigging.Rig pistolIk;
     public UnityEngine.Animations.Rigging.Rig rifleIk;
@@ -37,6 +40,9 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject cannon;
     public bool isRifleActivate = false;
     public bool isCannonActivate = false;
+    public Text pistolText;
+    public Text rifleText;
+    public Text cannonText;
 
     //땅과 접촉하는 것을 검사하는 것과 관련된 속성
     public Transform groundCheckTransform;
@@ -73,12 +79,23 @@ public class msPlayerControllerNew : MonoBehaviour
     public int skill_4_Heal;
 
     //UI관련 연동
+    public GameObject coinUI;
+    public GameObject HealthAbilitySysUI;
+    public GameObject bulletManagerUI;
+    public GameObject skillUI;
+    public GameObject bagUI;
+    public GameObject inventoryUI;
+    public GameObject skillBockUI;
+    public GameObject redScreenWarningUI;
 
-     void Awake()
+    public Text coinText;
+
+    void Awake()
     {
 
     }
 
+    
     public void Start()
     {
         invincibleEffect.SetActive(false);
@@ -107,6 +124,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         //스킬 UI는 하나밖에 없다고 생각해서 Find를 사용함.
         sklUI = GameObject.Find("SkillUI").GetComponent<SkillAbility>();
+        LMH = GameObject.Find("HealthSystem").GetComponent<LifeManaHandler>();
 
         animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 0);
         animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 1);
@@ -115,44 +133,52 @@ public class msPlayerControllerNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //안막혀 있으면 진행
-        if (!GameManager.Instance.thePlayerController_Block)
+        DebugPlayer(); //디버깅
+
+        if (isStage == false)
         {
-            DebugPlayer(); //디버깅
-
-            if (isDead == true)
-            {
-                return;
-            }
-
-            if (characterMoveMode == true)
-            {
-                return;
-            }
-
-            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-
-            //마우스의 현재 위치를 받고 캐릭터가 바라보는 곳과 일체화시킴.
-            if(Physics.Raycast(ray, out hit, Mathf.Infinity, mouseAimMask))
-            {
-                targetTransform.position = hit.point;
-            }
-
-            //점프 기능을 수행
-            if (Input.GetButtonDown("Jump") && isGrounded && isRolling==false && isDamaged==false)
-            {
-                //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
-                rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
-            }
-
-            PlayerDied(); //사망처리
-            WeaponControl(); //무기관리자
+            return;
         }
+
+        if (isDead == true)
+        {
+            return;
+        }
+
+        if (characterMoveMode == true)
+        {
+            return;
+        }
+
+        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        //마우스의 현재 위치를 받고 캐릭터가 바라보는 곳과 일체화시킴.
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, mouseAimMask))
+        {
+            targetTransform.position = hit.point;
+        }
+
+        //점프 기능을 수행
+        if (Input.GetButtonDown("Jump") && isGrounded && isRolling == false && isDamaged == false)
+        {
+            //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
+            rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -1 * Physics.gravity.y), ForceMode.VelocityChange);
+        }
+
+        PlayerDied(); //사망처리
+        WeaponControl(); //무기관리자
+        CheckWeaponBulletForText();
+        CheckCoin();
     }
 
     private void FixedUpdate()
     {
+        if (isStage == false)
+        {
+            return;
+        }
+
         if (isDead == true)
         {
             return;
@@ -163,84 +189,102 @@ public class msPlayerControllerNew : MonoBehaviour
             Player3DMove();
             return;
         }
-        //안막혀 있으면 진행
-        if (!GameManager.Instance.thePlayerController_Block)
+
+        //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
+        PlayerMove();
+        PlayerDash(); //대시
+
+        //플레이어 회전
+        rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
+
+        //그라운드 체크
+        isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
+        animator.SetBool("isGrounded", isGrounded);
+
+        SkillAbility(); //스킬체크
+    }
+
+    public void OnOffAllUI(bool x)
+    {
+        if (x == true)
         {
-                //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
-                PlayerMove();
-                PlayerDash(); //대시
-
-            //플레이어 회전
-            rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
-
-            //그라운드 체크
-            isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
-            animator.SetBool("isGrounded", isGrounded);
-
-            SkillAbility(); //스킬체크
-
+            coinUI.SetActive(true);
+            HealthAbilitySysUI.SetActive(true);
+            bulletManagerUI.SetActive(true);
+            skillUI.SetActive(true);
+            bagUI.SetActive(true);
+            inventoryUI.SetActive(true);
+            skillBockUI.SetActive(true);
+            redScreenWarningUI.SetActive(true);
+        }
+        else
+        {
+            coinUI.SetActive(false);
+            HealthAbilitySysUI.SetActive(false);
+            bulletManagerUI.SetActive(false);
+            skillUI.SetActive(false);
+            bagUI.SetActive(false);
+            inventoryUI.SetActive(false);
+            skillBockUI.SetActive(false);
+            redScreenWarningUI.SetActive(false);
         }
     }
 
     public void WeaponControl()
     {
-        //안막혀 있으면 진행
-        if (!GameManager.Instance.thePlayerController_Block)
+        if (isRolling == true || isDamaged == true)
         {
-
-            if (isRolling == true || isDamaged == true)
-            {
-                return;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Q))
-            {
-                currentWeapon--;
-                Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
-                if (currentWeapon == 0)
-                {
-                    currentWeapon = 3;
-                }
-                if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
-                {
-                    currentWeapon = 1;
-                }
-                else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
-                {
-                    currentWeapon = 1;
-                }
-                if (currentWeapon == 3 && isCannonActivate == false && isRifleActivate == true)
-                {
-                    currentWeapon = 2;
-                }
-                SwitchingWeapon();
-                Debug.Log("current Weapon : " + currentWeapon);
-            }
-
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                currentWeapon++;
-                Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
-                if (currentWeapon == 4)
-                {
-                    currentWeapon = 1;
-                }
-                if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
-                {
-                    currentWeapon = 1;
-                }
-                else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
-                {
-                    currentWeapon = 3;
-                }
-                if (currentWeapon == 3 && isCannonActivate == false)
-                {
-                    currentWeapon = 1;
-                }
-                SwitchingWeapon();
-                Debug.Log("current Weapon : " + currentWeapon);
-            }
+            return;
         }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            currentWeapon--;
+            //Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
+            if (currentWeapon == 0)
+            {
+                currentWeapon = 3;
+            }
+            if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
+            {
+                currentWeapon = 1;
+            }
+            else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
+            {
+                currentWeapon = 1;
+            }
+            if (currentWeapon == 3 && isCannonActivate == false && isRifleActivate == true)
+            {
+                currentWeapon = 2;
+            }
+            SwitchingWeapon();
+            //Debug.Log("current Weapon : " + currentWeapon);
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentWeapon++;
+            //Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
+            if (currentWeapon == 4)
+            {
+                currentWeapon = 1;
+            }
+            if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
+            {
+                currentWeapon = 1;
+            }
+            else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
+            {
+                currentWeapon = 3;
+            }
+            if (currentWeapon == 3 && isCannonActivate == false)
+            {
+                currentWeapon = 1;
+            }
+            SwitchingWeapon();
+            //Debug.Log("current Weapon : " + currentWeapon);
+        }
+
     }
 
     public void SwitchingWeapon()
@@ -313,6 +357,23 @@ public class msPlayerControllerNew : MonoBehaviour
         }
     }
 
+    public void CheckWeaponBulletForText()
+    {
+        String pistolTextContents = pistol.GetComponent<msOneHandGun>().currentAmmo + "/" + pistol.GetComponent<msOneHandGun>().fullAmmo;
+        String rifleTextContents = rifle.GetComponent<msMachineGun>().currentAmmo + "/" + rifle.GetComponent<msMachineGun>().fullAmmo;
+        String cannonTextContents = cannon.GetComponent<msCannon>().currentAmmo + "/" + cannon.GetComponent<msCannon>().fullAmmo;
+
+
+        pistolText.text = pistolTextContents;
+        rifleText.text = rifleTextContents;
+        cannonText.text = cannonTextContents;
+    }
+
+    public void CheckCoin()
+    {
+        coinText.text = DataManager.Instance.data.Money.ToString();
+    }
+
     private void initPlayerStat()
     {
         //플레이어 생성시 만들어지는 플레이어 초기화 함수이다.
@@ -326,7 +387,7 @@ public class msPlayerControllerNew : MonoBehaviour
         float v = Input.GetAxis("Vertical");
         Vector3 velocity = new Vector3(0, 0, 0);
 
-        if (isRolling == false && isDamaged==false)
+        if (isRolling == false && isDamaged == false)
         {
             Vector3 moveHorizontal = Vector3.right * h;
             velocity = (moveHorizontal).normalized;
@@ -339,7 +400,7 @@ public class msPlayerControllerNew : MonoBehaviour
         {
 
         }
-        
+
     }
 
     public void Player3DMove()
@@ -400,7 +461,7 @@ public class msPlayerControllerNew : MonoBehaviour
             Debug.Log("플레이어가 사망하였습니다.");
             animator.SetTrigger("isDead");
             StartCoroutine(PlayerDeadDelay());
-            
+
         }
     }
 
@@ -428,7 +489,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 characterMoveMode = true;
                 Debug.Log("디버깅 3 : 3D모드 ON");
             }
-            
+
         }
     }
 
@@ -439,14 +500,14 @@ public class msPlayerControllerNew : MonoBehaviour
         animator.SetTrigger("isDamage");
         rbody.AddForce(new Vector3(-2.0f, 0.2f, 0) * (1000f - toughness), ForceMode.Acceleration);
         StartCoroutine(DamagedAnimationDelay());
-         //넉백의 구현
+        //넉백의 구현
     }
 
     public void SkillAbility()
     {
-        Vector3 skillOneTransform = transform.position + new Vector3(3 * Mathf.Sign(targetTransform.position.x - transform.position.x), 1,0);
+        Vector3 skillOneTransform = transform.position + new Vector3(3 * Mathf.Sign(targetTransform.position.x - transform.position.x), 1, 0);
         Vector3 skillTwoTransform = transform.position + new Vector3(0.3f * Mathf.Sign(targetTransform.position.x - transform.position.x), 1, 0);
-        Vector3 skillFourTransform = transform.position + new Vector3(0,0.7f,0);
+        Vector3 skillFourTransform = transform.position + new Vector3(0, 0.7f, 0);
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -454,7 +515,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown = true;
                 sklUI.abilityImage1.fillAmount = 1;
-                
+
                 var go = Instantiate(skillOneEffect);
                 go.transform.position = skillOneTransform;
                 go.transform.rotation = transform.rotation;
@@ -478,7 +539,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown2 = true;
                 sklUI.abilityImage2.fillAmount = 1;
-                
+
                 var go = Instantiate(skillTwoEffect);
                 go.transform.position = skillTwoTransform;
                 go.transform.rotation = transform.rotation;
@@ -501,7 +562,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown3 = true;
                 sklUI.abilityImage3.fillAmount = 1;
-                
+
                 //Instantiate(skillThreeEffect, transform.position, transform.rotation);
                 var go = Instantiate(skillThreeEffect);
                 go.transform.position = transform.position;
@@ -526,7 +587,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown4 = true;
                 sklUI.abilityImage4.fillAmount = 1;
-                
+
                 Instantiate(skillFourEffect, skillFourTransform, transform.rotation);
                 float tempHalfInitHealth = initHealthPoint * 0.5f;
                 healthPoint += tempHalfInitHealth;
@@ -546,7 +607,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public void PlayerDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && isRolling ==false)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && isRolling == false)
         {
             StartCoroutine(RollingAnimationDelay());
             rbody.AddForce(new Vector3(Mathf.Sign(targetTransform.position.x - transform.position.x) * dashAcceleration * Time.deltaTime, 0, 0), ForceMode.Acceleration);
@@ -601,15 +662,12 @@ public class msPlayerControllerNew : MonoBehaviour
             transform.position = trapRespawn.transform.position;
         }
 
-        if(mapscript.instance != null)
-        {
-            // 왼쪽 게이트면 이전맵으로
-            if (other.gameObject == mapscript.instance.gates[0])
-                mapscript.instance.previousMap();
-            // 오른쪽 게이트면 다음 맵으로
-            if (other.gameObject == mapscript.instance.gates[1])
-                mapscript.instance.nextMap();
-        }
+        // 왼쪽 게이트면 이전맵으로
+        if (other.gameObject == mapscript.instance.gates[0])
+            mapscript.instance.previousMap();
+        // 오른쪽 게이트면 다음 맵으로
+        if (other.gameObject == mapscript.instance.gates[1])
+            mapscript.instance.nextMap();
 
     }
 
@@ -640,7 +698,8 @@ public class msPlayerControllerNew : MonoBehaviour
         StartCoroutine("InvincibleTime");
     }
 
-    public  IEnumerator InvincibleTime() {
+    public IEnumerator InvincibleTime()
+    {
         //int countTime = 0;
 
         Debug.Log("무적 시간 시작");
@@ -680,7 +739,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
 
         while (countTime < duration)
-        { 
+        {
             yield return new WaitForSeconds(0.1f);
 
             countTime++;
@@ -871,7 +930,19 @@ public class msPlayerControllerNew : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-        
+
+    }
+
+    public void SetIsStage(bool x)
+    {
+        if (x == true)
+        {
+            isStage = true;
+        }
+        else
+        {
+            isStage = false;
+        }
     }
 
 }
