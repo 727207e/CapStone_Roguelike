@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+
 using UnityEngine.SceneManagement;
 
 public class msPlayerControllerNew : MonoBehaviour
@@ -73,12 +74,13 @@ public class msPlayerControllerNew : MonoBehaviour
     public int skill_3_Damage = 20;
     public int skill_4_Heal;
 
+    public GameObject gamemanager;
+    public DataManager dataManager;
     //UI관련 연동
 
 
 
-    public GameObject gamemanager;
-    public DataManager dataManager;
+    
     void Awake()
     {
 
@@ -153,6 +155,12 @@ public class msPlayerControllerNew : MonoBehaviour
 
         PlayerDied(); //사망처리
         WeaponControl(); //무기관리자
+
+
+
+
+
+
 
         //끼임 탈출
         if (Input.GetKeyDown(KeyCode.Backspace))
