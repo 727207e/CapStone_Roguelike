@@ -420,7 +420,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &61421914
 GameObject:
@@ -2851,7 +2851,7 @@ MonoBehaviour:
   boss:
   - {fileID: 676478751056110066, guid: 91086af68738a914e92dcfdb477647a8, type: 3}
   - {fileID: 676478751056110066, guid: e3cb258da9ef4a744ae9e3a9bc5f2cbd, type: 3}
-  beforeBoss: {fileID: 1618004654007289109, guid: 06a40d6bd000a6f4d9dca9905bad9446,
+  beforeBoss: {fileID: 1618004654007289109, guid: 13a3f5208d4f31844b566fc236a3d237,
     type: 3}
   monster_count: 0
   gates:

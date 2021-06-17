@@ -33144,6 +33144,7 @@ MonoBehaviour:
   fullscreenToggle: {fileID: 1087851542}
   screenWidths: c00300000005000080070000
   menu: {fileID: 540989855}
+  pause: {fileID: 0}
 --- !u!1 &1905246565
 GameObject:
   m_ObjectHideFlags: 0
@@ -67348,6 +67349,8 @@ MonoBehaviour:
   skill_2_Damage: 100
   skill_3_Damage: 20
   skill_4_Heal: 0
+  gamemanager: {fileID: 0}
+  dataManager: {fileID: 0}
   coinUI: {fileID: 7616036235995567064}
   HealthAbilitySysUI: {fileID: 7616036235581543820}
   bulletManagerUI: {fileID: 7616036235578751708}
@@ -70420,8 +70423,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7616036235293492675}
   m_HandleRect: {fileID: 7616036235293492674}
   m_Direction: 2
-  m_Value: -0.013889898
-  m_Size: 0.000000902102
+  m_Value: -0.0000017209163
+  m_Size: 0.65694207
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -86213,7 +86216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000021998741, y: 161.81691}
+  m_AnchoredPosition: {x: 0.000021998741, y: 159.60043}
   m_SizeDelta: {x: 0, y: 575.1}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7616036235882601336
