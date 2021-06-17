@@ -4766,11 +4766,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8194228839312623693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: def128ee84e8b2e48ae0d5b9f6f7a325, type: 3}
+  m_Script: {fileID: 11500000, guid: ad05c5e7aae9ab04daf0cc4ec06097d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 50
-  onHitTrigger: 1
 --- !u!1 &8194228839312635313
 GameObject:
   m_ObjectHideFlags: 0

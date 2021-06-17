@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.Animations.Rigging;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
 public class msPlayerControllerNew : MonoBehaviour
 {
     public bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
@@ -78,6 +80,8 @@ public class msPlayerControllerNew : MonoBehaviour
     public int skill_3_Damage = 20;
     public int skill_4_Heal;
 
+    public GameObject gamemanager;
+    public DataManager dataManager;
     //UI관련 연동
     public GameObject coinUI;
     public GameObject HealthAbilitySysUI;
@@ -133,6 +137,9 @@ public class msPlayerControllerNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gamemanager = GameObject.Find("SaveManager");
+        
+
         DebugPlayer(); //디버깅
 
         if (isStage == false)
@@ -171,6 +178,10 @@ public class msPlayerControllerNew : MonoBehaviour
             //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -1 * Physics.gravity.y), ForceMode.VelocityChange);
         }
+
+        //끼임 탈출
+        if (Input.GetKeyDown(KeyCode.Backspace))
+            transform.position = GameObject.Find("Player_Spawn_1").transform.position;
 
         PlayerDied(); //사망처리
         WeaponControl(); //무기관리자
@@ -674,6 +685,15 @@ public class msPlayerControllerNew : MonoBehaviour
         // 오른쪽 게이트면 다음 맵으로
         if (other.gameObject == mapscript.instance.gates[1])
             mapscript.instance.nextMap();
+        // 연구소로
+        if (other.gameObject == mapscript.instance.gates[2])
+            SceneManager.LoadScene(2);
+
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            gamemanager.GetComponent<DataManager>().data.Money += 50;
+            Destroy(other.gameObject);
+        }
 
     }
 

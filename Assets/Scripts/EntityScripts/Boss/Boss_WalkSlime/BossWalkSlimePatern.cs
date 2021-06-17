@@ -9,10 +9,16 @@ public class BossWalkSlimePatern : BossPartentScripts
 
     List<int> AttackPatern_List;
 
+    public GameObject crystal;
+    public bool live = true;
+    public Vector3 position = Vector3.zero;
+
     int count = 0;
 
     protected override void Start()
     {
+        position = GameObject.Find("Crystal_Spawn").transform.position;
+
         BossHp = 100;
         attack_Delay = 1.5f;
         move_Delay = 1f;
@@ -96,7 +102,9 @@ public class BossWalkSlimePatern : BossPartentScripts
         }
 
         //죽음 체크
-        Death();
+        if (live)
+            live = Death(live, crystal, position);
+        
     }
 
     public override void Attack()
