@@ -78,9 +78,6 @@ public class msPlayerControllerNew : MonoBehaviour
     public DataManager dataManager;
     //UI관련 연동
 
-
-
-    
     void Awake()
     {
 
@@ -153,18 +150,12 @@ public class msPlayerControllerNew : MonoBehaviour
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
         }
 
-        PlayerDied(); //사망처리
-        WeaponControl(); //무기관리자
-
-
-
-
-
-
-
         //끼임 탈출
         if (Input.GetKeyDown(KeyCode.Backspace))
             transform.position = GameObject.Find("Player_Spawn_1").transform.position;
+
+        PlayerDied(); //사망처리
+        WeaponControl(); //무기관리자
     }
 
     private void FixedUpdate()
