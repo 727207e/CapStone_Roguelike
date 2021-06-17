@@ -176,6 +176,7 @@ public class msPlayerControllerNew : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded && isRolling == false && isDamaged == false)
         {
             //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
+            AudioManager.instance.PlaySound2D("PlayerJump");
             rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight * -1 * Physics.gravity.y), ForceMode.VelocityChange);
         }
 
@@ -274,6 +275,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 currentWeapon = 2;
             }
+            AudioManager.instance.PlaySound2D("WeaponChanged");
             SwitchingWeapon();
             //Debug.Log("current Weapon : " + currentWeapon);
         }
@@ -298,6 +300,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 currentWeapon = 1;
             }
+            AudioManager.instance.PlaySound2D("WeaponChanged");
             SwitchingWeapon();
             //Debug.Log("current Weapon : " + currentWeapon);
         }
@@ -477,6 +480,7 @@ public class msPlayerControllerNew : MonoBehaviour
             healthPoint = 0;
             Debug.Log("플레이어가 사망하였습니다.");
             animator.SetTrigger("isDead");
+            AudioManager.instance.PlaySound2D("PlayerDeath");
             StartCoroutine(PlayerDeadDelay());
 
         }
@@ -516,6 +520,7 @@ public class msPlayerControllerNew : MonoBehaviour
         healthPoint -= damage;
         animator.SetTrigger("isDamage");
         rbody.AddForce(new Vector3(-2.0f, 0.2f, 0) * (1000f - toughness), ForceMode.Acceleration);
+        AudioManager.instance.PlaySound2D("PlayerDamaged");
         StartCoroutine(DamagedAnimationDelay());
         //넉백의 구현
     }
@@ -528,7 +533,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            if (sklUI.isCooldown == false)
+            if (sklUI.isCooldown == false && abilityPoint>30)
             {
                 sklUI.isCooldown = true;
                 sklUI.abilityImage1.fillAmount = 1;
@@ -541,6 +546,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("1번 스킬 발동");
                 abilityPoint -= skill_1_Energe;
+                AudioManager.instance.PlaySound2D("Skill_1");
                 StartCoroutine(SkillAnimationDelay(1, 10f));
 
             }
@@ -552,7 +558,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (sklUI.isCooldown2 == false)
+            if (sklUI.isCooldown2 == false && abilityPoint > 50)
             {
                 sklUI.isCooldown2 = true;
                 sklUI.abilityImage2.fillAmount = 1;
@@ -565,6 +571,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("2번 스킬 발동");
                 abilityPoint -= skill_2_Energe;
+                AudioManager.instance.PlaySound2D("Skill_2");
                 StartCoroutine(SkillAnimationDelay(2, 10));
             }
             else
@@ -575,7 +582,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            if (sklUI.isCooldown3 == false)
+            if (sklUI.isCooldown3 == false && abilityPoint > 20)
             {
                 sklUI.isCooldown3 = true;
                 sklUI.abilityImage3.fillAmount = 1;
@@ -590,6 +597,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("3번 스킬 발동");
                 abilityPoint -= skill_3_Energe;
+                AudioManager.instance.PlaySound2D("Skill_3");
                 StartCoroutine(SkillAnimationDelay(3, 10));
             }
             else
@@ -608,6 +616,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 Instantiate(skillFourEffect, skillFourTransform, transform.rotation);
                 float tempHalfInitHealth = initHealthPoint * 0.5f;
                 healthPoint += tempHalfInitHealth;
+                AudioManager.instance.PlaySound2D("Skill_4");
                 StartCoroutine(SkillAnimationDelay(4, 10));
                 if (healthPoint > initHealthPoint)
                 {
@@ -626,8 +635,9 @@ public class msPlayerControllerNew : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && isRolling == false)
         {
-            StartCoroutine(RollingAnimationDelay());
+            AudioManager.instance.PlaySound2D("PlayerRolling");
             rbody.AddForce(new Vector3(Mathf.Sign(targetTransform.position.x - transform.position.x) * dashAcceleration * Time.deltaTime, 0, 0), ForceMode.Acceleration);
+            StartCoroutine(RollingAnimationDelay());
         }
     }
 
