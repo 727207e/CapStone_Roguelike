@@ -22,6 +22,8 @@ TagManager:
   - Monster
   - Coin
   - ParticleAttack
+  - Trap
+  - Crystal
   layers:
   - Default
   - TransparentFX

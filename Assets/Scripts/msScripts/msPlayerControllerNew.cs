@@ -687,14 +687,28 @@ public class msPlayerControllerNew : MonoBehaviour
             mapscript.instance.nextMap();
         // 연구소로
         if (other.gameObject == mapscript.instance.gates[2])
+        {
+            mapscript.instance.dataManager.GameSave();
             SceneManager.LoadScene(2);
+        }
 
         if (other.gameObject.CompareTag("Coin"))
         {
             gamemanager.GetComponent<DataManager>().data.Money += 50;
             Destroy(other.gameObject);
         }
+    }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Crystal"))
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                GameObject cardgenerator = GameObject.Find("CardGenerator");
+                cardgenerator.GetComponent<CardGenerator>().relicgive();
+            }
+        }
     }
 
     public void OnCollisionEnter(Collision collision)

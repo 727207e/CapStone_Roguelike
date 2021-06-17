@@ -2720,8 +2720,9 @@ MonoBehaviour:
   hitCollider: {fileID: 3151832896681653170}
   the_Next_Partern_HP_Limit: 0
   oldpos: {fileID: 371239091}
-  crystal: {fileID: 1435128896743559756, guid: dd847020969ab9343bfee55542042c84, type: 3}
+  crystal: {fileID: 1678884195978160, guid: 516d7ec438e44664a9e2827be456ca97, type: 3}
   live: 1
+  position: {x: 0, y: 0, z: 0}
 --- !u!114 &3151832897966553380
 MonoBehaviour:
   m_ObjectHideFlags: 0
