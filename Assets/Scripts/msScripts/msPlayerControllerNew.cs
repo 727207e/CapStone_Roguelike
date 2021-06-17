@@ -707,6 +707,8 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 GameObject cardgenerator = GameObject.Find("CardGenerator");
                 cardgenerator.GetComponent<CardGenerator>().relicgive();
+
+                Destroy(other.gameObject);
             }
         }
     }
