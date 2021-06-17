@@ -6,7 +6,7 @@ public class msSkill_3_Collision_Effect : MonoBehaviour
 {
     //public GameObject player;
     //public msPlayerControllerNew msPCN;
-    public float effect_3_ReflectForce = 1000f;
+    public float effect_3_ReflectForce = 3000f;
     public Vector3 tempPlayerPosition;
     public int skillDamage = 0;
     //public GameObject effectSelf;

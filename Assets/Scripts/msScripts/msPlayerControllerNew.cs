@@ -442,7 +442,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown = true;
                 sklUI.abilityImage1.fillAmount = 1;
-                StartCoroutine(SkillAnimationDelay(1, 10f));
+                
                 var go = Instantiate(skillOneEffect);
                 go.transform.position = skillOneTransform;
                 go.transform.rotation = transform.rotation;
@@ -451,6 +451,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("1번 스킬 발동");
                 abilityPoint -= skill_1_Energe;
+                StartCoroutine(SkillAnimationDelay(1, 10f));
 
             }
             else
@@ -465,7 +466,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown2 = true;
                 sklUI.abilityImage2.fillAmount = 1;
-                StartCoroutine(SkillAnimationDelay(2, 10));
+                
                 var go = Instantiate(skillTwoEffect);
                 go.transform.position = skillTwoTransform;
                 go.transform.rotation = transform.rotation;
@@ -474,6 +475,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("2번 스킬 발동");
                 abilityPoint -= skill_2_Energe;
+                StartCoroutine(SkillAnimationDelay(2, 10));
             }
             else
             {
@@ -487,7 +489,7 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown3 = true;
                 sklUI.abilityImage3.fillAmount = 1;
-                StartCoroutine(SkillAnimationDelay(3, 10));
+                
                 //Instantiate(skillThreeEffect, transform.position, transform.rotation);
                 var go = Instantiate(skillThreeEffect);
                 go.transform.position = transform.position;
@@ -498,6 +500,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 effect.ActiveEffect();
                 Debug.Log("3번 스킬 발동");
                 abilityPoint -= skill_3_Energe;
+                StartCoroutine(SkillAnimationDelay(3, 10));
             }
             else
             {
@@ -511,10 +514,11 @@ public class msPlayerControllerNew : MonoBehaviour
             {
                 sklUI.isCooldown4 = true;
                 sklUI.abilityImage4.fillAmount = 1;
-                StartCoroutine(SkillAnimationDelay(4, 10));
+                
                 Instantiate(skillFourEffect, skillFourTransform, transform.rotation);
                 float tempHalfInitHealth = initHealthPoint * 0.5f;
                 healthPoint += tempHalfInitHealth;
+                StartCoroutine(SkillAnimationDelay(4, 10));
                 if (healthPoint > initHealthPoint)
                 {
                     healthPoint = initHealthPoint;

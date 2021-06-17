@@ -19323,4 +19323,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0540b78cdf8aa3498ee3240d0069c59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect_3_ReflectForce: 1000
+  effect_3_ReflectForce: 3000
+  tempPlayerPosition: {x: 0, y: 0, z: 0}
+  skillDamage: 0
