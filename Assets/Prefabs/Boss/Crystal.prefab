@@ -655,9 +655,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4888588471481040}
   - component: {fileID: 910210522}
+  - component: {fileID: 893028128495241164}
   m_Layer: 8
-  m_Name: Crystalsv01
-  m_TagString: Untagged
+  m_Name: Crystal
+  m_TagString: Crystal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,6 +700,19 @@ CapsuleCollider:
   m_Height: 1.2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &893028128495241164
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678884195978160}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 20}
+  m_Center: {x: 0, y: 5, z: -5}
 --- !u!1001 &1809913631
 PrefabInstance:
   m_ObjectHideFlags: 0

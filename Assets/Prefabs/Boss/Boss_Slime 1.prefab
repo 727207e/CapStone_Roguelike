@@ -1001,8 +1001,9 @@ MonoBehaviour:
   _theGrab: 0
   _theGrabObj: {fileID: 701500932956639576}
   CameraMovingPaternPos: []
-  crystal: {fileID: 1435128896743559756, guid: dd847020969ab9343bfee55542042c84, type: 3}
+  crystal: {fileID: 1678884195978160, guid: 55fd4a162e9afdd40aa8b9abb72231be, type: 3}
   live: 1
+  position: {x: 0, y: 0, z: 0}
 --- !u!114 &701500933209829124
 MonoBehaviour:
   m_ObjectHideFlags: 0

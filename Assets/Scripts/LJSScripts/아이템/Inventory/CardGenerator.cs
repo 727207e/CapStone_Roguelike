@@ -87,6 +87,19 @@ public class CardGenerator : MonoBehaviour
         }
     }
 
+    public void relicgive()
+    {
+        SumthePercent();
+
+        //캔버스 생성
+        theCanvasObj = Instantiate(Canvas_Card) as GameObject;
+
+        for (int count = 0; count < 3; count++)
+        {
+            GeneratorCard(count);
+        }
+    }
+
     //////////////////////////////////////////////////////////////카드 생성
     public void GeneratorCard(int count)
     {
