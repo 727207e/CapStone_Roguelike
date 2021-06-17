@@ -50,7 +50,7 @@ public class CardGenerator : MonoBehaviour
 
     private void Start()
     {
-        inventoryScript = GameManager.Instance.player.transform.Find("캐랙티한테고정으로달릴UI").
+        inventoryScript = GameManager.Instance.player.transform.Find("UIForCharcter").
             transform.Find("체력바,하단스킬창,아템창").transform.Find("Inventory").GetComponent<InventoryScript>();
     }
 

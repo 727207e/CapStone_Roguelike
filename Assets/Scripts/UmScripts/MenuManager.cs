@@ -17,6 +17,10 @@ public class MenuManager : MonoBehaviour
 	//사용될 메뉴 옵션
 	public GameObject menu;
 
+
+	//사용될 메뉴 옵션
+	public GameObject pause;
+
 	//메뉴옵션 활성화 비활성화
 	private bool menu_active = false;
 
@@ -50,7 +54,9 @@ public class MenuManager : MonoBehaviour
 			//메뉴바 활성화
 			menu.SetActive(true);
 			menu_active = true;
-        }    
+
+
+		}    
 
 		//메뉴 비활성화
 		else if(Input.GetKeyDown(KeyCode.Escape) && menu_active)

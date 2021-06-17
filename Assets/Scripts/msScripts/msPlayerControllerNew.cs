@@ -137,6 +137,12 @@ public class msPlayerControllerNew : MonoBehaviour
 
         if (isStage == false)
         {
+
+
+            pistol.SetActive(false);
+            rifle.SetActive(false);
+            cannon.SetActive(false);
+
             return;
         }
 
@@ -935,13 +941,20 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public void SetIsStage(bool x)
     {
+
+
+        //켜기
         if (x == true)
         {
             isStage = true;
         }
+
+        //끄기
         else
         {
+
             isStage = false;
+
         }
     }
 

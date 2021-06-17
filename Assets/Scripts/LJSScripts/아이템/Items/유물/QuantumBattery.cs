@@ -11,5 +11,10 @@ public class QuantumBattery : Items
             " \n 에너지가 초당 0.5만큼 추가로 회복됩니다.");
     }
 
+    public override void theItemsEffect()
+    {
+        base.theItemsEffect();
 
+        Player.LMH.gameObject.GetComponent<LifeManaHandler>().abilityPointRegenForEverySeconds += 0.5f;
+    }
 }

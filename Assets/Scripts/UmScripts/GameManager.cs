@@ -63,7 +63,7 @@ public class GameManager : MonoBehaviour
     {
         if(player == null)
         {
-            player = GameObject.Find("MainCharacterSys 1");
+            player = GameObject.Find("MainCharacterSys_Final");
         }
 
         if(main_Camera == null)
@@ -155,14 +155,21 @@ public class GameManager : MonoBehaviour
     // 체인을 걸어서 이 함수는 매 씬마다 호출된다.
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        //게임 매니저 정보 읽어오기
         Start();
 
+
+        //화면 밝아짐
         StartCoroutine(fadeOut());
 
+        //연구소 씬일경우
         if (SceneManager.GetActiveScene().name == "3_LabScene")
         {
-            print("block");
-            thePlayerController_Block = true; // 막음
+
+            //캐릭터 이동 잠금
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                .SetIsStage(false);
+
 
             //연구소 이동시 캐릭터 특정위치에 배치
             GameObject charpos = GameObject.Find("CharPos");
@@ -171,9 +178,34 @@ public class GameManager : MonoBehaviour
 
         }
 
+
+        //주사기 일 경우
+        if (SceneManager.GetActiveScene().name == "4_InjectionScene")
+        {
+            //캐릭터 이동 잠금
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                .SetIsStage(false);
+
+            //Ui off
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                .OnOffAllUI(false);
+
+
+        }
+
+
+        //던전씬 입장일 경우
         if (SceneManager.GetActiveScene().name == "DungeonScene")
         {
-            thePlayerController_Block = false; // 움직임 가능
+
+            //캐릭터 이동 잠그고 UI 잠금
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+    .OnOffAllUI(true);
+
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+    .SetIsStage(true);
+
+            //정보갱신
             player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>().Start();
         }
 

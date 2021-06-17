@@ -18,7 +18,7 @@ public class Raiserlightweight : Items
 
         Player.sklUI.cooldown2 -= 2;
 
-        //에너지 소모량
+        Player.skill_2_Energe -= 20f;
 
         Player.skill_2_Damage -= 30;
     }
