@@ -77,6 +77,16 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject gamemanager;
     public DataManager dataManager;
     //UI관련 연동
+    public GameObject coinUI;
+    public GameObject HealthAbilitySysUI;
+    public GameObject bulletManagerUI;
+    public GameObject skillUI;
+    public GameObject bagUI;
+    public GameObject inventoryUI;
+    public GameObject skillBockUI;
+    public GameObject redScreenWarningUI;
+
+    public Text coinText;
     void Awake()
     {
 
