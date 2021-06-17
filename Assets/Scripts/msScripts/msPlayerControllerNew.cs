@@ -87,6 +87,7 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject redScreenWarningUI;
 
     public Text coinText;
+
     void Awake()
     {
 
