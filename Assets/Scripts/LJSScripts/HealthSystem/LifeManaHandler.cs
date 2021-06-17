@@ -19,6 +19,7 @@ public class LifeManaHandler : MonoBehaviour
     bool activebloodScreen = false;
 
     public float calculateHealthPoint;
+    public float abilityPointRegenForEverySeconds = 1f;
 
     void Start()
     {
@@ -37,9 +38,6 @@ public class LifeManaHandler : MonoBehaviour
 
     void Update()
     {
-
-      
-
         calculateHealthPoint = msPCN.healthPoint / msPCN.initHealthPoint;
         lifeBar.fillAmount = Mathf.MoveTowards(lifeBar.fillAmount, calculateHealthPoint, Time.deltaTime);
         lifeText.text = "" + (int)msPCN.healthPoint;
@@ -48,7 +46,7 @@ public class LifeManaHandler : MonoBehaviour
         if (msPCN.abilityPoint < msPCN.initAbilityPoint)
         {
             manaBar.fillAmount = Mathf.MoveTowards(manaBar.fillAmount, 1f, Time.deltaTime * 0.01f);
-            msPCN.abilityPoint = Mathf.MoveTowards(msPCN.abilityPoint / msPCN.initAbilityPoint, 1f, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
+            msPCN.abilityPoint = Mathf.MoveTowards(msPCN.abilityPoint / msPCN.initAbilityPoint, abilityPointRegenForEverySeconds, Time.deltaTime * 0.01f) * msPCN.initAbilityPoint;
         }
 
         if (msPCN.abilityPoint < 0)

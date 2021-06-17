@@ -32,7 +32,7 @@ public class LabSceneManager : MonoBehaviour
         //루트2 를 곱함(피타고라스 빗변공식)
         blockLength = MapGround.transform.localScale.x/2 * Mathf.Sqrt(2) - range;
 
-        Player.GetComponent<msPlayerControllerNew>().SetPlayerDisabled(0);
+        Player.GetComponent<msPlayerControllerNew>().SetPlayerDisabled(0); 
     }
 
     // Update is called once per frame

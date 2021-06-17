@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.UI;
 
 public class msPlayerControllerNew : MonoBehaviour
 {
-    private bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
-    private bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
+    public bool characterMoveMode = false; //캐릭터가 2D로 움직일 건지 3D로 움직일건지
+    public bool isStage = false; //캐릭터가 현재 인게임인지, 아니면 필드인지
 
     //캐릭터가 가지는 스탯
     public float walkSpeed = 10.0f; //이동속도 기본 10.0f
@@ -24,6 +25,8 @@ public class msPlayerControllerNew : MonoBehaviour
     public float invincibleTime = 1.0f; //무적 유지 시간.
     public GameObject invincibleEffect; //무적 효과
 
+    public LifeManaHandler LMH;
+
     //IK 조작 관련
     public UnityEngine.Animations.Rigging.Rig pistolIk;
     public UnityEngine.Animations.Rigging.Rig rifleIk;
@@ -37,6 +40,9 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject cannon;
     public bool isRifleActivate = false;
     public bool isCannonActivate = false;
+    public Text pistolText;
+    public Text rifleText;
+    public Text cannonText;
 
     //땅과 접촉하는 것을 검사하는 것과 관련된 속성
     public Transform groundCheckTransform;
@@ -73,6 +79,16 @@ public class msPlayerControllerNew : MonoBehaviour
     public int skill_4_Heal;
 
     //UI관련 연동
+    public GameObject coinUI;
+    public GameObject HealthAbilitySysUI;
+    public GameObject bulletManagerUI;
+    public GameObject skillUI;
+    public GameObject bagUI;
+    public GameObject inventoryUI;
+    public GameObject skillBockUI;
+    public GameObject redScreenWarningUI;
+
+    public Text coinText;
 
      void Awake()
     {
@@ -107,6 +123,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
         //스킬 UI는 하나밖에 없다고 생각해서 Find를 사용함.
         sklUI = GameObject.Find("SkillUI").GetComponent<SkillAbility>();
+        LMH = GameObject.Find("HealthSystem").GetComponent<LifeManaHandler>();
 
         animator.SetLayerWeight(animator.GetLayerIndex("3DMovement"), 0);
         animator.SetLayerWeight(animator.GetLayerIndex("Base Layer"), 1);
@@ -116,6 +133,11 @@ public class msPlayerControllerNew : MonoBehaviour
     void Update()
     {
         DebugPlayer(); //디버깅
+
+        if (isStage == false)
+        {
+            return;
+        }
 
         if (isDead == true)
         {
@@ -145,10 +167,17 @@ public class msPlayerControllerNew : MonoBehaviour
 
         PlayerDied(); //사망처리
         WeaponControl(); //무기관리자
+        CheckWeaponBulletForText();
+        CheckCoin();
     }
 
     private void FixedUpdate()
     {
+        if (isStage == false)
+        {
+            return;
+        }
+
         if (isDead == true)
         {
             return;
@@ -174,6 +203,32 @@ public class msPlayerControllerNew : MonoBehaviour
         SkillAbility(); //스킬체크
     }
 
+    public void OnOffAllUI(bool x)
+    {
+        if (x == true)
+        {
+            coinUI.SetActive(true);
+            HealthAbilitySysUI.SetActive(true);
+            bulletManagerUI.SetActive(true);
+            skillUI.SetActive(true);
+            bagUI.SetActive(true);
+            inventoryUI.SetActive(true);
+            skillBockUI.SetActive(true);
+            redScreenWarningUI.SetActive(true);
+        }
+        else
+        {
+            coinUI.SetActive(false);
+            HealthAbilitySysUI.SetActive(false);
+            bulletManagerUI.SetActive(false);
+            skillUI.SetActive(false);
+            bagUI.SetActive(false);
+            inventoryUI.SetActive(false);
+            skillBockUI.SetActive(false);
+            redScreenWarningUI.SetActive(false);
+        }
+    }
+
     public void WeaponControl()
     {
         if (isRolling == true || isDamaged == true)
@@ -184,7 +239,7 @@ public class msPlayerControllerNew : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             currentWeapon--;
-            Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
+            //Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
             if (currentWeapon==0)
             {
                 currentWeapon = 3;
@@ -202,13 +257,13 @@ public class msPlayerControllerNew : MonoBehaviour
                 currentWeapon = 2;
             }
             SwitchingWeapon();
-            Debug.Log("current Weapon : " + currentWeapon);
+            //Debug.Log("current Weapon : " + currentWeapon);
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
             currentWeapon++;
-            Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
+            //Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
             if (currentWeapon==4)
             {
                 currentWeapon = 1;
@@ -226,7 +281,7 @@ public class msPlayerControllerNew : MonoBehaviour
                 currentWeapon = 1;
             }
             SwitchingWeapon();
-            Debug.Log("current Weapon : " + currentWeapon);
+            //Debug.Log("current Weapon : " + currentWeapon);
         }
 
     }
@@ -299,6 +354,23 @@ public class msPlayerControllerNew : MonoBehaviour
 
 
         }
+    }
+
+    public void CheckWeaponBulletForText()
+    {
+        String pistolTextContents = pistol.GetComponent<msOneHandGun>().currentAmmo + "/" + pistol.GetComponent<msOneHandGun>().fullAmmo;
+        String rifleTextContents = rifle.GetComponent<msMachineGun>().currentAmmo + "/" + rifle.GetComponent<msMachineGun>().fullAmmo;
+        String cannonTextContents = cannon.GetComponent<msCannon>().currentAmmo + "/" + cannon.GetComponent<msCannon>().fullAmmo;
+
+
+        pistolText.text = pistolTextContents;
+        rifleText.text = rifleTextContents;
+        cannonText.text = cannonTextContents;
+    }
+
+    public void CheckCoin()
+    {
+        coinText.text =  DataManager.Instance.data.Money.ToString();
     }
 
     private void initPlayerStat()
@@ -857,6 +929,18 @@ public class msPlayerControllerNew : MonoBehaviour
             gameObject.SetActive(false);
         }
         
+    }
+
+    public void SetIsStage(bool x)
+    {
+        if (x == true)
+        {
+            isStage = true;
+        }
+        else
+        {
+            isStage = false;
+        }
     }
 
 }
