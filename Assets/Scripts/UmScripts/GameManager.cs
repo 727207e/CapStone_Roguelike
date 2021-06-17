@@ -169,9 +169,26 @@ public class GameManager : MonoBehaviour
         //화면 밝아짐
         StartCoroutine(fadeOut());
 
+        //타이틀 씬일경우
+        if (SceneManager.GetActiveScene().name == "1_GameOpening")
+        {
+
+            AudioManager.instance.PlayMusic("BGMIntro", 2);
+
+        }
+
+        //스토리텔링 씬일경우
+        if (SceneManager.GetActiveScene().name == "2_StroyTelling")
+        {
+
+            AudioManager.instance.PlayMusic("BGMScenario", 2);
+
+        }
+
         //연구소 씬일경우
         if (SceneManager.GetActiveScene().name == "3_LabScene")
         {
+            AudioManager.instance.PlayMusic("BGMLab", 2);
 
             //캐릭터 이동 잠금
             player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()

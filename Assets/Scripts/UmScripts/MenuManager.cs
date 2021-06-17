@@ -16,10 +16,6 @@ public class MenuManager : MonoBehaviour
 
 	//사용될 메뉴 옵션
 	public GameObject menu;
-
-
-	//사용될 메뉴 옵션
-	public GameObject pause;
 	public GameObject youWin_Image;
 	public GameObject youLose_image;
 

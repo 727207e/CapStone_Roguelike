@@ -108,6 +108,17 @@ public class AudioManager : MonoBehaviour
 		PlaySound(library.GetClipFromName(soundName), pos);
 	}
 
+	public void PlayMusic(string soundName, float fadeDuration = 1)
+	{
+		activeMusicSourceIndex = 1 - activeMusicSourceIndex; //2개 밖에 없기 때문에
+		musicSources[activeMusicSourceIndex].clip = library.GetClipFromName(soundName);
+		musicSources[activeMusicSourceIndex].Play();
+
+		//노래 변경시 페이드 아웃, 새로운 노래 페이드 인
+		StartCoroutine(AnimateMusicCrossfade(fadeDuration));
+	}
+
+
 	public void PlaySound2D(string soundName)
 	{
 		//이팩트 소리 출력
