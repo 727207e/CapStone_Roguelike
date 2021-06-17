@@ -11080,27 +11080,196 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundGroups:
-  - groupID: Impact
+  - groupID: BGMIntro
     group:
-    - {fileID: 8300000, guid: 73715d68729910d4ebb0c5a11847c05c, type: 3}
-    - {fileID: 8300000, guid: 44797adc677cb1b4a9bc93313e00e658, type: 3}
-    - {fileID: 8300000, guid: 8c90b7b51522d4f43bd69cfdf7103a6a, type: 3}
-  - groupID: EnemyAttack
+    - {fileID: 8300000, guid: 300b4e37f95aec54b8d5c331d78c7922, type: 3}
+    - {fileID: 8300000, guid: 1a18a12945f6a10428d66965bdf2c17f, type: 3}
+    - {fileID: 8300000, guid: e105f6b1ee2d03241bc234c300d848f1, type: 3}
+    - {fileID: 8300000, guid: 7e2a5e9cd25fb1945b7e55926d7685f2, type: 3}
+  - groupID: BGMScenario
     group:
-    - {fileID: 8300000, guid: 501b6c9383ae3eb478aa09cca66b8385, type: 3}
-  - groupID: EnemyDeath
+    - {fileID: 8300000, guid: 1d8b374b398425741a6b5e6fc10acbdb, type: 3}
+    - {fileID: 8300000, guid: 34afc693f8a3b7a4e879c0184952fc9e, type: 3}
+  - groupID: BGMMainStage
     group:
-    - {fileID: 8300000, guid: 5a0447abd5b6a7c44809e963d31f7b09, type: 3}
-    - {fileID: 8300000, guid: fd4b5807f61e3ef45a361407abcf3d8d, type: 3}
+    - {fileID: 8300000, guid: 5009a8261868be548819b8710a85140a, type: 3}
+    - {fileID: 8300000, guid: 1594a37e408cf37438e0f34aa9615fee, type: 3}
+    - {fileID: 8300000, guid: b884064ef3e8e2b4eb0465390904af58, type: 3}
+    - {fileID: 8300000, guid: acfd36e14e1e6554b830d7fbc649e021, type: 3}
+    - {fileID: 8300000, guid: c542caecdc0c0704a9cff1516cef480f, type: 3}
+  - groupID: BGMBossStage
+    group:
+    - {fileID: 8300000, guid: 85062449497d86b498ebbec93086cc61, type: 3}
+    - {fileID: 8300000, guid: 00bf11e8dbcb5ed43883e2daa39e5b08, type: 3}
+    - {fileID: 8300000, guid: 959bfb5141001844eb6eceb3527485ba, type: 3}
+    - {fileID: 8300000, guid: e1bab78b96110bd4da36706a6a2d3b6b, type: 3}
+    - {fileID: 8300000, guid: 86da7705ee05f324d9e99d9db48985e5, type: 3}
+    - {fileID: 8300000, guid: 7e1cdd5e884bdf44789ac3a351d564c1, type: 3}
+  - groupID: BGMLab
+    group:
+    - {fileID: 8300000, guid: 7eaab20cd3dfd834f9d1d2d6e41ad27d, type: 3}
+    - {fileID: 8300000, guid: 095c6828468967f44b60f8609771ab37, type: 3}
+  - groupID: BGMGameClear
+    group:
+    - {fileID: 8300000, guid: e1a86c215234bb24b9cecaf4ce233b8b, type: 3}
+  - groupID: BGMGameOver
+    group:
+    - {fileID: 8300000, guid: a22425ee39bf1514e93ff20d5972788c, type: 3}
+  - groupID: UIButtonClick
+    group:
+    - {fileID: 8300000, guid: 9d8a7aca58752094faf3a443e4c09ae8, type: 3}
+  - groupID: UIInventoryOpen
+    group:
+    - {fileID: 8300000, guid: 909c2e4a0039264498f307b61f0edfc3, type: 3}
+  - groupID: UIWeaponPurchased
+    group:
+    - {fileID: 8300000, guid: fcc2004ed03ddf84999862b2fa6fd21e, type: 3}
+  - groupID: UICoinGet
+    group:
+    - {fileID: 8300000, guid: bfe5b2d0b15f03e42a3c15751dd37234, type: 3}
+  - groupID: UIRandomBoxOpen
+    group:
+    - {fileID: 8300000, guid: 8294d59350f05834c9c977c6336fc891, type: 3}
+  - groupID: UICardShuffle
+    group:
+    - {fileID: 8300000, guid: 2d0d8d03a995b104a8d8d9fef5740215, type: 3}
+  - groupID: UICardSelect
+    group:
+    - {fileID: 8300000, guid: 5cbc4bbc49a4a3544a6bccef9131013d, type: 3}
+  - groupID: UIStageTransport
+    group:
+    - {fileID: 8300000, guid: 5f893d011c3547b4f94b8f13e8650bea, type: 3}
+  - groupID: UIInjection
+    group:
+    - {fileID: 8300000, guid: 61f92bf47d01f414f9df61894a1e2086, type: 3}
+  - groupID: WeaponPistolShot
+    group:
+    - {fileID: 8300000, guid: 35c3bb56f976748448969e7a0134b3b0, type: 3}
+  - groupID: WeaponRilfeShot
+    group:
+    - {fileID: 8300000, guid: 4e863ddfd07a7a142a592950df023247, type: 3}
+  - groupID: WeaponCannonShot
+    group:
+    - {fileID: 8300000, guid: 14a7cafc46b42524e8e5b007a0e0ad82, type: 3}
+    - {fileID: 8300000, guid: eca84b20029430446b25d254ca094435, type: 3}
+  - groupID: WeaponCannonSplash
+    group:
+    - {fileID: 8300000, guid: 3a0c2a3e616610c4cb5cd73c325494e0, type: 3}
+  - groupID: Skill_1
+    group:
+    - {fileID: 8300000, guid: 35ab54dcb8766594a9dba53570b12a0d, type: 3}
+  - groupID: Skill_2
+    group:
+    - {fileID: 8300000, guid: e4d57ddfd2f417140b73f39b2f662bcb, type: 3}
+  - groupID: Skill_3
+    group:
+    - {fileID: 8300000, guid: 48e275a737c6e914a8601b0f43af4577, type: 3}
+  - groupID: Skill_4
+    group:
+    - {fileID: 8300000, guid: dada44d5252d36644b375de1859a3c79, type: 3}
+    - {fileID: 8300000, guid: 368bd9904c37bb441bbfea4cb822c173, type: 3}
+  - groupID: PlayerDamaged
+    group:
+    - {fileID: 8300000, guid: c9732308291796e4b9fc40fa55eda389, type: 3}
+  - groupID: PlayerRolling
+    group:
+    - {fileID: 8300000, guid: bc1aa1de547252c44bdcc2ed0a77e94a, type: 3}
+    - {fileID: 8300000, guid: 382802fc468946640ae069e3449262b7, type: 3}
+  - groupID: WeaponChanged
+    group:
+    - {fileID: 8300000, guid: a77bf53907d102749870962f309fc873, type: 3}
+  - groupID: WeaponReload
+    group:
+    - {fileID: 8300000, guid: 0da5520ca34cc5f4c9a15542dc54dc48, type: 3}
   - groupID: PlayerDeath
     group:
-    - {fileID: 8300000, guid: f4decd7ba989a4f43a9abf7186b36f96, type: 3}
-  - groupID: StageClear
+    - {fileID: 8300000, guid: 2df3111e7fec77848920cbe252cb1a24, type: 3}
+    - {fileID: 8300000, guid: 2096c4ce833515043bc45c2ba3690f15, type: 3}
+  - groupID: PlayerJump
     group:
-    - {fileID: 8300000, guid: 4fe0dea8d149e1042b8b4a9a4993909d, type: 3}
-  - groupID: PlayerGun
+    - {fileID: 8300000, guid: a69277e843caf304fa47bf182b046add, type: 3}
+  - groupID: MonsterIdle
     group:
-    - {fileID: 8300000, guid: 4fe0dea8d149e1042b8b4a9a4993909d, type: 3}
+    - {fileID: 8300000, guid: ebe3a7d1fa40b024a8344106724242f2, type: 3}
+    - {fileID: 8300000, guid: 96a4313ef55f85c49a75ce2144a9d398, type: 3}
+    - {fileID: 8300000, guid: 28d8aa2a71c217e4d8e0784a6a27e405, type: 3}
+    - {fileID: 8300000, guid: 4ffd389f6bbc14f478ba3a55d1b04e68, type: 3}
+  - groupID: MonsterMeleeRollAttack
+    group:
+    - {fileID: 8300000, guid: 8a8fb9195421b2d4093baca14afe34e1, type: 3}
+    - {fileID: 8300000, guid: 9ab394f83aa89b14ca69b6eafb0008ec, type: 3}
+    - {fileID: 8300000, guid: ef2be94b96c91b741b70483a83f59715, type: 3}
+  - groupID: MonsterMeleeChargeAttack
+    group:
+    - {fileID: 8300000, guid: 8907863c5b46ddc4d94611b0b1121ce9, type: 3}
+  - groupID: MonsterRangeShot
+    group:
+    - {fileID: 8300000, guid: 1be716092d6a3504c92f2de7f0104edb, type: 3}
+    - {fileID: 8300000, guid: ca5d7b461442e5f4d99672577136a0f1, type: 3}
+  - groupID: MonsterDamaged
+    group:
+    - {fileID: 8300000, guid: 2431061e0eb65664e8844c7bde8d44cb, type: 3}
+  - groupID: MonsterDeath
+    group:
+    - {fileID: 8300000, guid: 00a7668746ed724409bc5772888830b4, type: 3}
+  - groupID: WalkSlimeIdle
+    group:
+    - {fileID: 8300000, guid: 9baf0ab227373c046a09d74ec42567fa, type: 3}
+  - groupID: WalkSlimeAttack
+    group:
+    - {fileID: 8300000, guid: ecc43dd7e55f6934e992b036aac9b96f, type: 3}
+  - groupID: WakSlimeDamaged
+    group:
+    - {fileID: 8300000, guid: b9a6707edf58fb54ba5f70f8c137eeec, type: 3}
+  - groupID: WalkSlimeDeath
+    group:
+    - {fileID: 8300000, guid: 2b8bbdbb6fc2ccb42bb3e5e5d1623e4e, type: 3}
+  - groupID: WalkSlimeSkill_1
+    group:
+    - {fileID: 8300000, guid: 8c039cfa186d88846b0866da2be5504d, type: 3}
+  - groupID: WalkSlimeSkill_2
+    group:
+    - {fileID: 8300000, guid: 2bc5634fff2d6a3498f645a0ca82f13d, type: 3}
+  - groupID: WalkSlimeSkillBlaze
+    group:
+    - {fileID: 8300000, guid: e8c271751b194a245b6222fcdd9255a6, type: 3}
+  - groupID: BossSlimeIntro
+    group:
+    - {fileID: 8300000, guid: 87427e8bbc3939b43a67d26801d9ffe1, type: 3}
+  - groupID: BossSlimeSlash
+    group:
+    - {fileID: 8300000, guid: 6b7ade19753cb0441bc9902eaaede356, type: 3}
+  - groupID: BossSlimeEnergyCharge
+    group:
+    - {fileID: 8300000, guid: 5ebc77dea653c9a40ad46c86008806e3, type: 3}
+  - groupID: BossSlimeEnergyShotVoice
+    group:
+    - {fileID: 8300000, guid: 7dfbad6aca7a7f148852c45a6bab429f, type: 3}
+  - groupID: BossSlimeEnergyShot
+    group:
+    - {fileID: 8300000, guid: 528f3b04b0baaff43a57c93d9bff8ab8, type: 3}
+  - groupID: BossSlimePoisonShot
+    group:
+    - {fileID: 8300000, guid: 6ce80333880644a4184c081072045c29, type: 3}
+    - {fileID: 8300000, guid: b256bbeae067a7843a32cb46dd6731b1, type: 3}
+    - {fileID: 8300000, guid: 3afcc745d4c3edf48a89ac229daa45ed, type: 3}
+    - {fileID: 8300000, guid: d25dee17966c47748adc1e273cfdd017, type: 3}
+  - groupID: BossSlimeAttack_1
+    group:
+    - {fileID: 8300000, guid: 49f5a06cfa19adc4ba941c9ebde48b49, type: 3}
+    - {fileID: 8300000, guid: e2839bc6f311e8943bb36d191c5a85fa, type: 3}
+  - groupID: BossSlimeAttack_2
+    group:
+    - {fileID: 8300000, guid: c442ed2a57143dc4290c4530237ad17a, type: 3}
+  - groupID: BossSlimeAttack_3
+    group:
+    - {fileID: 8300000, guid: 11ccdddb89aead943b0c9f7f81c176d8, type: 3}
+  - groupID: BossSlimeDamaged
+    group:
+    - {fileID: 8300000, guid: 25d22e66d2c483c4c9e5f98832925c59, type: 3}
+  - groupID: BossSlimeDeath
+    group:
+    - {fileID: 8300000, guid: 0ac68ba36ed8f8546a65c1c79cefa230, type: 3}
 --- !u!1 &5170947111978231046
 GameObject:
   m_ObjectHideFlags: 0

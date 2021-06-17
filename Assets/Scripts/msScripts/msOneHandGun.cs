@@ -61,6 +61,7 @@ public class msOneHandGun : MonoBehaviour
                     }
                     else
                     {
+                        AudioManager.instance.PlaySound2D("WeaponPistolShot");
                         var go = Instantiate(bulletPrefab);
                         go.transform.position = muzzleTransform.position;
                         go.transform.rotation = muzzleTransform.rotation;
