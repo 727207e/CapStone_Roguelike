@@ -21,7 +21,7 @@ public class gateOpenControl : MonoBehaviour
     void Update()
     {
         // 몬스터가 없으면
-        if (mapscript.instance.monster_count == 0)
+        if (mapscript.instance.monster_count <= 0)
         {
             // 왼쪽 게이트일 경우 배열 0번에 오른쪽 게이트일 경우 배열 1번에
             if (gameObject.name == "LGate")
@@ -29,14 +29,16 @@ public class gateOpenControl : MonoBehaviour
                 if (map_Position != 0)
                 {
                     gates[0] = Instantiate(open_Gate, map.transform) as GameObject;
-                    gates[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 10, 0);
+                    gates[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
+                    gates[0].transform.Rotate(0, -90, 0);
                     Destroy(gameObject);
                 }
             }
             if (gameObject.name == "RGate")
             {
                 gates[1] = Instantiate(open_Gate, map.transform) as GameObject;
-                gates[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 10, 0);
+                gates[1].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
+                gates[1].transform.Rotate(0, 90, 0);
                 Destroy(gameObject);
             }
         }

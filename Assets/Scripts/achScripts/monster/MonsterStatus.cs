@@ -76,6 +76,9 @@ public class MonsterStatus : MonoBehaviour
             Rigidbody rigid = GetComponent<Rigidbody>();
             rigid.isKinematic = true;
 
+            if (GetComponent<BoxCollider>() != null)
+                GetComponent<BoxCollider>().enabled = false;
+
             // 생성한 뒤 제거
             Destroy(gameObject, 1.5f);
         }
@@ -90,45 +93,31 @@ public class MonsterStatus : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // 총알공격
-        if (other.tag == "PlayerAttack")
+        if (other.gameObject.CompareTag("PlayerAttack"))
         {
-            msBullet1 msBullet1 = other.GetComponent<msBullet1>();
-            if (msBullet1 != null)
+            if (other.GetComponent<msBullet1>() != null)
             {
+                msBullet1 msBullet1 = other.GetComponent<msBullet1>();
                 int damage = msBullet1.bulletDamage;
-                curHP -= damage;
+                Damaged(damage);
                 Destroy(other.gameObject);
             }
 
-            enemyBullet ebul = other.GetComponent<enemyBullet>();
-            curHP -= ebul.damage;
-            Destroy(other.gameObject);
-
-            animator.SetTrigger("Damaged");
-            // 캐넌 판정 아직 덜만들어짐
-            /*
-            else
+            // 캐넌 탄알 판정
+            if (other.GetComponent<msBullet_Cannon>() != null)
             {
                 msBullet_Cannon bullet_Cannon = other.GetComponent<msBullet_Cannon>();
                 int damage = bullet_Cannon.bulletDamage;
+                Damaged(damage);
             }
-            */
+
+            animator.SetTrigger("Damaged");
         }
 
         // 혹시 트랩으로 떨어지면
-        if (other.tag == "Trap")
+        if (other.gameObject.CompareTag("Trap"))
         {
             curHP = 0;
-        }
-
-        if (other.tag == "skill_2")
-        {
-
-        }
-
-        if (other.tag == "skill_3")
-        {
-
         }
     }
 

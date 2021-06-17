@@ -575,6 +575,23 @@ public class msPlayerControllerNew : MonoBehaviour
             StartCoroutine("InvincibleTime");
         }
 
+        // 함정으로 떨어지면
+        if (other.gameObject.CompareTag("Trap"))
+        {
+            Debug.Log("함정으로 떨어졌습니다.");
+
+            PlayerDamaged(200);
+            GameObject trapRespawn = GameObject.Find("TrapRespawn");
+            transform.position = trapRespawn.transform.position;
+        }
+
+        // 왼쪽 게이트면 이전맵으로
+        if (other.gameObject == mapscript.instance.gates[0])
+            mapscript.instance.previousMap();
+        // 오른쪽 게이트면 다음 맵으로
+        if (other.gameObject == mapscript.instance.gates[1])
+            mapscript.instance.nextMap();
+
     }
 
     public void OnCollisionEnter(Collision collision)
