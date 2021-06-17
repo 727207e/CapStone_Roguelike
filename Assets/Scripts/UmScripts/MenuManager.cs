@@ -20,6 +20,8 @@ public class MenuManager : MonoBehaviour
 
 	//사용될 메뉴 옵션
 	public GameObject pause;
+	public GameObject youWin_Image;
+	public GameObject youLose_image;
 
 	//메뉴옵션 활성화 비활성화
 	private bool menu_active = false;
@@ -152,23 +154,35 @@ public class MenuManager : MonoBehaviour
 	}
 
 	public void diePlayerContinue()
-    {
-
-    }
+	{
+		GameManager.Instance.NextSceneFadein("1_GameOpening");
+		youLose_image.SetActive(false);
+	}
 
 	public void diePlayerQuit()
     {
-
-    }
+		Application.Quit();
+	}
 
 	public void victoryPlayerContinue()
-    {
-
-    }
+	{
+		GameManager.Instance.NextSceneFadein("3_LabScene");
+		youWin_Image.SetActive(false);
+	}
 
 	public void victoryPlayerQuit()
     {
+		Application.Quit();
+	}
 
+	public void dieImageAppear()
+    {
+		youLose_image.SetActive(true);
+    }
+
+	public void victoryImageAppear()
+    {
+		youWin_Image.SetActive(true);
     }
 
 }

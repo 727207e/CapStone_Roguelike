@@ -912,7 +912,9 @@ public class msPlayerControllerNew : MonoBehaviour
 
         yield return new WaitForSeconds(1.0f);
 
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        MenuManager.instance.dieImageAppear();
+
 
         yield return null;
     }
