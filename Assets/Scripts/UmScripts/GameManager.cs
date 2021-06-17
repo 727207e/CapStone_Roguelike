@@ -148,6 +148,8 @@ public class GameManager : MonoBehaviour
     {
         Start();
 
+        StartCoroutine(fadeOut());
+
     }
 
     void OnDisable()
