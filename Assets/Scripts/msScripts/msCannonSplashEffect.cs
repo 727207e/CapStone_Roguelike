@@ -38,6 +38,7 @@ public class msCannonSplashEffect : MonoBehaviour
     public void ActiveEffect()
     {
         gameObject.SetActive(true);
+        AudioManager.instance.PlaySound2D("WeaponCannonSplash");
     }
 
 
