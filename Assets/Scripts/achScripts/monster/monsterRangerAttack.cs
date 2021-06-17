@@ -10,16 +10,16 @@ public class monsterRangerAttack : MonoBehaviour
     public float distance;                  // 타겟과의 거리
 
     // 이동관련
-    public float sight_Range = 20.0f;       // 타겟 인지범위
-    public float timer = 0.0f;              // 단순 타이머
-    public bool patrol_State = true;        // 순찰 상태
-    public bool detected = false;           // 타겟 감지
-    public float patrol_min = 5.0f;         // 패트롤 최소 이동거리
-    public float patrol_max = 10.0f;        // 패트롤 최대 이동거리
-    public int left_right_idle = 4;
+    private float sight_Range = 15.0f;       // 타겟 인지범위
+    private float timer = 0.0f;              // 단순 타이머
+    private bool patrol_State = true;        // 순찰 상태
+    private bool detected = false;           // 타겟 감지
+    private float patrol_min = 5.0f;         // 패트롤 최소 이동거리
+    private float patrol_max = 10.0f;        // 패트롤 최대 이동거리
+    private int left_right_idle = 4;
 
     private Vector3 moveto_Position;        // 이동방향 설정용
-    public Vector3 direction;              // 이동 방향으로 고개돌리기
+    private Vector3 direction;              // 이동 방향으로 고개돌리기
 
     // 공격관련
     public float attack_Delay = 0.0f;       // 공격 딜레이

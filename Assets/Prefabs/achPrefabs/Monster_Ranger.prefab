@@ -239,14 +239,6 @@ MonoBehaviour:
   fire_Pos: {fileID: 4813518354336598818}
   target: {fileID: 0}
   distance: 0
-  sight_Range: 20
-  timer: 0
-  patrol_State: 1
-  detected: 0
-  patrol_min: 5
-  patrol_max: 10
-  left_right_idle: 4
-  direction: {x: 0, y: 0, z: 0}
   attack_Delay: 0
   attack_Speed: 3
   attack_state: 0
@@ -703,7 +695,7 @@ GameObject:
   - component: {fileID: 346793055784262043}
   - component: {fileID: 7746925288535158699}
   - component: {fileID: 4613896945629825097}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1085,7 +1077,7 @@ GameObject:
   - component: {fileID: 8950771228078512867}
   - component: {fileID: 6510330130310076004}
   - component: {fileID: 7163004366279715593}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBar_Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2093,7 +2085,7 @@ GameObject:
   - component: {fileID: 6383474194549356654}
   - component: {fileID: 2969191245301661193}
   - component: {fileID: 3144357236358243053}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: HPBar_Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}

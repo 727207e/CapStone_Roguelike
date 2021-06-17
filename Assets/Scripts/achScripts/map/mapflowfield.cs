@@ -11,8 +11,8 @@ public class mapflowfield : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startposi = new Vector3(-10.0f, 28.0f, 0.0f);
-        endposi = new Vector3(-10.0f, -25.0f, 0.0f);
+        startposi = new Vector3(-10.0f, -25.0f, 0.0f);
+        endposi = new Vector3(-10.0f, 28.0f, 0.0f);
     }
 
     // Update is called once per frame
