@@ -9,8 +9,13 @@ public class msCameraPlayerTracker : MonoBehaviour
     public GameObject player;
     public msPlayerControllerNew msPCN;
 
+    public GameObject boss;
+
+    public bool triggerBool = true;
+
     void Start()
     {
+        boss = null;
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
@@ -25,7 +30,18 @@ public class msCameraPlayerTracker : MonoBehaviour
 
     void Update()
     {
-        if (player == true)
+        if (GameObject.Find("Boss_Slime 1") != null)
+        {
+            boss = GameObject.Find("Boss_Slime 1");
+            triggerBool = boss.GetComponent<BossSlimePatern>()._cameraCoroutineTrigger;
+        }
+        else if (GameObject.Find("Boss_WalkSlime") != null)
+        {
+            boss = GameObject.Find("Boss_WalkSlime");
+            triggerBool = boss.GetComponent<BossWalkSlimePatern>()._cameraCoroutineTrigger;
+        }
+
+        if (player == true && triggerBool)
         {
             Vector3 dir = player.transform.position - transform.position;
             Vector3 moveVector = new Vector3(dir.x * cameraSpeed * Time.deltaTime, (dir.y + 2.5f) * cameraSpeed * Time.deltaTime, 0.0f);

@@ -5,6 +5,7 @@ using UnityEngine;
 public class gateOpenControl : MonoBehaviour
 {
     public GameObject open_Gate;
+    public GameObject lab_Gate;
     private GameObject[] gates;
     private GameObject map;
     private int map_Position;
@@ -31,6 +32,13 @@ public class gateOpenControl : MonoBehaviour
                     gates[0] = Instantiate(open_Gate, map.transform) as GameObject;
                     gates[0].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
                     gates[0].transform.Rotate(0, -90, 0);
+                    Destroy(gameObject);
+                }
+                else if (map_Position == 8)
+                {
+                    gates[2] = Instantiate(lab_Gate, map.transform) as GameObject;
+                    gates[2].transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, 0);
+                    gates[2].transform.Rotate(0, -90, 0);
                     Destroy(gameObject);
                 }
             }

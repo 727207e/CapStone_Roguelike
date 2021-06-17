@@ -106,5 +106,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293e9b02ad7e55c42858dd55de87da20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  open_Gate: {fileID: 131587655575345367, guid: f97669c9b8a4085429b512470605b566,
+  open_Gate: {fileID: 131587655575345367, guid: 6d4ea2900c01c7641be6a91e0cf8a598,
     type: 3}

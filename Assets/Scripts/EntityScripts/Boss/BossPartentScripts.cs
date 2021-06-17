@@ -124,12 +124,14 @@ public class BossPartentScripts : MonoBehaviour, IBoss
     /// /////////////////////////////////////////////////////// Interface 함수 정의
     public virtual void ShowTheBoss()
     {
-        StartCoroutine(BossStageShowCoroutine());
+        Vector3 position = Camera.main.transform.position;
+        Quaternion rotation = Camera.main.transform.rotation;
+        StartCoroutine(BossStageShowCoroutine(position, rotation));
     }
 
     public virtual void Attack() { }
 
-    public IEnumerator BossStageShowCoroutine()
+    public IEnumerator BossStageShowCoroutine(Vector3 position, Quaternion rotation)
     {
         //카메라 이동
         StartCoroutine(CameraMovingCoroutine());
@@ -156,7 +158,7 @@ public class BossPartentScripts : MonoBehaviour, IBoss
             yield return null;
 
         //다시 시작하면 나중을 위해 트리거 락
-        _cameraCoroutineTrigger = false;
+        //_cameraCoroutineTrigger = false;
 
         //등장 애니메이션 종료
 
@@ -166,9 +168,14 @@ public class BossPartentScripts : MonoBehaviour, IBoss
         hitCollider.SetActive(true);
         ////////////////////////////////////////////////////////추후 변경
         ///
-
+        
+        _camera.transform.position = position;
+        _camera.transform.rotation = rotation;
+        
+        /*
         _camera.transform.position = oldpos.transform.position;
         _camera.transform.rotation = oldpos.transform.rotation;
+        */
     }
 
     public IEnumerator TextShowCoroutine()
@@ -292,12 +299,19 @@ public class BossPartentScripts : MonoBehaviour, IBoss
         _animation_Appear = false;
     }
 
-    protected virtual void Death()
+    protected virtual bool Death(bool live, GameObject crystal, Vector3 position)
     {
-        if(BossHp < 0)
+        if(BossHp <= 0 && live)
         {
             _animator.SetTrigger("Death");
+            Debug.Log("보스킬");
+            mapscript.instance.monster_count--;
+            live = false;
+
+            Instantiate(crystal, position, Quaternion.identity);
         }
+
+        return live;
     }
 
 }

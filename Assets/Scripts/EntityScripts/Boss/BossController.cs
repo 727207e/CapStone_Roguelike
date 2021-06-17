@@ -12,15 +12,20 @@ public class BossController : MonoBehaviour
     {
         bossPaternStatus = GetComponent<IBoss>();
 
+        mapscript.instance.monster_count++;
+
+        bossPaternStatus.ShowTheBoss();
     }
 
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.Space))
         {
             bossPaternStatus.ShowTheBoss();
         }
+        */
 
         if (Input.GetKeyDown(KeyCode.K))
         {

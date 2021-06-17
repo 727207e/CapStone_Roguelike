@@ -29,12 +29,20 @@ public class mapscript : MonoBehaviour
     public int monster_count = 0;
 
     // 문
-    public GameObject[] gates = new GameObject[2];
+    public GameObject[] gates = new GameObject[3];
+
+    public GameObject gamemanager;
+    public DataManager dataManager;
 
     // Start is called before the first frame update
     void Start()
     {
         _instance = this;
+
+        gamemanager = GameObject.Find("SaveManager");
+        dataManager = gamemanager.GetComponent<DataManager>();
+
+        dataManager.LoadData();
 
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -51,14 +59,17 @@ public class mapscript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gamemanager = GameObject.Find("SaveManager");
+        dataManager = gamemanager.GetComponent<DataManager>();
+
         player = GameObject.FindGameObjectWithTag("Player");
         // 좌클릭시 다음맵 우클릭시 이전맵
         // 범위 벗어나는 값에대해서는 설정안해둬서 오류남
         // 맵이동 테스트용으로 넣은것이므로 추후에 지울것
-        if (Input.GetKeyDown(KeyCode.Mouse0) == true && monster_count <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse0) == true && stage_Position != 8)
             nextMap();
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) == true && monster_count <= 0)
+        if (Input.GetKeyDown(KeyCode.Mouse1) == true)
             previousMap();
 
         //몬스터 생성
@@ -73,6 +84,7 @@ public class mapscript : MonoBehaviour
         map_List[stage_Position].SetActive(true);
         player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_1").position;
 
+        dataManager.GameSave();
         // 페이드
         FadeController.instance.objFadein();
     }
@@ -85,6 +97,7 @@ public class mapscript : MonoBehaviour
         map_List[stage_Position].SetActive(true);
         player.transform.position = map_List[stage_Position].transform.Find("Player_Spawn_2").position;
 
+        dataManager.GameSave();
         //페이드
         FadeController.instance.objFadein();
     }

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
+using UnityEngine.SceneManagement;
 
 public class msPlayerControllerNew : MonoBehaviour
 {
@@ -74,7 +75,11 @@ public class msPlayerControllerNew : MonoBehaviour
 
     //UI관련 연동
 
-     void Awake()
+
+
+    public GameObject gamemanager;
+    public DataManager dataManager;
+    void Awake()
     {
 
     }
@@ -115,6 +120,9 @@ public class msPlayerControllerNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        gamemanager = GameObject.Find("SaveManager");
+        
+
         DebugPlayer(); //디버깅
 
         if (isDead == true)
@@ -145,6 +153,10 @@ public class msPlayerControllerNew : MonoBehaviour
 
         PlayerDied(); //사망처리
         WeaponControl(); //무기관리자
+
+        //끼임 탈출
+        if (Input.GetKeyDown(KeyCode.Backspace))
+            transform.position = GameObject.Find("Player_Spawn_1").transform.position;
     }
 
     private void FixedUpdate()
@@ -591,6 +603,15 @@ public class msPlayerControllerNew : MonoBehaviour
         // 오른쪽 게이트면 다음 맵으로
         if (other.gameObject == mapscript.instance.gates[1])
             mapscript.instance.nextMap();
+        // 연구소로
+        if (other.gameObject == mapscript.instance.gates[2])
+            SceneManager.LoadScene(2);
+
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            gamemanager.GetComponent<DataManager>().data.Money += 50;
+            Destroy(other.gameObject);
+        }
 
     }
 

@@ -20,8 +20,14 @@ public class BossSlimePatern : BossPartentScripts
     //카메라가 패턴 변경으로 인해 보이게 될 카메라 무빙 위치
     public List<GameObject> CameraMovingPaternPos;
 
+    public GameObject crystal;
+    public bool live = true;
+    public Vector3 position = Vector3.zero;
+
     protected override void Start()
     {
+        position = GameObject.Find("Crystal_Spawn").transform.position;
+
         BossHp = 10000;
         attack_Delay = 1.5f;
         move_Delay = 1f;
@@ -51,7 +57,7 @@ public class BossSlimePatern : BossPartentScripts
                 if (attack_DistanceLimitToPlayer == false)
                 {
                     //target을 향해 간다
-                    //BossMove();
+                    BossMove();
                 }
 
                 //사거리에 들어오면 움직임 멈춤
@@ -111,7 +117,8 @@ public class BossSlimePatern : BossPartentScripts
              PaternHpCheck();
 
         //죽음 체크
-        Death();
+        if (live)
+            live = Death(live, crystal, position);
     }
 
     public override void Attack()

@@ -29,9 +29,9 @@ public class MonsterStatus : MonoBehaviour
         mapscript.instance.monster_count++;
 
         // 클리어 횟수 로드
-        //clearCount = 
+        clearCount = position;
 
-        multiple = 1 * (1 + (clearCount * 0.1));
+        multiple = 1 * (1 + (clearCount * 0.2));
         maxHP = (int)(maxHP * multiple);
         curHP = maxHP;
         Damage = (int)(Damage * multiple);
@@ -86,7 +86,7 @@ public class MonsterStatus : MonoBehaviour
         // 디버그용 몬스터 체력 10 감소
         if (Input.GetKeyDown(KeyCode.Mouse2) == true)
         {
-            curHP -= 10;
+            curHP = 0;
         }
     }
 
