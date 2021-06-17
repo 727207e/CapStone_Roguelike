@@ -45,6 +45,16 @@ public class CardGenerator : MonoBehaviour
     public InventoryScript inventoryScript;
 
 
+
+
+
+    private void Start()
+    {
+        inventoryScript = GameManager.Instance.player.transform.Find("캐랙티한테고정으로달릴UI").
+            transform.Find("체력바,하단스킬창,아템창").transform.Find("Inventory").GetComponent<InventoryScript>();
+    }
+
+
     void SumthePercent()
     {
         total = 0;
@@ -62,7 +72,7 @@ public class CardGenerator : MonoBehaviour
     
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.U))
         {
 
             SumthePercent();
@@ -93,6 +103,7 @@ public class CardGenerator : MonoBehaviour
         //카드 이름 대입
         theCardObj.transform.Find("Front").transform.Find("CardName").
             GetComponent<Text>().text = RandomCardSelectresult[count].theName();
+
 
         //카드에 번호 부여
         theCardObj.GetComponent<CardUI>().theNumber = count;

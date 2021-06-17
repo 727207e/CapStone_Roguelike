@@ -11,8 +11,6 @@ public class CardUI : MonoBehaviour, IPointerDownHandler
     Animator animator;
 
     CardGenerator cardGenerator;
-    InventoryScript inventoryScript;
-
     //할당받을 넘버
     public int theNumber;
 
@@ -21,9 +19,7 @@ public class CardUI : MonoBehaviour, IPointerDownHandler
     {
         SelectCard();
         cardGenerator = GameObject.Find("CardGenerator").GetComponent<CardGenerator>();
-        inventoryScript = GameManager.Instance.player.transform.Find("CharacterCanvas").
-            transform.Find("체력바,하단스킬창,아템창").transform.Find("Inventory")
-            .GetComponent<InventoryScript>();
+
     }
 
     public void SelectCard()

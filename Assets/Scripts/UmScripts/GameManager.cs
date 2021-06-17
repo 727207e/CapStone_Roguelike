@@ -20,6 +20,15 @@ public class GameManager : MonoBehaviour
 
     public Transform audioListener;
 
+
+    /// <summary>
+    /// ///////////플레이어 움직임 저지
+    /// </summary>
+    /// 
+
+    public bool thePlayerController_Block = false;
+
+
     private void Awake()
     {
         if(instance == null)
@@ -149,6 +158,25 @@ public class GameManager : MonoBehaviour
         Start();
 
         StartCoroutine(fadeOut());
+
+        if (SceneManager.GetActiveScene().name == "3_LabScene")
+        {
+            print("block");
+            thePlayerController_Block = true; // 막음
+
+            //연구소 이동시 캐릭터 특정위치에 배치
+            GameObject charpos = GameObject.Find("CharPos");
+            player.transform.Find("MainPlayerCharacter").
+                transform.position = charpos.transform.position;
+
+        }
+
+        if (SceneManager.GetActiveScene().name == "DungeonScene")
+        {
+            thePlayerController_Block = false; // 움직임 가능
+            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>().Start();
+        }
+
 
     }
 

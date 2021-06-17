@@ -79,7 +79,7 @@ public class msPlayerControllerNew : MonoBehaviour
 
     }
 
-    void Start()
+    public void Start()
     {
         invincibleEffect.SetActive(false);
         rb = GetComponent<RigBuilder>();
@@ -115,36 +115,40 @@ public class msPlayerControllerNew : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        DebugPlayer(); //디버깅
-
-        if (isDead == true)
+        //안막혀 있으면 진행
+        if (!GameManager.Instance.thePlayerController_Block)
         {
-            return;
+            DebugPlayer(); //디버깅
+
+            if (isDead == true)
+            {
+                return;
+            }
+
+            if (characterMoveMode == true)
+            {
+                return;
+            }
+
+            Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            //마우스의 현재 위치를 받고 캐릭터가 바라보는 곳과 일체화시킴.
+            if(Physics.Raycast(ray, out hit, Mathf.Infinity, mouseAimMask))
+            {
+                targetTransform.position = hit.point;
+            }
+
+            //점프 기능을 수행
+            if (Input.GetButtonDown("Jump") && isGrounded && isRolling==false && isDamaged==false)
+            {
+                //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
+                rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
+            }
+
+            PlayerDied(); //사망처리
+            WeaponControl(); //무기관리자
         }
-
-        if (characterMoveMode == true)
-        {
-            return;
-        }
-
-        Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        //마우스의 현재 위치를 받고 캐릭터가 바라보는 곳과 일체화시킴.
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, mouseAimMask))
-        {
-            targetTransform.position = hit.point;
-        }
-
-        //점프 기능을 수행
-        if (Input.GetButtonDown("Jump") && isGrounded && isRolling==false && isDamaged==false)
-        {
-            //rbody.velocity = new Vector3(rbody.velocity.x, 0, 0);
-            rbody.AddForce(Vector3.up * Mathf.Sqrt(jumpHeight *-1* Physics.gravity.y),ForceMode.VelocityChange);
-        }
-
-        PlayerDied(); //사망처리
-        WeaponControl(); //무기관리자
     }
 
     private void FixedUpdate()
@@ -159,76 +163,84 @@ public class msPlayerControllerNew : MonoBehaviour
             Player3DMove();
             return;
         }
+        //안막혀 있으면 진행
+        if (!GameManager.Instance.thePlayerController_Block)
+        {
+                //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
+                PlayerMove();
+                PlayerDash(); //대시
 
-        //움직이기 - 영상에서 사용한 경우. 이 경우 3d 이동이 불가능하기 때문에 자체적으로 만든 함수를 사용
-        PlayerMove();
-        PlayerDash(); //대시
+            //플레이어 회전
+            rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
 
-        //플레이어 회전
-        rbody.MoveRotation(Quaternion.Euler(new Vector3(0, 90 * Mathf.Sign(targetTransform.position.x - transform.position.x), 0)));
+            //그라운드 체크
+            isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
+            animator.SetBool("isGrounded", isGrounded);
 
-        //그라운드 체크
-        isGrounded = Physics.CheckSphere(groundCheckTransform.position, groundCheckRadius, groundMask, QueryTriggerInteraction.Ignore);
-        animator.SetBool("isGrounded", isGrounded);
+            SkillAbility(); //스킬체크
 
-        SkillAbility(); //스킬체크
+        }
     }
 
     public void WeaponControl()
     {
-        if (isRolling == true || isDamaged == true)
+        //안막혀 있으면 진행
+        if (!GameManager.Instance.thePlayerController_Block)
         {
-            return;
-        }
 
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            currentWeapon--;
-            Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
-            if (currentWeapon==0)
+            if (isRolling == true || isDamaged == true)
             {
-                currentWeapon = 3;
+                return;
             }
-            if (currentWeapon==2 && isRifleActivate == false && isCannonActivate==false)
-            {
-                currentWeapon = 1;
-            }
-            else if (currentWeapon==2 && isRifleActivate==false && isCannonActivate == true)
-            {
-                currentWeapon = 1;
-            }
-            if(currentWeapon==3 && isCannonActivate == false && isRifleActivate ==true)
-            {
-                currentWeapon = 2;
-            }
-            SwitchingWeapon();
-            Debug.Log("current Weapon : " + currentWeapon);
-        }
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            currentWeapon++;
-            Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
-            if (currentWeapon==4)
+            if (Input.GetKeyDown(KeyCode.Q))
             {
-                currentWeapon = 1;
+                currentWeapon--;
+                Debug.Log("버튼 Q 중간 과정 : " + currentWeapon);
+                if (currentWeapon == 0)
+                {
+                    currentWeapon = 3;
+                }
+                if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
+                {
+                    currentWeapon = 1;
+                }
+                else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
+                {
+                    currentWeapon = 1;
+                }
+                if (currentWeapon == 3 && isCannonActivate == false && isRifleActivate == true)
+                {
+                    currentWeapon = 2;
+                }
+                SwitchingWeapon();
+                Debug.Log("current Weapon : " + currentWeapon);
             }
-            if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
-            {
-                currentWeapon = 1;
-            }
-            else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
-            {
-                currentWeapon = 3;
-            }
-            if (currentWeapon == 3 && isCannonActivate == false)
-            {
-                currentWeapon = 1;
-            }
-            SwitchingWeapon();
-            Debug.Log("current Weapon : " + currentWeapon);
-        }
 
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                currentWeapon++;
+                Debug.Log("버튼 E 중간 과정 : " + currentWeapon);
+                if (currentWeapon == 4)
+                {
+                    currentWeapon = 1;
+                }
+                if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == false)
+                {
+                    currentWeapon = 1;
+                }
+                else if (currentWeapon == 2 && isRifleActivate == false && isCannonActivate == true)
+                {
+                    currentWeapon = 3;
+                }
+                if (currentWeapon == 3 && isCannonActivate == false)
+                {
+                    currentWeapon = 1;
+                }
+                SwitchingWeapon();
+                Debug.Log("current Weapon : " + currentWeapon);
+            }
+        }
     }
 
     public void SwitchingWeapon()
@@ -589,12 +601,15 @@ public class msPlayerControllerNew : MonoBehaviour
             transform.position = trapRespawn.transform.position;
         }
 
-        // 왼쪽 게이트면 이전맵으로
-        if (other.gameObject == mapscript.instance.gates[0])
-            mapscript.instance.previousMap();
-        // 오른쪽 게이트면 다음 맵으로
-        if (other.gameObject == mapscript.instance.gates[1])
-            mapscript.instance.nextMap();
+        if(mapscript.instance != null)
+        {
+            // 왼쪽 게이트면 이전맵으로
+            if (other.gameObject == mapscript.instance.gates[0])
+                mapscript.instance.previousMap();
+            // 오른쪽 게이트면 다음 맵으로
+            if (other.gameObject == mapscript.instance.gates[1])
+                mapscript.instance.nextMap();
+        }
 
     }
 
