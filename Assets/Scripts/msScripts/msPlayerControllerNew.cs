@@ -77,7 +77,6 @@ public class msPlayerControllerNew : MonoBehaviour
     public GameObject gamemanager;
     public DataManager dataManager;
     //UI관련 연동
-
     void Awake()
     {
 
