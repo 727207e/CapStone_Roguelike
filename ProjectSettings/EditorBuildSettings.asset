@@ -13,11 +13,11 @@ EditorBuildSettings:
     guid: 7b0d1a9eed50df740ad7fda3f80f8492
   - enabled: 1
     path: Assets/Scenes/3_LabScene.unity
-    guid: 8b8c57e6961f9fb4a9f12165ecd47a9a
+    guid: c97ca1234729c7441a28a8ac6f04b576
   - enabled: 1
     path: Assets/Scenes/4_InjectionScene.unity
-    guid: 048d24f010e8e984ba2005600b9a05c8
+    guid: eced32f579534944fa0e8bdc32d31adf
   - enabled: 1
     path: Assets/Scenes/DungeonScene.unity
-    guid: 610b320ba893c894f95b804021f51300
+    guid: 8ccd5e74388b8284fab43ca62da1b985
   m_configObjects: {}

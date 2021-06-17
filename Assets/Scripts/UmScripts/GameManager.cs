@@ -165,75 +165,63 @@ public class GameManager : MonoBehaviour
         //게임 매니저 정보 읽어오기
         Start();
 
-
         //화면 밝아짐
         StartCoroutine(fadeOut());
 
-        //타이틀 씬일경우
-        if (SceneManager.GetActiveScene().name == "1_GameOpening")
+        switch (SceneManager.GetActiveScene().name)
         {
+            case "1_GameOpening":
 
-            AudioManager.instance.PlayMusic("BGMIntro", 2);
+                AudioManager.instance.PlayMusic("BGMIntro", 2);
+
+                break;
+            case "2_StroyTelling":
+
+                AudioManager.instance.PlayMusic("BGMScenario", 2);
+
+                break;
+            case "3_LabScene":
+                AudioManager.instance.PlayMusic("BGMLab", 2);
+
+                //캐릭터 이동 잠금
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                    .SetIsStage(false);
+
+
+                //연구소 이동시 캐릭터 특정위치에 배치
+                GameObject charpos = GameObject.Find("CharPos");
+                player.transform.Find("MainPlayerCharacter").
+                    transform.position = charpos.transform.position;
+
+                break;
+            case "4_InjectionScene":
+                //캐릭터 이동 잠금
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                    .SetIsStage(false);
+
+                //Ui off
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                    .OnOffAllUI(false);
+
+
+                break;
+            case "DungeonScene":
+                //캐릭터 이동 잠그고 UI 잠금
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+        .OnOffAllUI(true);
+
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+        .SetIsStage(true);
+
+                //정보갱신
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>().Start();
+
+                break;
+
+            default:
+                break;
 
         }
-
-        //스토리텔링 씬일경우
-        if (SceneManager.GetActiveScene().name == "2_StroyTelling")
-        {
-
-            AudioManager.instance.PlayMusic("BGMScenario", 2);
-
-        }
-
-        //연구소 씬일경우
-        if (SceneManager.GetActiveScene().name == "3_LabScene")
-        {
-            AudioManager.instance.PlayMusic("BGMLab", 2);
-
-            //캐릭터 이동 잠금
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
-                .SetIsStage(false);
-
-
-            //연구소 이동시 캐릭터 특정위치에 배치
-            GameObject charpos = GameObject.Find("CharPos");
-            player.transform.Find("MainPlayerCharacter").
-                transform.position = charpos.transform.position;
-
-        }
-
-
-        //주사기 일 경우
-        if (SceneManager.GetActiveScene().name == "4_InjectionScene")
-        {
-            //캐릭터 이동 잠금
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
-                .SetIsStage(false);
-
-            //Ui off
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
-                .OnOffAllUI(false);
-
-
-        }
-
-
-        //던전씬 입장일 경우
-        if (SceneManager.GetActiveScene().name == "DungeonScene")
-        {
-
-            //캐릭터 이동 잠그고 UI 잠금
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
-    .OnOffAllUI(true);
-
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
-    .SetIsStage(true);
-
-            //정보갱신
-            player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>().Start();
-        }
-
-
     }
 
     void OnDisable()

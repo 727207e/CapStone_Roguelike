@@ -690,16 +690,20 @@ public class msPlayerControllerNew : MonoBehaviour
         }
 
         // 왼쪽 게이트면 이전맵으로
+
         if (other.gameObject == mapscript.instance.gates[0])
             mapscript.instance.previousMap();
         // 오른쪽 게이트면 다음 맵으로
-        if (other.gameObject == mapscript.instance.gates[1])
+        else if (other.gameObject == mapscript.instance.gates[1])
             mapscript.instance.nextMap();
         // 연구소로
-        if (other.gameObject == mapscript.instance.gates[2])
+        else if (mapscript.instance.gates[2] != null)
         {
-            mapscript.instance.dataManager.GameSave();
-            SceneManager.LoadScene(2);
+            if(other.gameObject == mapscript.instance.gates[2])
+            {
+                mapscript.instance.dataManager.GameSave();
+                SceneManager.LoadScene(2);
+            }
         }
 
         if (other.gameObject.CompareTag("Coin"))

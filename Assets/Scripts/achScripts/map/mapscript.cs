@@ -66,11 +66,11 @@ public class mapscript : MonoBehaviour
         // 좌클릭시 다음맵 우클릭시 이전맵
         // 범위 벗어나는 값에대해서는 설정안해둬서 오류남
         // 맵이동 테스트용으로 넣은것이므로 추후에 지울것
-        if (Input.GetKeyDown(KeyCode.Mouse0) == true && stage_Position != 8)
-            nextMap();
+        //if (Input.GetKeyDown(KeyCode.Mouse0) == true && stage_Position != 8)
+        //    nextMap();
 
-        if (Input.GetKeyDown(KeyCode.Mouse1) == true)
-            previousMap();
+        //if (Input.GetKeyDown(KeyCode.Mouse1) == true)
+        //    previousMap();
 
         //몬스터 생성
         //monsters_Spawn();
