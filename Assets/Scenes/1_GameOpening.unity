@@ -710,17 +710,17 @@ PrefabInstance:
     - target: {fileID: 6100311804997540514, guid: b24be94f933fe7d46910d4933b416aed,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6100311804997540514, guid: b24be94f933fe7d46910d4933b416aed,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6100311804997540514, guid: b24be94f933fe7d46910d4933b416aed,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6100311804997540514, guid: b24be94f933fe7d46910d4933b416aed,
         type: 3}
@@ -1086,17 +1086,17 @@ PrefabInstance:
     - target: {fileID: 7580101253649839102, guid: fe7873724fa68e54689363a9044ad015,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580101253649839102, guid: fe7873724fa68e54689363a9044ad015,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580101253649839102, guid: fe7873724fa68e54689363a9044ad015,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7580101253649839102, guid: fe7873724fa68e54689363a9044ad015,
         type: 3}
@@ -1398,7 +1398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
+  m_AllowSwitchOff: 1
 --- !u!1 &251605849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +2016,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetScreenResolution
         m_Mode: 3
         m_Arguments:
@@ -2027,7 +2027,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_IsOn: 0
+  m_IsOn: 1
 --- !u!1 &429070424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3220,7 +3220,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetMusicVolume
         m_Mode: 0
         m_Arguments:
@@ -3300,7 +3300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: Last Hope
 --- !u!222 &822881332
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5280,7 +5280,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetFullscreen
         m_Mode: 0
         m_Arguments:
@@ -5701,7 +5701,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: Last Hope
 --- !u!222 &1331402734
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6006,7 +6006,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetScreenResolution
         m_Mode: 3
         m_Arguments:
@@ -6108,7 +6108,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetMasterVolume
         m_Mode: 0
         m_Arguments:
@@ -7171,7 +7171,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetScreenResolution
         m_Mode: 3
         m_Arguments:
@@ -8107,7 +8107,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1356579220}
         m_MethodName: SetSfxVolume
         m_Mode: 0
         m_Arguments:

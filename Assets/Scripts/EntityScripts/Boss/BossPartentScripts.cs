@@ -146,6 +146,8 @@ public class BossPartentScripts : MonoBehaviour, IBoss
         //케릭터 웃음
         _animator.SetBool("Laugh", true);
 
+        AudioManager.instance.PlaySound2D("WalkSlimeIdle");
+
         //Hp바 등장씬
         canvas_Boss_Hp_Bar.SetActive(true);
         canvas_Boss_Hp_Bar.GetComponent<Boss_UI_HpBar>().FilltheHpBar();
@@ -303,11 +305,12 @@ public class BossPartentScripts : MonoBehaviour, IBoss
     {
         if(BossHp <= 0 && live)
         {
-            _animator.SetTrigger("Death");
+            _animator.SetBool("Death",true);
             Debug.Log("보스킬");
             mapscript.instance.monster_count--;
             live = false;
 
+            AudioManager.instance.PlaySound2D("BossSlimeDeath");
             Instantiate(crystal, position, Quaternion.identity);
         }
 

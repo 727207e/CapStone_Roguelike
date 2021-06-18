@@ -105,11 +105,4 @@ public class BossCirclePatern : BossPartentScripts
             count = 0;
 
     }
-
-    public void AnimationMoveEnd()
-    {
-        //애니메이션 종료시 초기화
-        _animator.SetInteger("Attack_Num", 0);
-        move_Countdown = true;
-    }
 }

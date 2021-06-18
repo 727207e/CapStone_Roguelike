@@ -94,6 +94,8 @@ public class msPlayerControllerNew : MonoBehaviour
 
     public Text coinText;
 
+    public int bossKillCount = 0;
+
     void Awake()
     {
 
@@ -474,16 +476,16 @@ public class msPlayerControllerNew : MonoBehaviour
     private void PlayerDied()
     {
         //플레이어가 체력이 0이되거나, 플레이어의 y축 가속도가 -50을 넘어가면 사망함.
-        //이후 
-        if (healthPoint <= 0 || rbody.velocity.y < -100)
-        {
-            healthPoint = 0;
-            Debug.Log("플레이어가 사망하였습니다.");
-            animator.SetTrigger("isDead");
-            AudioManager.instance.PlaySound2D("PlayerDeath");
-            StartCoroutine(PlayerDeadDelay());
+        ////이후 
+        //if (healthPoint <= 0 || rbody.velocity.y < -100)
+        //{
+        //    healthPoint = 0;
+        //    Debug.Log("플레이어가 사망하였습니다.");
+        //    animator.SetTrigger("isDead");
+        //    AudioManager.instance.PlaySound2D("PlayerDeath");
+        //    StartCoroutine(PlayerDeadDelay());
 
-        }
+        //}
     }
 
     //쉬운 디버깅을 위한 함수
@@ -701,7 +703,7 @@ public class msPlayerControllerNew : MonoBehaviour
         {
             if(other.gameObject == mapscript.instance.gates[2])
             {
-                mapscript.instance.dataManager.GameSave();
+                mapscript.instance.data.GameSave();
                 SceneManager.LoadScene(2);
             }
         }

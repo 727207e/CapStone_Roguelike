@@ -128,10 +128,12 @@ public class BossWalkSlimePatern : BossPartentScripts
         switch (attackNumber)
         {
             case 1: // 타격 - 왼손
+                AudioManager.instance.PlaySound2D("WalkSlimeSkill_1");
                 break;
             case 2: // 타격 - 오른손
                 break;
             case 3: // 쏘기 공격
+                AudioManager.instance.PlaySound2D("WalkSlimeSkill_2");
                 break;
             default:
                 break;
@@ -154,12 +156,14 @@ public class BossWalkSlimePatern : BossPartentScripts
         if (obj.name == "AttackPos_attack1")
         {
             effectController_.InstantiateParticle(1, 1, false);
+            AudioManager.instance.PlaySound2D("BossSlimeAttack_2");
         }
 
         //오른손공격
         else if (obj.name == "AttackPos_attack2")
         {
             effectController_.InstantiateParticle(2, 2, false);
+            AudioManager.instance.PlaySound2D("BossSlimeAttack_3");
         }
 
     }

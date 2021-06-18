@@ -29,7 +29,7 @@ public class MonsterStatus : MonoBehaviour
         mapscript.instance.monster_count++;
 
         // 클리어 횟수 로드
-        clearCount = position;
+        clearCount = GameObject.FindGameObjectWithTag("Player").GetComponent<msPlayerControllerNew>().bossKillCount;
 
         multiple = 1 * (1 + (clearCount * 0.2));
         maxHP = (int)(maxHP * multiple);
@@ -53,6 +53,8 @@ public class MonsterStatus : MonoBehaviour
         if (curHP <= 0 && alive)
         {
             alive = false;
+
+            AudioManager.instance.PlaySound2D("MonsterDeath");
 
             animator.SetTrigger("Dead");
 
@@ -112,6 +114,8 @@ public class MonsterStatus : MonoBehaviour
             }
 
             animator.SetTrigger("Damaged");
+
+            AudioManager.instance.PlaySound2D("MonsterDamaged");
         }
 
         // 혹시 트랩으로 떨어지면

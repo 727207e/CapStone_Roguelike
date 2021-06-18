@@ -100,7 +100,9 @@ public class MenuManager : MonoBehaviour
 			
 			//선택된 화질
 			Screen.SetResolution(screenWidths[i], (int)(screenWidths[i] / aspectRatio), false);
-			
+
+			print(screenWidths[i]);
+
 			//값 저장
 			PlayerPrefs.SetInt("screen res index", activeScreenResIndex);
 			PlayerPrefs.Save();
@@ -150,7 +152,10 @@ public class MenuManager : MonoBehaviour
 	}
 
 	public void diePlayerContinue()
-	{
+	{                
+		//Ui on
+		GameManager.Instance.player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+			.OnOffAllUI(false);
 		GameManager.Instance.NextSceneFadein("1_GameOpening");
 		youLose_image.SetActive(false);
 	}
@@ -172,12 +177,14 @@ public class MenuManager : MonoBehaviour
 	}
 
 	public void dieImageAppear()
-    {
+	{
+		AudioManager.instance.PlayMusic("BGMGameOver", 1);
 		youLose_image.SetActive(true);
     }
 
 	public void victoryImageAppear()
-    {
+	{
+		AudioManager.instance.PlayMusic("BGMGameClear",1);
 		youWin_Image.SetActive(true);
     }
 

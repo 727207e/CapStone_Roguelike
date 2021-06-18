@@ -20,12 +20,10 @@ public class BossController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(Input.GetKeyDown(KeyCode.Space))
-        {
-            bossPaternStatus.ShowTheBoss();
-        }
-        */
+        //if(Input.GetKeyDown(KeyCode.Space))
+        //{
+        //    bossPaternStatus.ShowTheBoss();
+        //}
 
         if (Input.GetKeyDown(KeyCode.K))
         {

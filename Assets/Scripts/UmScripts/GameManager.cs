@@ -187,6 +187,9 @@ public class GameManager : MonoBehaviour
                 player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
                     .SetIsStage(false);
 
+                //Ui on
+                player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
+                    .OnOffAllUI(true);
 
                 //연구소 이동시 캐릭터 특정위치에 배치
                 GameObject charpos = GameObject.Find("CharPos");
@@ -195,6 +198,9 @@ public class GameManager : MonoBehaviour
 
                 break;
             case "4_InjectionScene":
+
+                AudioManager.instance.PlayMusic("BGMLab", 2);
+
                 //캐릭터 이동 잠금
                 player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
                     .SetIsStage(false);
@@ -206,6 +212,9 @@ public class GameManager : MonoBehaviour
 
                 break;
             case "DungeonScene":
+
+                AudioManager.instance.PlayMusic("BGMMainStage", 2);
+
                 //캐릭터 이동 잠그고 UI 잠금
                 player.transform.Find("MainPlayerCharacter").GetComponent<msPlayerControllerNew>()
         .OnOffAllUI(true);

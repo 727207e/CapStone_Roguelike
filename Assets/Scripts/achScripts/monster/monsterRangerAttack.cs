@@ -66,7 +66,7 @@ public class monsterRangerAttack : MonoBehaviour
 
     private void attack()
     {
-        int random_range = 1 + (int)(clearCount/4);
+        int random_range = 1 + (int)(clearCount / 4);
         if (random_range > 4)
             random_range = 4;
         int index = Random.Range(0, random_range);
@@ -112,6 +112,7 @@ public class monsterRangerAttack : MonoBehaviour
             enemyBullet enemyBullet = rangeratk.GetComponent<enemyBullet>();
             enemyBullet.damage = monsterStatus.Damage;
         }
+        AudioManager.instance.PlaySound2D("MonsterRangeShot");
     }
     public void patrol()
     {
@@ -159,13 +160,13 @@ public class monsterRangerAttack : MonoBehaviour
         {
             if (timer < 2.0f)
             {
-                    transform.LookAt(transform.position + moving_direction);
-                    transform.Translate(moving_direction * 2.0f * Time.deltaTime, Space.World);
+                transform.LookAt(transform.position + moving_direction);
+                transform.Translate(moving_direction * 2.0f * Time.deltaTime, Space.World);
             }
             else
             {
                 left_right_idle = Random.Range(0, 9);
-                
+
                 patrol_State = true;
                 timer = 0.0f;
             }

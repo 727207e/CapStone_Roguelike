@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
     private float h;
     private float v;
 
-    public bool theSceneMove = true;
+    bool theSceneMove = true;
 
     [SerializeField]
     private Text actionText;  // 행동을 보여 줄 텍스트
@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+
+        theSceneMove = true;
     }
 
 
@@ -107,7 +109,7 @@ public class Player : MonoBehaviour
 
                 if (theSceneMove)
                 {
-                    print("tt");
+                    theSceneMove = false;
                     GameManager.Instance.NextSceneFadein("4_InjectionScene");
                 }
             }

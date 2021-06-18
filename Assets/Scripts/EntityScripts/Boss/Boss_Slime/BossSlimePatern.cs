@@ -28,7 +28,7 @@ public class BossSlimePatern : BossPartentScripts
     {
         position = GameObject.Find("Crystal_Spawn").transform.position;
 
-        BossHp = 10000;
+        BossHp = 100;
         attack_Delay = 1.5f;
         move_Delay = 1f;
         the_Next_Partern_HP_Limit = 30;
@@ -142,8 +142,12 @@ public class BossSlimePatern : BossPartentScripts
         switch (attackNumber)
         {
             case 1: // 잡기
+
+                AudioManager.instance.PlaySound2D("BossSlimeSlash");
+
                 break;
             case 2: // 입브레스
+                AudioManager.instance.PlaySound2D("BossSlimePoisonShot");
                 break;
             case 3: // 입브레스(쏘기)
                 break;
@@ -183,6 +187,7 @@ public class BossSlimePatern : BossPartentScripts
         {
             //맞으면 효과
             effectController_.InstantiateParticle(3, 3, true);
+            AudioManager.instance.PlaySound2D("BossSlimeAttack_2");
         }
 
         //때리기 두손
@@ -190,6 +195,7 @@ public class BossSlimePatern : BossPartentScripts
         {
             //맞으면 효과
             effectController_.InstantiateParticle(2, 7, true);
+            AudioManager.instance.PlaySound2D("BossSlimeAttack_3");
 
         }
     }

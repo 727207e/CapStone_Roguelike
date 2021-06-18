@@ -79,9 +79,9 @@ public class monsterMeleeAttack : MonoBehaviour
             {
                 //if ((left_right_idle <= 1 && moveto_Position.x < transform.position.x) || (left_right_idle <= 3 && left_right_idle > 1 && moveto_Position.x > transform.position.x) || left_right_idle == 4)
                 //{
-                    //direction = (moveto_Position - transform.position).normalized;
-                    transform.LookAt(transform.position + moving_direction);
-                    transform.Translate(moving_direction * 1.5f * Time.deltaTime, Space.World);
+                //direction = (moveto_Position - transform.position).normalized;
+                transform.LookAt(transform.position + moving_direction);
+                transform.Translate(moving_direction * 1.5f * Time.deltaTime, Space.World);
                 //}
             }
             else
@@ -102,9 +102,15 @@ public class monsterMeleeAttack : MonoBehaviour
         {
             int rand = Random.Range(0, 2);
             if (rand == 0)
+            {
                 animator.SetTrigger("Attack_M");
+                AudioManager.instance.PlaySound2D("MonsterMeleeRollAttack");
+            }
             else
+            {
                 animator.SetTrigger("Attack_M2");
+                AudioManager.instance.PlaySound2D("MonsterMeleeChargeAttack");
+            }
             attack_state = false;
         }
 
